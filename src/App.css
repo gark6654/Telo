@@ -6,11 +6,19 @@ input:focus, input:active, button:focus {
 /* ==================== HEADER ==================== */
 /* The name of the site is made in two colors. */
 header {
+    overflow: hidden;
     padding: 15px 0px;
     min-height: 100px;
 }
+.HeaderTopPart {
+    max-width: 100%;
+    padding: 0px 16px;
+}
+.HeaderTopPart, .HeaderBottomPart {
+    margin: 10px 0px;
+}
 @media (max-width: 768px) {
-    .HeaderLogoBox {
+    .HeaderTopPart {
         text-align: center;
     }
 }
@@ -20,4 +28,31 @@ header {
 .SiteName b {
     font-weight: normal;
     color: #e6563f;
+}
+/* Basket */
+.BasketButton {
+    width: 20%;
+    padding: 5px;
+    background: #5096fd;
+    border: 1px solid #5096fd;
+    border-radius: 30px;
+}
+.BasketItemCount {
+    position: absolute;
+    top: 5px;
+    right: 80px;
+    background: #fff;
+    width: 25px;
+    height: 25px; 
+    border-radius: 50%;
+}
+@media (max-width: 768px) {
+    .BasketButton {
+        width: 35%;
+    }
+}
+@media (max-width: 576px) {
+    .BasketBox button{
+        float: none !important;
+    }
 }
