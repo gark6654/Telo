@@ -31,28 +31,39 @@ header {
 }
 /* Basket */
 .BasketButton {
-    width: 20%;
+    width: 25%;
     padding: 5px;
     background: #5096fd;
+    color: #fff;
     border: 1px solid #5096fd;
     border-radius: 30px;
 }
 .BasketItemCount {
-    position: absolute;
-    top: 5px;
-    right: 80px;
-    background: #fff;
     width: 25px;
     height: 25px; 
+    position: absolute;
+    top: 5px;
+    right: 13.5%;
+    background: #fff;
+    color: black;
     border-radius: 50%;
 }
+@media (max-width: 856px) {
+    /*  */
+} 
 @media (max-width: 768px) {
     .BasketButton {
         width: 35%;
+    }
+    .BasketItemCount {
+        right: 19%;
     }
 }
 @media (max-width: 576px) {
     .BasketBox button{
         float: none !important;
+    }
+    .BasketItemCount {
+        right: 50%;
     }
 }
