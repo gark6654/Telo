@@ -25,7 +25,7 @@ function Categories(props) {
                     </li>
                     <li>
                         <button className="CategoryButton btn">
-                        <img src={ShampooIcon} alt="Logo" />
+                            <img src={ShampooIcon} alt="Logo" />
                             <span>Shampoo</span>
                         </button>
                     </li>

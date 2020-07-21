@@ -92,19 +92,23 @@ header {
     min-height: 100vh;
 }
 /* Shop page */
-/* Categories side */
-.CategoriesBox {
+/* <<Shop By Category>> <<Filters>> */
+.FiltersBox, .CategoriesBox {
+    margin: 15px auto;
     padding: 10px;
     border: 1px solid lightgray;
 }
-.CategoriesBox .Title {
+aside .Title {
     width: 100%;
     padding: 5px;
     background: #5096fd;
     color: #fff;
 }
+
+/* Categories side */
 .CategoriesBox ul {
     padding: 0px;
+    margin: 5px auto;
 }
 .CategoriesBox li {
     list-style-type: none;
@@ -113,12 +117,31 @@ header {
     width: 100%;
     text-align: left;
 }
+.CategoryButton:hover {
+    background: lightgray;
+}
 .CategoryButton img {
     width: 30px;
     margin-right: 5px;
 }
+
+/* Filters side */
+.PriceFilter span {
+    margin: auto 5px;
+}
+.PriceFilter input {
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+.PriceFilter span:last-child {
+    font-size: 20px;
+    color: #e6563f;
+}
+
 @media (max-width: 768px) {
-    .CategoriesBox {
+    .CategoriesBox, .FiltersBox {
         text-align: center;
     }
     .CategoriesBox li {
