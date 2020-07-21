@@ -1,6 +1,11 @@
 import React from 'react';
 
 function NavBar(props) {
+
+    function search(event) {
+        event.preventDefault();
+    }
+
     return (
         <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
             <button 
@@ -23,7 +28,7 @@ function NavBar(props) {
                         <a className="nav-link" href="#">Shop</a>
                     </li>
                 </ul>
-                <form className="form-inline my-2 my-lg-0">
+                <form className="form-inline my-2 my-lg-0" onSubmit={search}>
                     <input 
                         className="form-control 
                         mr-sm-2" 

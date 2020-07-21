@@ -1,10 +1,9 @@
 /* ==================== GLOBAL ==================== */
-input:focus, input:active, button:focus {
-    outline: none;
+input:focus, input:active, button:focus, button:active {
+    outline: none !important;
 }
 
 /* ==================== HEADER ==================== */
-/* The name of the site is made in two colors. */
 header {
     overflow: hidden;
     padding: 15px 0px;
@@ -22,6 +21,7 @@ header {
         text-align: center;
     }
 }
+/* The name of the site is made in two colors. */
 .SiteName {
     color: #5096fd;
 }
@@ -38,25 +38,30 @@ header {
     border: 1px solid #5096fd;
     border-radius: 30px;
 }
+.BasketButton:hover {
+    background: #e6563f;
+    border: 1px solid #e6563f;
+}
+.BasketButton label {
+    cursor: pointer;
+    margin-left: 12px;
+}
 .BasketItemCount {
-    width: 25px;
-    height: 25px; 
+    width: 24px;
+    height: 24px; 
     position: absolute;
     top: 5px;
-    right: 13.5%;
+    right: 14.5%;
     background: #fff;
     color: black;
     border-radius: 50%;
 }
-@media (max-width: 856px) {
-    /*  */
-} 
 @media (max-width: 768px) {
     .BasketButton {
         width: 35%;
     }
     .BasketItemCount {
-        right: 19%;
+        right: 20%;
     }
 }
 @media (max-width: 576px) {
@@ -64,6 +69,41 @@ header {
         float: none !important;
     }
     .BasketItemCount {
+        right: 51%;
+    }
+}
+@media (max-width: 425px) {
+    .BasketItemCount {
         right: 50%;
     }
+    .BasketButton label {
+        margin-left: 0px;
+    }
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: #5096fd;
+    color: #fff;
+    min-height: 250px;
+}
+/* Footer Top Part */
+.FooterContacts {
+    padding: 10px;
+}
+.AddressBox, .PhoneBox, .MailBox {
+    padding: 5px;
+}
+.AddressBox p, .PhoneBox p, .MailBox p {
+    margin: 5px;
+}
+.PhoneBox img, .MailBox img {
+    margin: 5px;
+}
+/* Footer bottom part */
+.FooterBottomPart {
+    position: relative;
+    bottom: 0;
+    border: 1px solid black;
+    background: #fff;
 }
