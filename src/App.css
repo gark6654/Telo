@@ -86,11 +86,45 @@ header {
         margin-left: 0px;
     }
 }
+
 /* ==================== CONTENT ==================== */
 .Content {
     min-height: 100vh;
 }
-
+/* Shop page */
+/* Categories side */
+.CategoriesBox {
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+.CategoriesBox .Title {
+    width: 100%;
+    padding: 5px;
+    background: #5096fd;
+    color: #fff;
+}
+.CategoriesBox ul {
+    padding: 0px;
+}
+.CategoriesBox li {
+    list-style-type: none;
+}
+.CategoryButton {
+    width: 100%;
+    text-align: left;
+}
+.CategoryButton img {
+    width: 30px;
+    margin-right: 5px;
+}
+@media (max-width: 768px) {
+    .CategoriesBox {
+        text-align: center;
+    }
+    .CategoriesBox li {
+        display: inline-block;
+    }
+}
 /* ==================== FOOTER ==================== */
 footer {
     position: relative;

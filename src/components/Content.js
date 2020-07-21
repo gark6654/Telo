@@ -5,7 +5,7 @@ import Shop from './Pages/Shop';
 
 function Content(props) {
     return (
-        <div className="Content container">
+        <div className="Content container-fluid">
             {/*
                 A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. 
