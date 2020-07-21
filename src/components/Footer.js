@@ -5,8 +5,8 @@ import MailIcon from '../media/email.svg';
 
 function Footer(props) {
     return (
-        <footer className="container-fluid">
-            <div className="FooterTopPart">
+        <footer>
+            <div className="FooterTopPart container-fluid">
                 <div className="FooterContacts row">
                     <div className="AddressBox col-md">
                         <img src={GeoIcon} alt="address" width="25" />
@@ -25,8 +25,10 @@ function Footer(props) {
                     </div>
                 </div>
             </div>
-            <div className="FooterBottomPart">
-                Garik
+            <div className="FooterBottomPart container-fluid bg-light">
+                <p>
+                    &copy; {new Date().getFullYear()} Urartu.ge All Right Reserved
+                </p>
             </div>
         </footer>
     );

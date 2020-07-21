@@ -80,12 +80,16 @@ header {
         margin-left: 0px;
     }
 }
+/* ==================== CONTENT ==================== */
+.Content {
+    height: 100vh;
+}
 
 /* ==================== FOOTER ==================== */
 footer {
     background: #5096fd;
     color: #fff;
-    min-height: 250px;
+    height: 250px;
 }
 /* Footer Top Part */
 .FooterContacts {
@@ -102,8 +106,10 @@ footer {
 }
 /* Footer bottom part */
 .FooterBottomPart {
-    position: relative;
-    bottom: 0;
-    border: 1px solid black;
-    background: #fff;
+    border: none;
+    position: absolute;
+    top: 155%;
+    height: 30px;
+    text-align: center;
+    color: black;
 }
