@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar(props) {
-
+    
     function search(event) {
         event.preventDefault();
     }
@@ -22,10 +23,10 @@ function NavBar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item ">
-                        <a className="nav-link" href="#">Home</a>
+                        <Link to="/" className="nav-link">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Shop</a>
+                        <Link to="/Shop" className="nav-link">Shop</Link>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0" onSubmit={search}>

@@ -29,6 +29,9 @@ header {
     font-weight: normal;
     color: #e6563f;
 }
+.HeaderLogoBox a:hover {
+    text-decoration-line: none;
+}
 /* Basket */
 .BasketButton {
     width: 25%;
