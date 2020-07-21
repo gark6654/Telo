@@ -73,6 +73,9 @@ header {
     }
 }
 @media (max-width: 425px) {
+    .BasketBox {
+        width: 240%;
+    }
     .BasketItemCount {
         right: 50%;
     }
@@ -82,17 +85,24 @@ header {
 }
 /* ==================== CONTENT ==================== */
 .Content {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* ==================== FOOTER ==================== */
 footer {
+    position: relative;
+    bottom: 0px;
     background: #5096fd;
     color: #fff;
     height: 250px;
 }
 /* Footer Top Part */
+.FooterTopPart {
+    height: 90%;
+    padding: 0px 10px;
+}
 .FooterContacts {
+    width: 100%;
     padding: 10px;
 }
 .AddressBox, .PhoneBox, .MailBox {
@@ -106,10 +116,8 @@ footer {
 }
 /* Footer bottom part */
 .FooterBottomPart {
-    border: none;
-    position: absolute;
-    top: 155%;
-    height: 30px;
+    height: 10%;
     text-align: center;
+    background: #fff;
     color: black;
 }
