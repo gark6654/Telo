@@ -90,14 +90,10 @@ header {
 /* ==================== CONTENT ==================== */
 .Content {
     min-height: 100vh;
-    background: url(./media/back.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 /* Shop page */
 /* <<Shop By Category>> <<Filters>> */
 .FiltersBox, .CategoriesBox {
-    background: #fff;
     margin: 15px auto;
     padding: 10px;
     border: 1px solid lightgray;
@@ -108,7 +104,18 @@ aside .Title {
     background: #5096fd;
     color: #fff;
 }
-
+.FilterCollapseButton {
+    width: 30%;
+    margin: auto;
+    background: #5096fd;
+    color: #fff;
+}
+.FilterCollapseButton:focus {
+    color: #fff;
+}
+.FilterCollapseButton:active {
+    background: #e6563f;
+}
 /* Categories side */
 .CategoriesBox ul {
     padding: 0px;
@@ -150,6 +157,7 @@ aside .Title {
 @media (max-width: 768px) {
     .CategoriesBox, .FiltersBox {
         text-align: center;
+        max-height: 100vmin;
     }
     .CategoriesBox li {
         display: inline-block;

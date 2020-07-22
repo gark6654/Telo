@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Filters(props) {
     const [maxPrice, setMaxPrice] = useState(100);
 
+    // Set max price value from input or slider(range).
     function setValues(event) {
         setMaxPrice(event.target.value);
     }
