@@ -1,9 +1,9 @@
-/* ==================== GLOBAL ==================== */
+/* ======================================== GLOBAL ======================================== */
 input:focus, input:active, button:focus, button:active {
     outline: none !important;
 }
 
-/* ==================== HEADER ==================== */
+/* ======================================== HEADER ======================================== */
 header {
     overflow: hidden;
     padding: 15px 0px;
@@ -87,9 +87,12 @@ header {
     }
 }
 
-/* ==================== CONTENT ==================== */
+/* ======================================== CONTENT ======================================== */
 .Content {
-    min-height: 100vh;
+    min-height: 200vh;
+}
+.FiltersPart {
+    height: 100vh;
 }
 /* Shop page */
 /* <<Shop By Category>> <<Filters>> */
@@ -163,7 +166,10 @@ aside .Title {
         display: inline-block;
     }
 }
-/* ==================== FOOTER ==================== */
+.ProductsPart {
+    height: 124px;
+}
+/* ======================================== FOOTER ======================================== */
 footer {
     position: relative;
     bottom: 0px;
@@ -174,7 +180,14 @@ footer {
 /* Footer Top Part */
 .FooterTopPart {
     height: 90%;
+    text-align: center;
     padding: 0px 10px;
+}
+@media (max-width: 425px) {
+    .FooterTopPart {
+        text-align: left;
+        margin: 15px;
+    }
 }
 .FooterContacts {
     width: 100%;

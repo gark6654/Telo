@@ -33,8 +33,8 @@ function Shop(props) {
                 <Categories />
                 <Filters />
             </aside>
-            <div className="col-md">
-
+            <div className="ProductsPart ">
+                Garik
             </div>
         </div>
     );
