@@ -35,10 +35,10 @@ header {
 .SiteName b {
     font-weight: normal;
     color: #e6563f;
-    transition: .2s;
 }
 .SiteName:hover {
     font-size: 42px;
+    opacity: .85;
 }   
 .HeaderLogoBox a:hover {
     text-decoration-line: none;
@@ -215,7 +215,7 @@ aside .Title {
 }
 
 .Product img {
-    width: 250px;
+    width: 100%;
 }
 
 /* ======================================== FOOTER ======================================== */
