@@ -21,6 +21,7 @@ header {
         text-align: center;
     }
 }
+
 /* The name of the site is made in two colors. */
 .SiteName {
     color: #5096fd;
@@ -32,6 +33,7 @@ header {
 .HeaderLogoBox a:hover {
     text-decoration-line: none;
 }
+
 /* Basket */
 .BasketButton {
     width: 25%;
@@ -87,11 +89,21 @@ header {
     }
 }
 
+/* Header Bottom Part */
+@media (max-width: 992px) {
+    /* Collapsed navbar */
+    .navbar-collapse {
+        padding: 5px;
+    }
+}
+
 /* ======================================== CONTENT ======================================== */
 .Content {
     min-height: 100vh;
 }
+
 /* Shop page */
+
 /* <<Shop By Category>> <<Filters>> */
 .FiltersBox, .CategoriesBox {
     margin: 15px auto;
@@ -116,6 +128,7 @@ aside .Title {
 .FilterCollapseButton:active {
     background: #e6563f;
 }
+
 /* Categories side */
 .CategoriesBox ul {
     padding: 0px;
@@ -173,6 +186,7 @@ aside .Title {
     border: 1px solid black;
     margin: 5px;
 }
+
 /* ======================================== FOOTER ======================================== */
 footer {
     position: relative;
@@ -181,6 +195,7 @@ footer {
     color: #fff;
     height: 250px;
 }
+
 /* Footer Top Part */
 .FooterTopPart {
     height: 90%;
@@ -206,6 +221,7 @@ footer {
 .PhoneBox img, .MailBox img {
     margin: 5px;
 }
+
 /* Footer bottom part */
 .FooterBottomPart {
     height: 10%;

@@ -8,9 +8,9 @@ function NavBar(props) {
     }
 
     return (
-        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <button 
-                className="navbar-toggler" 
+                className="navbar-toggler float-right" 
                 type="button" 
                 data-toggle="collapse" 
                 data-target="#navbarSupportedContent" 
