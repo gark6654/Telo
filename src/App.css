@@ -2,6 +2,11 @@
 input:focus, input:active, button:focus, button:active {
     outline: none !important;
 }
+.MoneySymbol {
+    color: #e6563f;
+    font-size: 24px;
+    transition: .2s;
+}
 
 /* ======================================== HEADER ======================================== */
 header {
@@ -25,11 +30,16 @@ header {
 /* The name of the site is made in two colors. */
 .SiteName {
     color: #5096fd;
+    transition: .2s;
 }
 .SiteName b {
     font-weight: normal;
     color: #e6563f;
+    transition: .2s;
 }
+.SiteName:hover {
+    font-size: 42px;
+}   
 .HeaderLogoBox a:hover {
     text-decoration-line: none;
 }
@@ -140,8 +150,10 @@ aside .Title {
 .CategoryButton {
     width: 100%;
     text-align: left;
+    transition: .5s;
 }
 .CategoryButton:hover {
+    margin: 10px auto;
     background: lightgray;
 }
 .CategoryButton img {
@@ -162,10 +174,6 @@ aside .Title {
 .PriceFilter input[type="range"] {
     width: 100%;
 }
-.PriceFilter span:last-child {
-    font-size: 20px;
-    color: #e6563f;
-}
 
 @media (max-width: 768px) {
     .CategoriesBox, .FiltersBox {
@@ -176,15 +184,38 @@ aside .Title {
         display: inline-block;
     }
 }
+
+/* Products side */
 .ProductsPart {
     margin: 15px auto;
 }
 .ProductsPart .row {
     justify-content: center;
 }
-.ProductsPart .Product {
-    border: 1px solid black;
+
+/* Single Product */
+.Product {
+    padding: 15px;
     margin: 5px;
+    text-align: center;
+    color: #5096fd;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 10px 0px lightgray;
+    -moz-box-shadow: 0px 0px 10px 0px lightgray;
+    box-shadow: 0px 0px 10px 0px lightgray;
+    transition: .5s;
+}
+.Product:hover {
+    color: #e6563f;
+    margin: 35px;
+}
+.Product:hover  .MoneySymbol {
+    color: #5096fd;
+    font-size: 40px;
+}
+
+.Product img {
+    width: 250px;
 }
 
 /* ======================================== FOOTER ======================================== */

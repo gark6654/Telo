@@ -28,7 +28,7 @@ function Filters(props) {
                             value={maxPrice} 
                             onChange={setValues} 
                         />
-                        <span>₾</span>
+                        <span className="MoneySymbol">₾</span>
                     </div>
                     <div className="form-group">
                         <input 
