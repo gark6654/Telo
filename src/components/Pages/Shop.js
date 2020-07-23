@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Categories from '../Categories';
 import Filters from '../Filters';
 import FilterIcon from '../../media/filter.svg'
+import ProductsBox from '../ProductsBox';
 
 function Shop(props) {
     const [windowW, setWindowW] = useState(window.innerWidth); // UI For Filters collapse. 
@@ -13,9 +14,9 @@ function Shop(props) {
     });
 
     return (
-        <div className="row">
+        <div className={`${windowW <= 768 ? '' : 'row'}`}>
             {
-                windowW < 768 ? <button
+                windowW <= 768 ? <button
                     className="btn FilterCollapseButton"
                     type="button"
                     data-toggle="collapse"
@@ -29,12 +30,12 @@ function Shop(props) {
                 </button> : ''
             }
 
-            <aside className={`FiltersPart col-md-auto ${windowW < 768 ? 'collapse' : ''}`} id="CollapseFilters">
+            <aside className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`} id="CollapseFilters">
                 <Categories />
                 <Filters />
             </aside>
-            <div className="ProductsPart ">
-                Garik
+            <div className="ProductsPart col-md">
+                <ProductsBox />
             </div>
         </div>
     );

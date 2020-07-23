@@ -89,10 +89,7 @@ header {
 
 /* ======================================== CONTENT ======================================== */
 .Content {
-    min-height: 200vh;
-}
-.FiltersPart {
-    height: 100vh;
+    min-height: 100vh;
 }
 /* Shop page */
 /* <<Shop By Category>> <<Filters>> */
@@ -108,7 +105,7 @@ aside .Title {
     color: #fff;
 }
 .FilterCollapseButton {
-    width: 30%;
+    width: 100%;
     margin: auto;
     background: #5096fd;
     color: #fff;
@@ -167,7 +164,14 @@ aside .Title {
     }
 }
 .ProductsPart {
-    height: 124px;
+    margin: 15px auto;
+}
+.ProductsPart .row {
+    justify-content: center;
+}
+.ProductsPart .Product {
+    border: 1px solid black;
+    margin: 5px;
 }
 /* ======================================== FOOTER ======================================== */
 footer {
