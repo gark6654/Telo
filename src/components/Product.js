@@ -1,18 +1,23 @@
-import React from 'react';
-import Persil from '../media/Products/persil.jpg';
+import React, { useState } from 'react';
 
 function Product(props) {
+    const [zoom, setZoom] = useState(false);
+
+    function zoomProduct() {
+        console.log('Garik');
+    }
+
     return (
-        <div className="Product col-lg-3 col-md-5 col-sm-5">
+        <div className="Product col-lg-3 col-md-5 col-sm-5" onClick={zoomProduct}>
             <h1>
-                Persil
+                {props.name}
             </h1>
-            <img src={Persil} alt="prd" />
+            <img src={`http://192.168.0.102:3000/media/Products/${props.img}`} alt="prd" />
             <label>
-                Automatic Washing Pawder
+                {props.desc}
             </label>
-            <h4 className="MoneySymbol">
-                80 <span className="MoneySymbol">₾</span>
+            <h4 className="ProductPriceBox MoneySymbol">
+                {props.price} <span className="MoneySymbol">₾</span>
             </h4>
         </div>
     );

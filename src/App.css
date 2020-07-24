@@ -4,7 +4,7 @@ input:focus, input:active, button:focus, button:active {
 }
 .MoneySymbol {
     color: #e6563f;
-    font-size: 24px;
+    font-size: 26px;
     transition: .2s;
 }
 
@@ -213,9 +213,18 @@ aside .Title {
     color: #5096fd;
     font-size: 40px;
 }
-
 .Product img {
     width: 100%;
+} 
+/* Product description */
+.Product label {
+    margin: 40px auto;
+}
+.ProductPriceBox {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
 }
 
 /* ======================================== FOOTER ======================================== */
