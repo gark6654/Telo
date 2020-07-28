@@ -20,7 +20,11 @@ function Product(props) {
     }, [props]);
 
     function zoomProduct() {
-        zoom ? setZoom(false) : setZoom(true);
+        setZoom(true);
+    }
+
+    function collapseBox() {
+        setZoom(false);
     }
 
     return (
@@ -38,7 +42,7 @@ function Product(props) {
                 </h4>
             </div>
             {
-                zoom ? <SingleProduct product={info} /> : ''
+                zoom ? <SingleProduct product={info} collapse={collapseBox} /> : ''
             }
         </>
     );

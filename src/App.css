@@ -218,6 +218,7 @@ aside .Title {
 .Product img {
     width: 100%;
 } 
+
 /* Product description */
 .Product label {
     margin-bottom: 40px;
@@ -228,19 +229,76 @@ aside .Title {
     left: 0;
     position: absolute;
 }
+
 /* Single zoomed Product */
 .SingleProductWindow {
     position: fixed;
-    top: 25%;
+    top: 0;
     left: 0;
     z-index: 12;
-    border: 1px solid black;
 }
 .SingleProductWindow article {
+    height: 100vh;
+    overflow: auto;
     background: #fff;
-    border: 1px solid black;
-    margin: auto;
+    margin: 15px auto;
+    padding: 15px;
+    -webkit-box-shadow: 0px 0px 10px 0px gray;
+    -moz-box-shadow: 0px 0px 10px 0px gray;
+    box-shadow: 0px 0px 10px 0px gray;
+    text-align: center;
 }
+
+/* Single Product Scrollbar */
+.SingleProductWindow article::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+.SingleProductWindow article::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #5096fd;
+}
+.SingleProductWindow img {
+    width: 50%;
+}
+
+/* Price */
+.Price {
+    color: #e6563f;
+}
+
+/* Collapse Button */
+.ExitButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background: #5096fd;
+    border-radius: 50%;
+    border: none;
+    transition: .2s;
+}
+.ExitButton:hover {
+    width: 51px;
+    height: 51px;
+    background: #e6563f;
+}
+.ExitButton img {
+    width: 60%;
+}
+
+/* Add Cart Box */
+.ToCartBox {
+    margin: 50px auto;
+}
+.ToCartBox input {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
 
 /* ======================================== FOOTER ======================================== */
 footer {
