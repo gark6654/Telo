@@ -193,13 +193,15 @@ aside .Title {
     justify-content: center;
 }
 
-/* Single Product */
+/* Product in row */
+.Product, .Product * {
+    cursor: pointer;
+}
 .Product {
     padding: 15px;
     margin: 5px;
     text-align: center;
     color: #5096fd;
-    cursor: pointer;
     -webkit-box-shadow: 0px 0px 10px 0px lightgray;
     -moz-box-shadow: 0px 0px 10px 0px lightgray;
     box-shadow: 0px 0px 10px 0px lightgray;
@@ -218,13 +220,26 @@ aside .Title {
 } 
 /* Product description */
 .Product label {
-    margin: 40px auto;
+    margin-bottom: 40px;
 }
 .ProductPriceBox {
     width: 100%;
     bottom: 0;
     left: 0;
     position: absolute;
+}
+/* Single zoomed Product */
+.SingleProductWindow {
+    position: fixed;
+    top: 25%;
+    left: 0;
+    z-index: 12;
+    border: 1px solid black;
+}
+.SingleProductWindow article {
+    background: #fff;
+    border: 1px solid black;
+    margin: auto;
 }
 
 /* ======================================== FOOTER ======================================== */
