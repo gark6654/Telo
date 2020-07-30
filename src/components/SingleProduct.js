@@ -17,7 +17,7 @@ function SingleProduct(props) {
                 <h1>
                     {props.product.name}
                 </h1>
-                <img src={`http://192.168.0.102:3000/media/Products/${props.product.img}`} alt="prd" />
+                <img src={`http://localhost:3000/media/Products/${props.product.img}`} alt="prd" />
                 <h3>
                     {props.product.desc}
                 </h3>

@@ -11,8 +11,11 @@ function Content(props) {
                 renders the first one that matches the current URL. 
             */}
             <Switch>
-                <Route path="/Shop">
+                <Route path="/Shop/">
                     <Shop />
+                </Route>
+                <Route path="/cart/">
+                    Cart Page
                 </Route>
                 <Route path="/">
                     <Home />

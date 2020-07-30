@@ -200,6 +200,7 @@ aside .Title {
 .Product {
     padding: 15px;
     margin: 5px;
+    border-radius: 5px;
     text-align: center;
     color: #5096fd;
     -webkit-box-shadow: 0px 0px 10px 0px lightgray;
@@ -232,23 +233,33 @@ aside .Title {
 
 /* Single zoomed Product */
 .SingleProductWindow {
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 12;
+    background: rgba(27, 38, 49, .7);
 }
 .SingleProductWindow article {
-    height: 100vh;
     overflow: auto;
     background: #fff;
+    border-radius: 15px;
     margin: 15px auto;
     padding: 15px;
-    -webkit-box-shadow: 0px 0px 10px 0px gray;
-    -moz-box-shadow: 0px 0px 10px 0px gray;
-    box-shadow: 0px 0px 10px 0px gray;
+    -webkit-box-shadow: 0px 0px 10px 0px lightgray;
+    -moz-box-shadow: 0px 0px 10px 0px lightgray;
+    box-shadow: 0px 0px 10px 0px lightgray;
     text-align: center;
+    animation: zoom .6s;
 }
-
+@keyframes zoom {
+    from {
+        padding: 1px;
+    }
+    to {
+        padding: 15px;
+    }
+}
 /* Single Product Scrollbar */
 .SingleProductWindow article::-webkit-scrollbar {
     width: 5px;

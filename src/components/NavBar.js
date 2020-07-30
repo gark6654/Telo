@@ -26,7 +26,7 @@ function NavBar(props) {
                         <Link to="/" className="nav-link">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/Shop" className="nav-link">Shop</Link>
+                        <Link to="/Shop/" className="nav-link">Shop</Link>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0" onSubmit={search}>
