@@ -243,23 +243,12 @@ aside .Title {
 .SingleProductWindow article {
     overflow: auto;
     background: #fff;
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 15px auto;
     padding: 15px;
-    -webkit-box-shadow: 0px 0px 10px 0px lightgray;
-    -moz-box-shadow: 0px 0px 10px 0px lightgray;
-    box-shadow: 0px 0px 10px 0px lightgray;
     text-align: center;
-    animation: zoom .6s;
 }
-@keyframes zoom {
-    from {
-        padding: 1px;
-    }
-    to {
-        padding: 15px;
-    }
-}
+
 /* Single Product Scrollbar */
 .SingleProductWindow article::-webkit-scrollbar {
     width: 5px;

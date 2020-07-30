@@ -24,7 +24,7 @@ function SingleProduct(props) {
                 <h2 className="Price">
                     {props.product.price} ₾
                 </h2>
-                <ToCartForm price={props.product.price} />
+                <ToCartForm product={props.product} />
             </article>
         </div>
     );

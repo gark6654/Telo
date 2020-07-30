@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function ToCartForm(props) {
-    const [sum, setSum] = useState(props.price);
+    const [sum, setSum] = useState(props.product.price);
 
     function getSum(event) {    
-        setSum(event.target.value * props.price);
+        // Count * price
+        setSum(event.target.value * props.product.price);
+    }
+
+    function submit(event) {
+        event.preventDefault();
+        console.log(props.product);
     }
 
     return(
-        <form className="ToCartBox">
+        <form className="ToCartBox" onSubmit={submit}>
             <div className="form-group">
                 <span>Count</span>
                 <input className="form-control" type="number" min={1} defaultValue={1} onChange={getSum} />

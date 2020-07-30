@@ -30,9 +30,9 @@ function Product(props) {
     return (
         <>
             <div className="Product col-lg-3 col-md-5 col-sm-5" onClick={zoomProduct}>
-                <h1>
+                <h2>
                     {info.name}
-                </h1>
+                </h2>
                 <img src={`http://localhost:3000/media/Products/${info.img}`} alt="prd" />
                 <label>
                     {info.desc}
