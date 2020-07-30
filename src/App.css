@@ -1,5 +1,5 @@
 /* ======================================== GLOBAL ======================================== */
-input:focus, input:active, button:focus, button:active {
+input:focus, input:active, button:focus, button:active, select:active, select:focus {
     outline: none !important;
 }
 .MoneySymbol {
@@ -100,10 +100,19 @@ header {
 }
 
 /* Header Bottom Part */
+.LangSelector {
+    margin: 5px;
+    padding: 7px;
+    border-color: #5096fd;
+    cursor: pointer;
+}
 @media (max-width: 992px) {
     /* Collapsed navbar */
     .navbar-collapse {
         padding: 5px;
+    }
+    .LangSelector {
+        margin: 0px;
     }
 }
 
@@ -210,7 +219,8 @@ aside .Title {
 }
 .Product:hover {
     color: #e6563f;
-    margin: 35px;
+    margin: 25px;
+    padding: 35px;
 }
 .Product:hover  .MoneySymbol {
     color: #5096fd;
@@ -241,6 +251,7 @@ aside .Title {
     background: rgba(27, 38, 49, .7);
 }
 .SingleProductWindow article {
+    max-height: 700px;
     overflow: auto;
     background: #fff;
     border-radius: 5px;
@@ -290,11 +301,9 @@ aside .Title {
 }
 
 /* Add Cart Box */
-.ToCartBox {
-    margin: 50px auto;
-}
 .ToCartBox input {
     width: 30%;
+    margin: 15px;
     margin: auto;
     text-align: center;
 }
