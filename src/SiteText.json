@@ -30,11 +30,11 @@
         },
         "footer": {
             "address": {
-                "title": "Հասցե",
-                "address": "Հայաստան"
+                "title": "Address",
+                "address": "Armenia"
             },
-            "phoneTitle": "Հեռախոս",
-            "mailTitle": "Էլ-հասցե",
+            "phoneTitle": "Phone",
+            "mailTitle": "E-mail",
             "rights": "All Right Reserved"
         }
     },
@@ -69,11 +69,11 @@
         },
         "footer": {
             "address": {
-                "title": "Հասցե",
-                "address": "Հայաստան"
+                "title": "Адрес",
+                "address": "Армения"
             },
-            "phoneTitle": "Հեռախոս",
-            "mailTitle": "Էլ-հասցե",
+            "phoneTitle": "Телефон",
+            "mailTitle": "Эл. адрес",
             "rights": "Все права защищены"
         }
     },
