@@ -6,11 +6,11 @@ import Content from './components/Content';
 import Footer from './components/Footer';
 import './App.css';
 
-const SiteText = React.createContext(null);
-const changeLang = React.createContext(null);
+const SiteText = React.createContext(null); // Site Text for sorting from selected language.
+const changeLang = React.createContext(null); // Change language function send's by context.
 const AddToCart = React.createContext(null);
 
-function App() {
+function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
     const [sortedText, setSortedText] = useState(Text.en); // Default language is English. 
 
@@ -28,15 +28,15 @@ function App() {
         else {
             setSortedText(Text.en);
         }
-    });
+    }, [lang]);
 
-    // Chamge site language from LangSelector.
+    // Change site language from LangSelector.
     function changeLanguage(lang) {
         setLang(lang);
         localStorage.setItem('lang', lang);
     }
 
-    // Add product to cart
+    // Add product to Basket.
     function ToCart(product) {
         console.log(product);
     }

@@ -38,7 +38,7 @@ function Product(props) {
                     {info.desc}
                 </label>
                 <h4 className="ProductPriceBox MoneySymbol">
-                    {info.price} <span className="MoneySymbol">₾</span>
+                    {info.price} <span className="MoneySymbol">֏</span>
                 </h4>
             </div>
             {
