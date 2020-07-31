@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ExitIcon from '../media/cancel.svg';
 import ToCartForm from './ToCartForm';
 
 function SingleProduct(props) {
+    const outRef = useRef(null);
+
     function collapseBox() {
         props.collapse();
     }
 
+    useEffect(() => {
+        function outSideClick(event) {
+            if (event.target === outRef.current) {
+                collapseBox();
+            }
+        }
+
+        document.addEventListener('mousedown', outSideClick);
+    });
+
     return (
-        <div className="SingleProductWindow container-fluid">
+        <div ref={outRef} className="SingleProductWindow container-fluid">
             <article className="col-md-5">
                 <button className="ExitButton" onClick={collapseBox}>
                     <img src={ExitIcon} alt={"Logo"} />

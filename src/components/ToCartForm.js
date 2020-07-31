@@ -25,7 +25,7 @@ function ToCartForm(props) {
                 <input className="form-control" type="number" min={1} defaultValue={1} onChange={getSum} />
             </div>
             <h4 className="Sum">
-                {sum} ₾
+                {sum} ֏
             </h4>
             <button className="btn btn-primary">
                 {Text.toCart}

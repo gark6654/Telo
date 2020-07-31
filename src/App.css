@@ -261,7 +261,7 @@ aside .Title {
     background: rgba(27, 38, 49, .7);
 }
 .SingleProductWindow article {
-    max-height: 650px;
+    max-height: 100vh;
     overflow: auto;
     background: #fff;
     border-radius: 5px;
