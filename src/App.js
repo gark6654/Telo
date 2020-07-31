@@ -54,7 +54,9 @@ function App() {
                         <Content />
                     </AddToCart.Provider>
                 </SiteText.Provider>
-                <Footer />
+                <SiteText.Provider value={sortedText.footer}>
+                    <Footer />
+                </SiteText.Provider>
             </Router>
         </main>
     );

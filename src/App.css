@@ -280,9 +280,9 @@ aside .Title {
 
 /* Collapse Button */
 .ExitButton {
-    position: absolute;
+    position: sticky;
     top: 0;
-    right: 0;
+    left: 100%;
     width: 25px;
     height: 25px;
     margin: 5px;
@@ -293,8 +293,6 @@ aside .Title {
     transition: .2s;
 }
 .ExitButton:hover {
-    width: 28px;
-    height: 28px;
     background: #e6563f;
 }
 .ExitButton img {

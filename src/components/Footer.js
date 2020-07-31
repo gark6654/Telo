@@ -1,33 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SiteText } from '../App';
 import GeoIcon from '../media/map.svg';
 import PhoneIcon from '../media/phone.svg';
 import MailIcon from '../media/email.svg';
 
 function Footer(props) {
+    const Text = useContext(SiteText); // Footer part text sorted by language.
+
     return (
         <footer>
             <div className="FooterTopPart">
                 <div className="FooterContacts row">
                     <div className="AddressBox col-md">
                         <img src={GeoIcon} alt="address" width="25" />
-                        <span>Address:</span>
-                        <p>Georgia</p>
+                        <span>{Text.address.title}:</span>
+                        <p>{Text.address.address}</p>
                     </div>
                     <div className="PhoneBox col-md">
                         <img src={PhoneIcon} alt="phone" width="25" />
-                        <span>Phone:</span>
-                        <p>+995 599 56 03 91</p>
+                        <span>{Text.phoneTitle}:</span>
+                        <p>+374 55 97 79 39</p>
                     </div>
                     <div className="MailBox col-md">
                         <img src={MailIcon} alt="mail" width="25" />
-                        <span>E-mail:</span>
+                        <span>{Text.mailTitle}:</span>
                         <p>urartu@gmail.com</p>
                     </div>
                 </div>
             </div>
             <div className="FooterBottomPart">
                 <p>
-                    &copy; {new Date().getFullYear()} Urartu.ge All Right Reserved
+                    &copy; {new Date().getFullYear()} Urartu.ge {Text.rights}.
                 </p>
             </div>
         </footer>

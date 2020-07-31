@@ -1,5 +1,6 @@
 {
     "en": {
+        "_comment": "English",
         "header": {
             "basketTitle": "My Cart",
             "navBar": {
@@ -23,9 +24,18 @@
                 }
             }
         },
-        "footer": {}
+        "footer": {
+            "address": {
+                "title": "Հասցե",
+                "address": "Հայաստան"
+            },
+            "phoneTitle": "Հեռախոս",
+            "mailTitle": "Էլ-հասցե",
+            "rights": "All Right Reserved"
+        }
     },
     "ru": {
+        "_comment": "Русский",
         "header": {
             "basketTitle": "Карзина",
             "navBar": {
@@ -49,9 +59,18 @@
                 }
             }
         },
-        "footer": {}
+        "footer": {
+            "address": {
+                "title": "Հասցե",
+                "address": "Հայաստան"
+            },
+            "phoneTitle": "Հեռախոս",
+            "mailTitle": "Էլ-հասցե",
+            "rights": "Все права защищены"
+        }
     },
     "am": {
+        "_comment": "Հայերեն",
         "header": {
             "basketTitle": "Զամբյուղ",
             "navBar": {
@@ -75,6 +94,14 @@
                 }
             }
         },
-        "footer": {}
+        "footer": {
+            "address": {
+                "title": "Հասցե",
+                "address": "Հայաստան"
+            },
+            "phoneTitle": "Հեռախոս",
+            "mailTitle": "Էլ-հասցե",
+            "rights": "Բոլոր իրավունքները պաշտպանված են"
+        }
     }
 }
