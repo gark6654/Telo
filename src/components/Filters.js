@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { SiteText } from '../App';
 
 function Filters(props) {
+    const Text = useContext(SiteText).pages.shop.filterPart; // Filters part text sorted by language.
     const [maxPrice, setMaxPrice] = useState(100);
 
     // Set max price value from input or slider(range).
@@ -11,15 +13,15 @@ function Filters(props) {
     return (
         <div className="FiltersBox">
             <div className="Title">
-                <h5>Filters</h5>
+                <h5>{Text.title}</h5>
             </div>
             <div className="PriceFilter">
-                <span>Price:</span>
+                <span>{Text.price}:</span>
                 <form>
                     <div className="form-group">
-                        <span>From</span>
+                        <span>{Text.from}</span>
                         <input type="number" min="0" step="1" value="0" />
-                        <span>To</span>
+                        <span>{Text.to}</span>
                         <input 
                             type="number" 
                             min="1" 

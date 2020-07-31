@@ -10,7 +10,19 @@
                 "searchTitle": "Search"
             }
         },
-        "content": {},
+        "content": {
+            "pages": {
+                "shop": {
+                    "categoryTitle": "Category",
+                    "filterPart": {
+                        "title": "Filters",
+                        "price": "Price",
+                        "from": "From",
+                        "to": "To"
+                    }
+                }
+            }
+        },
         "footer": {}
     },
     "ru": {
@@ -24,7 +36,19 @@
                 "searchTitle": "Поиск"
             }
         },
-        "content": {},
+        "content": {
+            "pages": {
+                "shop": {
+                    "categoryTitle": "Категория",
+                    "filterPart": {
+                        "title": "фильтры",
+                        "price": "Цена",
+                        "from": "От",
+                        "to": "До"
+                    }
+                }
+            }
+        },
         "footer": {}
     },
     "am": {
@@ -38,7 +62,19 @@
                 "searchTitle": "Փնտրել"
             }
         },
-        "content": {},
+        "content": {
+            "pages": {
+                "shop": {
+                    "categoryTitle": "Կատեգորիա",
+                    "filterPart": {
+                        "title": "ֆիլտրեր",
+                        "price": "Գինը",
+                        "from": "Սկսած",
+                        "to": "Մինչև"
+                    }
+                }
+            }
+        },
         "footer": {}
     }
 }

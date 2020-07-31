@@ -1,13 +1,9 @@
-import React, { useContext } from 'react';
-import { SiteText } from '../App';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
 import Basket from './Basket';
 
 function Header(props) {    
-
-    const Text = useContext(SiteText); // Header part text sorted by language.
-
     return (
         <header>
             <div className="HeaderTopPart row">
@@ -16,10 +12,10 @@ function Header(props) {
                         <h1 className="SiteName">URARTU.<b>GE</b></h1>
                     </Link>
                 </div>
-                <Basket title={Text.basketTitle} />
+                <Basket />
             </div>
             <div className="HeaderBottomPart">
-                <NavBar links={Text.navBar} />
+                <NavBar />
             </div>
         </header>
     );

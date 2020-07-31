@@ -1,4 +1,13 @@
 /* ======================================== GLOBAL ======================================== */
+body::-webkit-scrollbar, .SingleProductWindow article::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+    background: rgba(27, 38, 49, .3);
+}
+body::-webkit-scrollbar-thumb, .SingleProductWindow article::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #5096fd;
+}
 input:focus, input:active, button:focus, button:active, select:active, select:focus {
     outline: none !important;
 }
@@ -134,6 +143,7 @@ aside .Title {
     padding: 5px;
     background: #5096fd;
     color: #fff;
+    border-radius: 5px;
 }
 .FilterCollapseButton {
     width: 100%;
@@ -251,23 +261,13 @@ aside .Title {
     background: rgba(27, 38, 49, .7);
 }
 .SingleProductWindow article {
-    max-height: 700px;
+    max-height: 650px;
     overflow: auto;
     background: #fff;
     border-radius: 5px;
     margin: 15px auto;
     padding: 15px;
     text-align: center;
-}
-
-/* Single Product Scrollbar */
-.SingleProductWindow article::-webkit-scrollbar {
-    width: 5px;
-    border-radius: 10px;
-}
-.SingleProductWindow article::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #5096fd;
 }
 .SingleProductWindow img {
     width: 50%;
@@ -283,21 +283,22 @@ aside .Title {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     margin: 5px;
+    padding: 0px;
     background: #5096fd;
     border-radius: 50%;
     border: none;
     transition: .2s;
 }
 .ExitButton:hover {
-    width: 51px;
-    height: 51px;
+    width: 28px;
+    height: 28px;
     background: #e6563f;
 }
 .ExitButton img {
-    width: 60%;
+    width: 15px;
 }
 
 /* Add Cart Box */

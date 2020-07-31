@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SiteText } from '../App';
 import SoapIcon from '../media/Soap.svg';
 import LiquidSoapIcon from '../media/LiquidSoap.svg';
 import ShampooIcon from '../media/shampoo.svg';
 
 function Categories(props) {
+    const Text = useContext(SiteText).pages.shop.categoryTitle; // Filters part text sorted by language.
+
     return (
         <div className="CategoriesBox">
             <div className="Title">
-                <h5>Shop By Category</h5>
+                <h5>{Text}</h5>
             </div>
             <div>
                 <ul>

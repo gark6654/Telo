@@ -49,9 +49,11 @@ function App() {
                         <Header />
                     </changeLang.Provider>
                 </SiteText.Provider>
-                <AddToCart.Provider value={ToCart}>
-                    <Content />
-                </AddToCart.Provider>
+                <SiteText.Provider value={sortedText.content}>
+                    <AddToCart.Provider value={ToCart}>
+                        <Content />
+                    </AddToCart.Provider>
+                </SiteText.Provider>
                 <Footer />
             </Router>
         </main>
