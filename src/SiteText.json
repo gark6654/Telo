@@ -1,0 +1,44 @@
+{
+    "en": {
+        "header": {
+            "basketTitle": "My Cart",
+            "navBar": {
+                "navLinks": {
+                    "home": "Home",
+                    "shop": "Shop"
+                },
+                "searchTitle": "Search"
+            }
+        },
+        "content": {},
+        "footer": {}
+    },
+    "ru": {
+        "header": {
+            "basketTitle": "Карзина",
+            "navBar": {
+                "navLinks": {
+                    "home": "Главная",
+                    "shop": "Магазин"
+                },
+                "searchTitle": "Поиск"
+            }
+        },
+        "content": {},
+        "footer": {}
+    },
+    "am": {
+        "header": {
+            "basketTitle": "Զամբյուղ",
+            "navBar": {
+                "navLinks": {
+                    "home": "Գլխավոր",
+                    "shop": "Խանութ"
+                },
+                "searchTitle": "Փնտրել"
+            }
+        },
+        "content": {},
+        "footer": {}
+    }
+}

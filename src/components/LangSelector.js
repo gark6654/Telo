@@ -11,8 +11,9 @@ function LangSelector(props) {
 
     return (
         <select className="LangSelector" onChange={change} value={localStorage.getItem('lang')}>
-            <option>EN</option>
-            <option>RU</option>
+            <option>ENG</option>
+            <option>РУС</option>
+            <option>ՀԱՅ</option>
         </select>
     );
 }
