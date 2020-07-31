@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
 import Basket from './Basket';
 
-function Header(props) {    
+function Header(props) {  
     return (
         <header>
             <div className="HeaderTopPart row">
@@ -12,7 +12,7 @@ function Header(props) {
                         <h1 className="SiteName">Washer.<b>am</b></h1>
                     </Link>
                 </div>
-                <Basket />
+                <Basket length={props.basketLength} />
             </div>
             <div className="HeaderBottomPart">
                 <NavBar />

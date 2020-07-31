@@ -8,7 +8,7 @@ import './App.css';
 
 const SiteText = React.createContext(null); // Site Text for sorting from selected language.
 const changeLang = React.createContext(null); // Change language function send's by context.
-const AddToCart = React.createContext(null);
+const ToBasket = React.createContext(null);
 
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
@@ -16,7 +16,7 @@ function App(props) {
     const [basketItems, setBasketItems] = useState([]);
 
     useEffect(() => {
-        console.log(basketItems);
+        sessionStorage.setItem('basket', JSON.stringify(basketItems));
     }, [basketItems]);
 
     // Get language from localStorage and setup site language.
@@ -62,13 +62,13 @@ function App(props) {
             <Router>
                 <SiteText.Provider value={sortedText.header}>
                     <changeLang.Provider value={changeLanguage}>
-                        <Header />
+                        <Header basketLength={basketItems ? basketItems.length : 0} />
                     </changeLang.Provider>
                 </SiteText.Provider>
                 <SiteText.Provider value={sortedText.content}>
-                    <AddToCart.Provider value={ToCart}>
+                    <ToBasket.Provider value={ToCart}>
                         <Content />
-                    </AddToCart.Provider>
+                    </ToBasket.Provider>
                 </SiteText.Provider>
                 <SiteText.Provider value={sortedText.footer}>
                     <Footer />
@@ -80,5 +80,5 @@ function App(props) {
 
 export { SiteText };
 export { changeLang };
-export { AddToCart };
+export { ToBasket };
 export default App;

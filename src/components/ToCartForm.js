@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { SiteText } from '../App';
-import { AddToCart } from '../App';
+import { ToBasket } from '../App';
 import Icon from '../media/shop.svg';
  
 function ToCartForm(props) {
     const Text = useContext(SiteText).toCartForm; // ToCartForm part text sorted by language.
+    const AddToBasket = useContext(ToBasket); // Function get's from context (APP.js).
 
     const [sum, setSum] = useState(props.product.price);
-    const func = useContext(AddToCart);
 
     function getSum(event) {    
         // Count * price
@@ -16,7 +16,8 @@ function ToCartForm(props) {
 
     function submit(event) {
         event.preventDefault();
-        func(props.product);
+        AddToBasket(props.product);
+        props.collapse();
     }
 
     return(

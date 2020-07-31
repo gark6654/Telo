@@ -40,7 +40,7 @@ function SingleProduct(props) {
                 <h2 className="Price">
                     {props.product.price} ֏
                 </h2>
-                <ToCartForm product={props.product} />
+                <ToCartForm product={props.product} collapse={collapseBox} />
             </article>
         </div>
     );
