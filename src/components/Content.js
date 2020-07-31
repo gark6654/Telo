@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import Home from './Pages/Home';
 import Shop from './Pages/Shop';
+import Cart from './Pages/Cart';
 
 function Content(props) {
     return (
@@ -15,7 +16,7 @@ function Content(props) {
                     <Shop />
                 </Route>
                 <Route path="/cart/">
-                    Cart Page
+                    <Cart />
                 </Route>
                 <Route path="/">
                     <Home />
