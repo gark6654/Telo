@@ -3,7 +3,6 @@ import ExitIcon from '../media/cancel.svg';
 import ToCartForm from './ToCartForm';
 
 function SingleProduct(props) {
-
     function collapseBox() {
         props.collapse();
     }
