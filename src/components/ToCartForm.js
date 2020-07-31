@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { SiteText } from '../App';
 import { AddToCart } from '../App';
+import Icon from '../media/shop.svg';
  
 function ToCartForm(props) {
     const Text = useContext(SiteText).toCartForm; // ToCartForm part text sorted by language.
@@ -28,7 +29,7 @@ function ToCartForm(props) {
                 {sum} ֏
             </h4>
             <button className="btn btn-primary">
-                {Text.toCart}
+                <img src={Icon} alt="logo" width="25" height="25" /> {Text.toCart}
             </button>
         </form>
     );

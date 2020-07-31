@@ -9,7 +9,7 @@ function Header(props) {
             <div className="HeaderTopPart row">
                 <div className="HeaderLogoBox col-md-3 col-sm-3 col-xs-5">
                     <Link to="/">
-                        <h1 className="SiteName">URARTU.<b>GE</b></h1>
+                        <h1 className="SiteName">Washer.<b>am</b></h1>
                     </Link>
                 </div>
                 <Basket />

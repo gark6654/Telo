@@ -13,6 +13,11 @@ const AddToCart = React.createContext(null);
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
     const [sortedText, setSortedText] = useState(Text.en); // Default language is English. 
+    const [basketItems, setBasketItems] = useState([]);
+
+    useEffect(() => {
+        console.log(basketItems);
+    }, [basketItems]);
 
     // Get language from localStorage and setup site language.
     useEffect(() => {
@@ -30,6 +35,17 @@ function App(props) {
         }
     }, [lang]);
 
+    // Setup basket storage.
+    useEffect(() => {
+        const sessionBasket = sessionStorage.getItem('basket');
+        if (sessionBasket) {
+            setBasketItems(JSON.parse(sessionStorage.getItem('basket')));
+        }
+        else {
+            sessionStorage.setItem('basket', JSON.stringify([]));
+        }
+    }, [props]);
+
     // Change site language from LangSelector.
     function changeLanguage(lang) {
         setLang(lang);
@@ -38,7 +54,7 @@ function App(props) {
 
     // Add product to Basket.
     function ToCart(product) {
-        console.log(product);
+        setBasketItems([...basketItems, product]);
     }
 
     return (

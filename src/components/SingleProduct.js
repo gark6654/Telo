@@ -9,6 +9,7 @@ function SingleProduct(props) {
         props.collapse();
     }
 
+    // Effect for out side click for collapse.
     useEffect(() => {
         function outSideClick(event) {
             if (event.target === outRef.current) {
@@ -28,7 +29,11 @@ function SingleProduct(props) {
                 <h1>
                     {props.product.name}
                 </h1>
-                <img src={`http://localhost:3000/media/Products/${props.product.img}`} alt="prd" />
+                <img 
+                    className="SingleProductImg" 
+                    src={`http://localhost:3000/media/Products/${props.product.img}`} 
+                    alt="prd" 
+                />
                 <h3>
                     {props.product.desc}
                 </h3>

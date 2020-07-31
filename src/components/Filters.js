@@ -3,7 +3,7 @@ import { SiteText } from '../App';
 
 function Filters(props) {
     const Text = useContext(SiteText).pages.shop.filterPart; // Filters part text sorted by language.
-    const [maxPrice, setMaxPrice] = useState(100);
+    const [maxPrice, setMaxPrice] = useState(100000);
 
     // Set max price value from input or slider(range).
     function setValues(event) {
@@ -36,7 +36,7 @@ function Filters(props) {
                         <input 
                             type="range" 
                             min="1" 
-                            max="1000" 
+                            max="100000" 
                             onChange={setValues} 
                             value={maxPrice} 
                         />

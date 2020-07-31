@@ -46,7 +46,7 @@ header {
     color: #e6563f;
 }
 .SiteName:hover {
-    font-size: 42px;
+    font-size: 46px;
     opacity: .85;
 }   
 .HeaderLogoBox a:hover {
@@ -269,7 +269,7 @@ aside .Title {
     padding: 15px;
     text-align: center;
 }
-.SingleProductWindow img {
+.SingleProductImg {
     width: 50%;
 }
 
