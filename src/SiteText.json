@@ -22,6 +22,10 @@
                         "to": "To"
                     }
                 }
+            },
+            "toCartForm": {
+                "count": "Count",
+                "toCart": "Add To Basket"
             }
         },
         "footer": {
@@ -57,6 +61,10 @@
                         "to": "До"
                     }
                 }
+            },
+            "toCartForm": {
+                "count": "Количество",
+                "toCart": "Добавить в корзину"
             }
         },
         "footer": {
@@ -92,6 +100,10 @@
                         "to": "Մինչև"
                     }
                 }
+            },
+            "toCartForm": {
+                "count": "Քանակ",
+                "toCart": "Ավելացնել զամբյուղի մեջ"
             }
         },
         "footer": {
