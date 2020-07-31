@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { SiteText } from '../../App';
 import Categories from '../Categories';
 import Filters from '../Filters';
 import FilterIcon from '../../media/filter.svg'
 import ProductsBox from '../ProductsBox';
 
 function Shop(props) {
+    const Text = useContext(SiteText).pages.shop.filterPart; // ToCartForm part text sorted by language.
+
     const [windowW, setWindowW] = useState(window.innerWidth); // UI For Filters collapse. 
 
     useEffect(() => {
@@ -25,7 +28,7 @@ function Shop(props) {
                     aria-controls="collapseExample"
                 >
                     <label>
-                        <span><img src={FilterIcon} alt="Logo" width="20" /></span> Filters
+                        <span><img src={FilterIcon} alt="Logo" width="20" /></span> {Text.title}
                     </label>
                 </button> : ''
             }
