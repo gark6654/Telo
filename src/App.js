@@ -54,7 +54,27 @@ function App(props) {
 
     // Add product to Basket.
     function ToCart(product) {
-        setBasketItems([...basketItems, product]);
+        console.log('New Product');
+        const basketProducts = basketItems;
+        if (basketProducts.length > 0) {
+            // Check if product already in basket add only count and pay price.
+            basketProducts.map(item => {
+                if (item.product.name === product.product.name
+                    && item.product.price === product.product.price
+                    && item.product.desc === product.product.desc) {
+                        item.count = parseInt(item.count) + parseInt(product.count);
+                        item.payPrice = parseInt(item.payPrice) + parseInt(product.payPrice);
+                }
+                else {
+                    basketProducts.push(product);
+                }
+            });
+        }
+        else {
+            basketProducts.push(product);
+        }
+
+        setBasketItems([...basketProducts]);
     }
 
     return (

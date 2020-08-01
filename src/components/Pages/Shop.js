@@ -14,7 +14,7 @@ function Shop(props) {
         window.addEventListener('resize', () => {
             setWindowW(window.innerWidth);
         });
-    });
+    }, [props]);
 
     return (
         <div className={`${windowW <= 768 ? '' : 'row'}`}>

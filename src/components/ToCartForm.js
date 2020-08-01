@@ -7,16 +7,25 @@ function ToCartForm(props) {
     const Text = useContext(SiteText).toCartForm; // ToCartForm part text sorted by language.
     const AddToBasket = useContext(ToBasket); // Function get's from context (APP.js).
 
+    // To basket product price.
     const [sum, setSum] = useState(props.product.price);
+    const [count, setCount] = useState(1);
 
     function getSum(event) {    
         // Count * price
-        setSum(event.target.value * props.product.price);
+        const count = event.target.value;
+        setCount(count);
+        setSum(count * props.product.price);
     }
 
     function submit(event) {
         event.preventDefault();
-        AddToBasket(props.product);
+        const toBasketProduct = {
+            "product": props.product,
+            "count": count,
+            "payPrice": sum
+        };
+        AddToBasket(toBasketProduct);
         props.collapse();
     }
 
@@ -24,7 +33,14 @@ function ToCartForm(props) {
         <form className="ToCartBox" onSubmit={submit}>
             <div className="form-group">
                 <b>{Text.count}</b>
-                <input className="form-control" type="number" min={1} defaultValue={1} onChange={getSum} />
+                <input 
+                    className="form-control" 
+                    type="number" 
+                    min={1} 
+                    defaultValue={1} 
+                    onChange={getSum} 
+                    defaultValue={count} 
+                />
             </div>
             <h4 className="Sum">
                 {sum} ֏

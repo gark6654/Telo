@@ -12,9 +12,9 @@ function Cart(props) {
 
     return (
         <div className="container">
-            {cartItems.length == 0 ? 'Basket is empty' :
-                <div class="table-responsive-lg">
-                    <table class="table">
+            {cartItems.length === 0 ? 'Basket is empty' :
+                <div className="table-responsive-lg">
+                    <table className="table">
                         <caption>Basket Items</caption>
                         <thead>
                             <tr>
@@ -23,18 +23,18 @@ function Cart(props) {
                                 <th scope="col">Description</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Count</th>
-                                <th scope="sol">Value</th>
+                                <th scope="sol">Pay</th>
                             </tr>
                         </thead>
                         <tbody>
                             {cartItems.map((item, key) => (
-                                <tr>
+                                <tr key={key}>
                                     <th scope="row">{key + 1}</th>
-                                    <td>{item.name}</td>
-                                    <td>{item.desc}</td>
-                                    <td>{item.price}</td>
-                                    <td>{item.price}</td>
-                                
+                                    <td>{item.product.name}</td>
+                                    <td>{item.product.desc}</td>
+                                    <td>{item.product.price}</td>
+                                    <td>{item.count}</td>
+                                    <td>{item.payPrice}</td>
                                 </tr>
                             ))}
                         </tbody>
