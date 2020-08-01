@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import RemoveIcon from '../../media/cancelRed.svg';
+import OrderForm from './../OrderForm';
 
 function Cart(props) {
     const [cartItems, setCartItems] = useState([]);
@@ -24,6 +26,7 @@ function Cart(props) {
                                 <th scope="col">Price</th>
                                 <th scope="col">Count</th>
                                 <th scope="sol">Pay</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,10 +38,16 @@ function Cart(props) {
                                     <td>{item.product.price}</td>
                                     <td>{item.count}</td>
                                     <td>{item.payPrice}</td>
+                                    <td>
+                                        <button>
+                                            <img src={RemoveIcon} alt="logo" />
+                                        </button>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
+                    <OrderForm />
                 </div>
             }
         </div>

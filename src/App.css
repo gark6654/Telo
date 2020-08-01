@@ -283,20 +283,17 @@ aside .Title {
     position: sticky;
     top: 0;
     left: 100%;
-    width: 25px;
-    height: 25px;
-    margin: 5px;
-    padding: 0px;
-    background: #5096fd;
-    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background: #fff;
     border: none;
     transition: .2s;
 }
 .ExitButton:hover {
-    background: #e6563f;
+    padding: 3px;
 }
 .ExitButton img {
-    width: 15px;
+    width: 100%;
 }
 
 /* Add Cart Box */
@@ -305,6 +302,31 @@ aside .Title {
     margin: 15px;
     margin: auto;
     text-align: center;
+}
+
+/* Basket Page */
+table thead {
+    background: #5096fd;
+    color: #fff;
+}
+tbody tr {
+    background: #F2F3F4;
+}
+tbody tr:hover {
+    background: #E5E7E9;
+}
+tbody tr:hover button {
+    background: #E5E7E9;
+}
+tbody button {
+    width: 100%;
+    height: 25px;
+    padding: 0px !important;
+    border: none !important;
+}
+tbody img {
+    width: 25px;
+    height: 20px;
 }
 
 
