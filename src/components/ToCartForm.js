@@ -21,6 +21,7 @@ function ToCartForm(props) {
     function submit(event) {
         event.preventDefault();
         const toBasketProduct = {
+            "id": JSON.parse(sessionStorage.getItem('basket')).length,
             "product": props.product,
             "count": count,
             "payPrice": sum

@@ -8,7 +8,8 @@ import './App.css';
 
 const SiteText = React.createContext(null); // Site Text for sorting from selected language.
 const changeLang = React.createContext(null); // Change language function send's by context.
-const ToBasket = React.createContext(null);
+const ToBasket = React.createContext(null); // Add item basket function send's by context.
+const ChangeBasket = React.createContext(null);
 
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
@@ -58,12 +59,19 @@ function App(props) {
         setBasketItems([...basketItems, product]);
     }
 
+    function changeCount(productId, value) {
+        console.log(productId);
+        console.log(value);
+    }
+
     return (
         <main>
             <Router>
                 <SiteText.Provider value={sortedText.header}>
                     <changeLang.Provider value={changeLanguage}>
-                        <Header basketLength={basketItems ? basketItems.length : 0} />
+                        <ChangeBasket.Provider value={changeCount}>
+                            <Header basketLength={basketItems ? basketItems.length : 0} />
+                        </ChangeBasket.Provider>
                     </changeLang.Provider>
                 </SiteText.Provider>
                 <SiteText.Provider value={sortedText.content}>
@@ -82,4 +90,5 @@ function App(props) {
 export { SiteText };
 export { changeLang };
 export { ToBasket };
+export { ChangeBasket };
 export default App;
