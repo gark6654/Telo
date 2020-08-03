@@ -15,9 +15,16 @@ function App(props) {
     const [sortedText, setSortedText] = useState(Text.en); // Default language is English. 
     const [basketItems, setBasketItems] = useState([]);
 
+    // Setup basket storage and global configs.
     useEffect(() => {
-        sessionStorage.setItem('basket', JSON.stringify(basketItems));
-    }, [basketItems]);
+        const sessionBasket = sessionStorage.getItem('basket');
+        if (sessionBasket) {
+            setBasketItems(JSON.parse(sessionStorage.getItem('basket')));
+        }
+        else {
+            sessionStorage.setItem('basket', JSON.stringify([]));
+        }
+    }, [props]);
 
     // Get language from localStorage and setup site language.
     useEffect(() => {
@@ -35,16 +42,10 @@ function App(props) {
         }
     }, [lang]);
 
-    // Setup basket storage.
+    // Update basket session storage on basketItems update.
     useEffect(() => {
-        const sessionBasket = sessionStorage.getItem('basket');
-        if (sessionBasket) {
-            setBasketItems(JSON.parse(sessionStorage.getItem('basket')));
-        }
-        else {
-            sessionStorage.setItem('basket', JSON.stringify([]));
-        }
-    }, [props]);
+        sessionStorage.setItem('basket', JSON.stringify(basketItems));
+    }, [basketItems]);
 
     // Change site language from LangSelector.
     function changeLanguage(lang) {
