@@ -33,7 +33,7 @@ function Product(props) {
                 <h2>
                     {info.name}
                 </h2>
-                <img src={`http://localhost:3000/media/Products/${info.img}`} alt="prd" />
+                <img src={`http://192.168.0.105:3000/media/Products/${info.img}`} alt="prd" />
                 <label>
                     {info.desc}
                 </label>
