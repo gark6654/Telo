@@ -305,13 +305,13 @@ aside .Title {
 }
 
 /* Basket Page */
-.CartBox div h1 {
+.CartBox div h2 {
     border-radius: 5px;
     padding: 5px;
 }
 
 /* Title */
-.CartBox h1 {
+.CartBox h2 {
     background: #5096fd;
     color: #fff;
 }
@@ -355,6 +355,11 @@ aside .Title {
     .ImageBox img {
         width: 35%;
     }
+}
+
+/* Order Form Box */
+.OrderBox {
+    margin: 5% auto;
 }
 
 .RemoveButton {

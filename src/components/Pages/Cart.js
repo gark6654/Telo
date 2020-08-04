@@ -16,7 +16,7 @@ function Cart(props) {
         <div className="CartBox container">
             {cartItems.length === 0 ? 'Basket is empty' :
                 <div>
-                    <h1>Basket Items</h1>
+                    <h2>Basket Items</h2>
                     {cartItems.map((item, key) => (
                         <BasketItem key={key} id={key} product={item} />
                     ))}

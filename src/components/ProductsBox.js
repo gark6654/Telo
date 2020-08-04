@@ -22,6 +22,44 @@ function ProductsBox(props) {
                 price={12000}
                 img={"GilletteFusion5.jpg"}  
             />
+            <Product
+                name={"Persil"}
+                desc={"Persil 2.34L Liquid detergent for color"}
+                price={8500}
+                img={"PersilLiquidDetergent.jpg"}
+            />
+            <Product
+                name={"Gillette Fusion5 PROSHIELD"}
+                desc={"Gillette Fusion5 ProShield Men's Razor features 5 anti-friction blades"}
+                price={12000}
+                img={"GilletteFusion5.jpg"}  
+            />
+            <Product
+                name={"Persil"}
+                desc={"Persil 2.34L Liquid detergent for color"}
+                price={8500}
+                img={"PersilLiquidDetergent.jpg"}
+            />
+            <Product
+                name={"Gillette Fusion5 PROSHIELD"}
+                desc={"Gillette Fusion5 ProShield Men's Razor features 5 anti-friction blades"}
+                price={12000}
+                img={"GilletteFusion5.jpg"}  
+            />
+            <Product
+                name={"Persil"}
+                desc={"Persil 2.34L Liquid detergent for color"}
+                price={8500}
+                img={"PersilLiquidDetergent.jpg"}
+            />
+            <Product
+                name={"Gillette Fusion5 PROSHIELD"}
+                desc={"Gillette Fusion5 ProShield Men's Razor features 5 anti-friction blades"}
+                price={12000}
+                img={"GilletteFusion5.jpg"}  
+            />
+            
+            
         </div>
     )
 }
