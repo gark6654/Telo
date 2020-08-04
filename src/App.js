@@ -6,10 +6,12 @@ import Content from './components/Content';
 import Footer from './components/Footer';
 import './App.css';
 
-const SiteText = React.createContext(null); // Site Text for sorting from selected language.
-const changeLang = React.createContext(null); // Change language function send's by context.
-const ToBasket = React.createContext(null); // Add item basket function send's by context.
-const ChangeBasket = React.createContext(null);
+const SiteText = React.createContext(null); // Site Text sorted from selected language.
+
+// Functions that are dispatched through the context.
+const changeLang = React.createContext(null); // Change language.
+const ToBasket = React.createContext(null); // Add item basket.
+const ChangeBasket = React.createContext(null); // Change item count from basket.
 
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
@@ -69,14 +71,15 @@ function App(props) {
             <Router>
                 <SiteText.Provider value={sortedText.header}>
                     <changeLang.Provider value={changeLanguage}>
-                        <ChangeBasket.Provider value={changeCount}>
-                            <Header basketLength={basketItems ? basketItems.length : 0} />
-                        </ChangeBasket.Provider>
+
+                        <Header basketLength={basketItems ? basketItems.length : 0} />
                     </changeLang.Provider>
                 </SiteText.Provider>
                 <SiteText.Provider value={sortedText.content}>
                     <ToBasket.Provider value={ToCart}>
-                        <Content />
+                        <ChangeBasket.Provider value={changeCount}>
+                            <Content />
+                        </ChangeBasket.Provider>
                     </ToBasket.Provider>
                 </SiteText.Provider>
                 <SiteText.Provider value={sortedText.footer}>

@@ -20,7 +20,7 @@ function BasketItem(props) {
     // On count change change payPrice too.
     function changeCount(event) {
         const count = event.target.value;
-        change(product.id, count);
+        change(props.id, count);
     }
 
     function hover() {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import RemoveIcon from '../../media/cancelRed.svg';
 import OrderForm from './../OrderForm';
 import BasketItem from '../BasketItem';
 
@@ -19,8 +18,9 @@ function Cart(props) {
                 <div>
                     <h1>Basket Items</h1>
                     {cartItems.map((item, key) => (
-                        <BasketItem key={key} product={item} />
+                        <BasketItem key={key} id={key} product={item} />
                     ))}
+                    <OrderForm />
                 </div>
             }
         </div>
