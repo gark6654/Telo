@@ -4,13 +4,24 @@ import BasketItem from '../BasketItem';
 
 function Cart(props) {
     const [cartItems, setCartItems] = useState([]);
+    const [fullPrice, setFullPrice] = useState(0);
 
     useEffect(() => {
         const sessionItems = JSON.parse(sessionStorage.getItem('basket'));
-        if (sessionItems) {
+        if (sessionItems.length !== 0) {
             setCartItems(sessionItems);
+            console.log(sessionItems);
         }
     }, [props]);
+
+    useEffect(() => {
+        const sessionItems = JSON.parse(sessionStorage.getItem('basket'));
+        let amount = 0;
+        sessionItems.map(item => {
+            amount += item.payPrice;
+        });
+        setFullPrice(amount);
+    }, [cartItems]);
 
     return (
         <div className="CartBox container">
@@ -20,7 +31,8 @@ function Cart(props) {
                     {cartItems.map((item, key) => (
                         <BasketItem key={key} id={key} product={item} />
                     ))}
-                    <OrderForm />
+                    <h3 className="float-right">Pay: {fullPrice} ֏</h3>
+                    <OrderForm payAmount={fullPrice} />
                 </div>
             }
         </div>

@@ -7,20 +7,20 @@ function BasketItem(props) {
     // Product data
     const product = props.product.product;
 
-    const [count, setCount] = useState(null);
-    const [payPrice, setPayPrice] = useState(null);
+    const [count, setCount] = useState(props.product.count);
+    const [payPrice, setPayPrice] = useState(props.product.payPrice);
 
     const change = useContext(ChangeBasket);
 
     useEffect(() => {
-        setCount(props.product.count);
-        setPayPrice(props.product.payPrice);
-    }, [props]);
+        setPayPrice(count * product.price);
+        change(props.id, count);
+    }, [count]);
 
-    // On count change change payPrice too.
+    // Change product count.
     function changeCount(event) {
         const count = event.target.value;
-        change(props.id, count);
+        setCount(count);
     }
 
     function hover() {
@@ -34,7 +34,7 @@ function BasketItem(props) {
         <div className="BasketItem container-fluid" onMouseEnter={hover} onMouseLeave={leave}>
             <div className="row">
                 <div className="ImageBox col-lg-2 col-md-2 col-sm-3 col-xs-5">
-                    <img src={`http://192.168.0.105:3000/media/Products/${product.img}`} alt="prInfo" />
+                    <img src={`http://localhost:3000/media/Products/${product.img}`} alt="prInfo" />
                 </div>
                 <div className="ProductInfoBox col-lg col-md col-sm col-xs">
                     <h3>
@@ -48,9 +48,20 @@ function BasketItem(props) {
                     </h4>
                     <div className="form">
                         <span>Count</span>
-                        <input className="form-control" type="number" defaultValue={count} onChange={changeCount} />
+                        <input 
+                            className="form-control" 
+                            type="number"
+                            min="1" 
+                            defaultValue={count} 
+                            onChange={changeCount} 
+                        />
                         <span>Pay</span>
-                        <input className="form-control" type="number" value={payPrice} readOnly /> ֏  
+                        <input 
+                            className="form-control" 
+                            type="number" 
+                            value={payPrice} 
+                            readOnly 
+                        /> ֏  
                     </div>
                 </div>
             </div>

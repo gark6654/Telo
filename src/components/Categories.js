@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { SiteText } from '../App';
-import SoapIcon from '../media/soap.svg';
+import SoapIcon from '../media/Soap.svg';
 import LiquidSoapIcon from '../media/LiquidSoap.svg';
 import ShampooIcon from '../media/shampoo.svg';
 import WashingPowder from '../media/powder.svg';

@@ -62,8 +62,10 @@ function App(props) {
     }
 
     function changeCount(productId, value) {
-        console.log(productId);
-        console.log(value);
+        const itemsForChange = basketItems;
+        itemsForChange[productId].count = value;
+        itemsForChange[productId].payPrice = value * itemsForChange[productId].product.price;
+        setBasketItems([...itemsForChange]);
     }
 
     return (

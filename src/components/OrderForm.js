@@ -27,15 +27,29 @@ function OrderForm(props) {
                 </div>
                 <div className="PaymentSort form-group">
                     <h4>Payment Sort</h4>
-                    <div class="form-check">
-                        <input required class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" />
-                        <label class="form-check-label" for="exampleRadios1">
+                    <div className="form-check">
+                        <input 
+                            required 
+                            className="form-check-input" 
+                            type="radio" 
+                            name="exampleRadios" 
+                            id="exampleRadios1" 
+                            value="option1" 
+                        />
+                        <label className="form-check-label" htmlFor="exampleRadios1">
                             Cash
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input required class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" />
-                        <label class="form-check-label" for="exampleRadios2">
+                    <div className="form-check">
+                        <input 
+                            required 
+                            className="form-check-input" 
+                            type="radio" 
+                            name="exampleRadios" 
+                            id="exampleRadios2" 
+                            value="option2" 
+                        />
+                        <label className="form-check-label" htmlFor="exampleRadios2">
                             Card
                         </label>
                     </div>
