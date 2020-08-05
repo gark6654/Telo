@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { BasketItems } from '../../App';
 import OrderForm from './../OrderForm';
 import BasketItem from '../BasketItem';
 
 function Cart(props) {
+    const BasketProducts = useContext(BasketItems);
+
     const [cartItems, setCartItems] = useState([]);
     const [fullPrice, setFullPrice] = useState(0);
 
     useEffect(() => {
-        const sessionItems = JSON.parse(sessionStorage.getItem('basket'));
+        const sessionItems = BasketProducts;
         if (sessionItems.length !== 0) {
             setCartItems(sessionItems);
-            console.log(sessionItems);
         }
     }, [props]);
 
     useEffect(() => {
-        const sessionItems = JSON.parse(sessionStorage.getItem('basket'));
+        const sessionItems = BasketProducts;
         let amount = 0;
         sessionItems.map(item => {
             amount += item.payPrice;
@@ -25,7 +27,10 @@ function Cart(props) {
 
     return (
         <div className="CartBox container">
-            {cartItems.length === 0 ? 'Basket is empty' :
+            {cartItems.length === 0 ?
+                <div class="alert alert-info" role="alert">
+                    <h1>Basket is empty</h1>
+                </div> :
                 <div>
                     <h2>Basket Items</h2>
                     {cartItems.map((item, key) => (

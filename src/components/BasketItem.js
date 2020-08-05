@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { ChangeBasket } from '../App';
+import { ChangeBasket, RemoveItem } from '../App';
 
 function BasketItem(props) {
     // UI
@@ -11,6 +11,7 @@ function BasketItem(props) {
     const [payPrice, setPayPrice] = useState(props.product.payPrice);
 
     const change = useContext(ChangeBasket);
+    const remove = useContext(RemoveItem);
 
     useEffect(() => {
         setPayPrice(count * product.price);
@@ -21,6 +22,11 @@ function BasketItem(props) {
     function changeCount(event) {
         const count = event.target.value;
         setCount(count);
+    }
+
+    // Remove product from basket.
+    function removeItem() {
+        remove(props.id);
     }
 
     function hover() {
@@ -48,24 +54,26 @@ function BasketItem(props) {
                     </h4>
                     <div className="form">
                         <span>Count</span>
-                        <input 
-                            className="form-control" 
+                        <input
+                            className="form-control"
                             type="number"
-                            min="1" 
-                            defaultValue={count} 
-                            onChange={changeCount} 
+                            min="1"
+                            defaultValue={count}
+                            onChange={changeCount}
                         />
                         <span>Pay</span>
-                        <input 
-                            className="form-control" 
-                            type="number" 
-                            value={payPrice} 
-                            readOnly 
-                        /> ֏  
+                        <input
+                            className="form-control"
+                            type="number"
+                            value={payPrice}
+                            readOnly
+                        /> ֏
                     </div>
                 </div>
             </div>
-            {isHover ? <button className="RemoveButton btn">Remove From Basket</button> : ''}
+            {isHover ? <button className="RemoveButton btn" onClick={removeItem}>
+                            Remove From Basket
+                        </button> : ''}
         </div>
     );
 }

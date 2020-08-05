@@ -7,11 +7,13 @@ import Footer from './components/Footer';
 import './App.css';
 
 const SiteText = React.createContext(null); // Site Text sorted from selected language.
+const BasketItems = React.createContext(null); // Basket items.
 
 // Functions that are dispatched through the context.
 const changeLang = React.createContext(null); // Change language.
 const ToBasket = React.createContext(null); // Add item basket.
-const ChangeBasket = React.createContext(null); // Change item count from basket.
+const ChangeBasket = React.createContext(null); // Change item count in basket.
+const RemoveItem = React.createContext(null); // Remove item from bsaket.
 
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
@@ -61,39 +63,53 @@ function App(props) {
         setBasketItems([...basketItems, product]);
     }
 
+    // Change item count in basket.
     function changeCount(productId, value) {
         const itemsForChange = basketItems;
         itemsForChange[productId].count = value;
         itemsForChange[productId].payPrice = value * itemsForChange[productId].product.price;
+
+        setBasketItems([...itemsForChange]);
+    }
+
+    // Remove item from basket.
+    function removeItem(productId) {
+        const itemsForChange = basketItems;
+        itemsForChange.splice(productId, 1);
+
         setBasketItems([...itemsForChange]);
     }
 
     return (
         <main>
             <Router>
-                <SiteText.Provider value={sortedText.header}>
-                    <changeLang.Provider value={changeLanguage}>
+                <BasketItems.Provider value={basketItems}>
+                    <SiteText.Provider value={sortedText.header}>
+                        <changeLang.Provider value={changeLanguage}>
 
-                        <Header basketLength={basketItems ? basketItems.length : 0} />
-                    </changeLang.Provider>
-                </SiteText.Provider>
-                <SiteText.Provider value={sortedText.content}>
-                    <ToBasket.Provider value={ToCart}>
-                        <ChangeBasket.Provider value={changeCount}>
-                            <Content />
-                        </ChangeBasket.Provider>
-                    </ToBasket.Provider>
-                </SiteText.Provider>
-                <SiteText.Provider value={sortedText.footer}>
-                    <Footer />
-                </SiteText.Provider>
+                            <Header basketLength={basketItems ? basketItems.length : 0} />
+                        </changeLang.Provider>
+                    </SiteText.Provider>
+                    <SiteText.Provider value={sortedText.content}>
+                        <ToBasket.Provider value={ToCart}>
+                            <ChangeBasket.Provider value={changeCount}>
+                                <RemoveItem.Provider value={removeItem}>
+                                    <Content />
+                                </RemoveItem.Provider>
+                            </ChangeBasket.Provider>
+                        </ToBasket.Provider>
+                    </SiteText.Provider>
+                    <SiteText.Provider value={sortedText.footer}>
+                        <Footer />
+                    </SiteText.Provider>
+                </BasketItems.Provider>
             </Router>
         </main>
     );
 }
 
-export { SiteText };
-export { changeLang };
-export { ToBasket };
-export { ChangeBasket };
+// Functions was created from context.
+export {
+    BasketItems, SiteText, changeLang, ToBasket, ChangeBasket, RemoveItem
+};
 export default App;
