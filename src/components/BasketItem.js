@@ -1,7 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { ChangeBasket, RemoveItem } from '../App';
+import { SiteText, ChangeBasket, RemoveItem } from '../App';
 
 function BasketItem(props) {
+    const Text = useContext(SiteText).pages.cart.basket.basketItem;
+    const change = useContext(ChangeBasket);
+    const remove = useContext(RemoveItem);
+
     // UI
     const [isHover, setIsHover] = useState(false);
     // Product data
@@ -9,9 +13,6 @@ function BasketItem(props) {
 
     const [count, setCount] = useState(props.product.count);
     const [payPrice, setPayPrice] = useState(props.product.payPrice);
-
-    const change = useContext(ChangeBasket);
-    const remove = useContext(RemoveItem);
 
     useEffect(() => {
         setPayPrice(count * product.price);
@@ -53,7 +54,7 @@ function BasketItem(props) {
                         {product.price} ֏
                     </h4>
                     <div className="form">
-                        <span>Count</span>
+                        <span>{Text.inputCount}</span>
                         <input
                             className="form-control"
                             type="number"
@@ -61,7 +62,7 @@ function BasketItem(props) {
                             defaultValue={count}
                             onChange={changeCount}
                         />
-                        <span>Pay</span>
+                        <span>{Text.inputAmount}</span>
                         <input
                             className="form-control"
                             type="number"
@@ -72,7 +73,7 @@ function BasketItem(props) {
                 </div>
             </div>
             {isHover ? <button className="RemoveButton btn" onClick={removeItem}>
-                            Remove From Basket
+                            {Text.remove}
                         </button> : ''}
         </div>
     );

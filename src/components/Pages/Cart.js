@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { BasketItems } from '../../App';
+import { SiteText, BasketItems } from '../../App';
 import OrderForm from './../OrderForm';
 import BasketItem from '../BasketItem';
 
 function Cart(props) {
+    const Text = useContext(SiteText).pages.cart;
     const BasketProducts = useContext(BasketItems);
 
     const [cartItems, setCartItems] = useState([]);
@@ -33,11 +34,11 @@ function Cart(props) {
                 </div>
             ) : // Else
                 <div>
-                    <h2>Basket Items</h2>
+                    <h2>{Text.basket.title}</h2>
                     {cartItems.map((item, key) => (
                         <BasketItem key={key} id={key} product={item} />
                     ))}
-                    <h3 className="float-right">Pay: {fullPrice} ֏</h3>
+                    <h3 className="float-right">{Text.pay}: {fullPrice} ֏</h3>
                     <OrderForm payAmount={fullPrice} />
                 </div>
             }

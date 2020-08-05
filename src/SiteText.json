@@ -21,6 +21,32 @@
                         "from": "From",
                         "to": "To"
                     }
+                },
+                "cart": {
+                    "basket": {
+                        "title": "Basket Items",
+                        "basketItem": {
+                            "inputCount": "Count",
+                            "inputAmount": "Amount",
+                            "remove": "Remove from basket"
+                        }
+                    },
+                    "pay": "Pay",
+                    "orderForm": {
+                        "title": "Order Now",
+                        "form": {
+                            "first": "First Name",
+                            "last": "Last Name",
+                            "phone": "Phone",
+                            "address": "Address",
+                            "sort": {
+                                "title": "Payment Type",
+                                "cash": "Cash",
+                                "card": "Credit card"
+                            },
+                            "buy": "Buy"
+                        }
+                    }
                 }
             },
             "toCartForm": {
@@ -60,6 +86,32 @@
                         "from": "От",
                         "to": "До"
                     }
+                },
+                "cart": {
+                    "basket": {
+                        "title": "Корзина товаров",
+                        "basketItem": {
+                            "inputCount": "Количество",
+                            "inputAmount": "Сумма",
+                            "remove": "Удалить из корзины"
+                        }
+                    },
+                    "pay": "Оплатить",
+                    "orderForm": {
+                        "title": "Заказать сейчас",
+                        "form": {
+                            "first": "Имя",
+                            "last": "Фамилия",
+                            "phone": "Телефон",
+                            "address": "Адрес",
+                            "sort": {
+                                "title": "Способ оплаты",
+                                "cash": "Наличные",
+                                "card": "Кредитная карта"
+                            },
+                            "buy": "Купить"
+                        }
+                    }
                 }
             },
             "toCartForm": {
@@ -98,6 +150,32 @@
                         "price": "Գինը",
                         "from": "Սկսած",
                         "to": "Մինչև"
+                    }
+                },
+                "cart": {
+                    "basket": {
+                        "title": "Զամբյուղի ապրանքները",
+                        "basketItem": {
+                            "inputCount": "Քանակ",
+                            "inputAmount": "Արժեք",
+                            "remove": "Հեռացնել զամբյուղից"
+                        }
+                    },
+                    "pay": "Վճարել",
+                    "orderForm": {
+                        "title": "Պատվիրել Հիմա",
+                        "form": {
+                            "first": "Անուն",
+                            "last": "Ազգանուն",
+                            "phone": "Հեռախոս",
+                            "address": "Հասցե",
+                            "sort": {
+                                "title": "Վճարման տեսակ",
+                                "cash": "Կանխիկ",
+                                "card": "Կրեդիտ քարտ"
+                            },
+                            "buy": "Գնել"
+                        }
                     }
                 }
             },

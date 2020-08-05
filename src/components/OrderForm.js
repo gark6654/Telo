@@ -1,61 +1,65 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SiteText } from '../App';
 
 function OrderForm(props) {
+    const Text = useContext(SiteText).pages.cart.orderForm;
+
+
     return (
         <div className="OrderBox">
-            <h2>Order Now</h2>
+            <h2>{Text.title}</h2>
             <form>
                 <div className="form-row">
                     <div className="col">
-                        <span>First Name:</span>
+                        <span>{Text.form.first}:</span>
                         <input required type="text" className="form-control" placeholder="John" />
                     </div>
                     <div className="col">
-                        <span>Last Name:</span>
+                        <span>{Text.form.last}:</span>
                         <input required type="text" className="form-control" placeholder="Whick" />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="col">
-                        <span>Phone:</span>
+                        <span>{Text.form.phone}:</span>
                         <input required className="form-control" type="text" placeholder="+374000000" defaultValue={"+374"} />
                     </div>
                     <div className="col">
-                        <span>Address:</span>
+                        <span>{Text.form.address}:</span>
                         <input required className="form-control" type="text" placeholder="+374000000" />
                     </div>
                 </div>
                 <div className="PaymentSort form-group">
-                    <h4>Payment Sort</h4>
+                    <h4>{Text.form.sort.title}</h4>
                     <div className="form-check">
-                        <input 
-                            required 
-                            className="form-check-input" 
-                            type="radio" 
-                            name="exampleRadios" 
-                            id="exampleRadios1" 
-                            value="option1" 
+                        <input
+                            required
+                            className="form-check-input"
+                            type="radio"
+                            name="exampleRadios"
+                            id="exampleRadios1"
+                            value="option1"
                         />
                         <label className="form-check-label" htmlFor="exampleRadios1">
-                            Cash
+                            {Text.form.sort.cash}
                         </label>
                     </div>
                     <div className="form-check">
-                        <input 
-                            required 
-                            className="form-check-input" 
-                            type="radio" 
-                            name="exampleRadios" 
-                            id="exampleRadios2" 
-                            value="option2" 
+                        <input
+                            required
+                            className="form-check-input"
+                            type="radio"
+                            name="exampleRadios"
+                            id="exampleRadios2"
+                            value="option2"
                         />
                         <label className="form-check-label" htmlFor="exampleRadios2">
-                            Card
+                            {Text.form.sort.card}
                         </label>
                     </div>
                 </div>
                 <button className="btn btn-primary">
-                    Buy
+                    {Text.form.buy}
                 </button>
             </form>
         </div>
