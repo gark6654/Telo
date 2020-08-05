@@ -23,6 +23,7 @@
                     }
                 },
                 "cart": {
+                    "empty": "Basket is empty",
                     "basket": {
                         "title": "Basket Items",
                         "basketItem": {
@@ -88,6 +89,7 @@
                     }
                 },
                 "cart": {
+                    "empty": "Корзина пуста",
                     "basket": {
                         "title": "Корзина товаров",
                         "basketItem": {
@@ -153,6 +155,7 @@
                     }
                 },
                 "cart": {
+                    "empty": "Զամբյուղը դատարկ է",
                     "basket": {
                         "title": "Զամբյուղի ապրանքները",
                         "basketItem": {

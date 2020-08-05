@@ -23,7 +23,7 @@ function SingleProduct(props) {
         <div ref={outRef} className="SingleProductWindow container-fluid">
             <article className="col-md-5">
                 <button className="ExitButton" onClick={collapseBox}>
-                    <img src="http://localhost:3000/media/Icon/cancel.svg" alt={"Logo"} />
+                    <img src="http://localhost:3000/media/Icons/cancel.svg" alt={"Logo"} />
                 </button>
                 <h1>
                     {props.product.name}

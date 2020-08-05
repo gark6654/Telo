@@ -46,7 +46,7 @@ function ToCartForm(props) {
             </h4>
             <button className="btn btn-primary">
                 <img 
-                    src="http://localhost:3000/media/Icons.shop.svg" 
+                    src="http://localhost:3000/media/Icons/shop.svg" 
                     alt="logo" width="25" height="25" 
                 /> {Text.toCart}
             </button>

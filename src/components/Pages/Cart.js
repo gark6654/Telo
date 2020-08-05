@@ -30,7 +30,7 @@ function Cart(props) {
         <div className="CartBox container">
             {cartItems.length === 0 ? (
                 <div class="alert alert-info" role="alert">
-                    <h1>Basket is empty</h1>
+                    <h1>{Text.empty}</h1>
                 </div>
             ) : // Else
                 <div>
