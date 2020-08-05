@@ -133,6 +133,11 @@ header {
 /* Shop page */
 
 /* <<Shop By Category>> <<Filters>> */
+.FiltersPart {
+    height: 100%;
+    position: sticky !important;
+    top: 0;
+}
 .FiltersBox, .CategoriesBox {
     margin: 15px auto;
     padding: 10px;

@@ -27,10 +27,11 @@ function Cart(props) {
 
     return (
         <div className="CartBox container">
-            {cartItems.length === 0 ?
+            {cartItems.length === 0 ? (
                 <div class="alert alert-info" role="alert">
                     <h1>Basket is empty</h1>
-                </div> :
+                </div>
+            ) : // Else
                 <div>
                     <h2>Basket Items</h2>
                     {cartItems.map((item, key) => (
