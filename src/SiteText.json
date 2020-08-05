@@ -41,10 +41,11 @@
                             "phone": "Phone",
                             "address": "Address",
                             "sort": {
-                                "title": "Payment Type",
+                                "title": "Payment Option",
                                 "cash": "Cash",
                                 "card": "Credit card"
                             },
+                            "rights": "The site does not carry liabilities for orders, filled with unfaithful data. Fill them carefully please !",
                             "buy": "Buy"
                         }
                     }
@@ -111,6 +112,7 @@
                                 "cash": "Наличные",
                                 "card": "Кредитная карта"
                             },
+                            "rights": "Сайт не несет ответственности за заказы, заполненные с неверными данными. Пожалуйста, заполняйте их внимательно.",
                             "buy": "Купить"
                         }
                     }
@@ -173,10 +175,11 @@
                             "phone": "Հեռախոս",
                             "address": "Հասցե",
                             "sort": {
-                                "title": "Վճարման տեսակ",
+                                "title": "Վճարման տարբերակ",
                                 "cash": "Կանխիկ",
                                 "card": "Կրեդիտ քարտ"
                             },
+                            "rights": "Կայքը պատասխանատվություն չի կրում սխալ տվյալներով լրացված պատվերների համար հետևաբար խնդրում ենք տվյալները ուշադիր լրացնել։",
                             "buy": "Գնել"
                         }
                     }

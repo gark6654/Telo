@@ -21,7 +21,7 @@ function Cart(props) {
         const sessionItems = BasketProducts;
         let amount = 0;
         sessionItems.map(item => {
-            amount += item.payPrice;
+            return amount += item.payPrice;
         });
         setFullPrice(amount);
     }, [cartItems]);
@@ -38,7 +38,7 @@ function Cart(props) {
                     {cartItems.map((item, key) => (
                         <BasketItem key={key} id={key} product={item} />
                     ))}
-                    <h3 className="float-right">{Text.pay}: {fullPrice} ֏</h3>
+                    <h3 className="FullAmount">{Text.pay}: {fullPrice} ֏</h3>
                     <OrderForm payAmount={fullPrice} />
                 </div>
             }

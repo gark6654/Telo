@@ -1,32 +1,82 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { SiteText } from '../App';
 
 function OrderForm(props) {
+    // Page Text sorted by selected language.
     const Text = useContext(SiteText).pages.cart.orderForm;
 
+    const [firstName, setFirstName] = useState(null);
+    const [lastName, setLastName] = useState(null);
+    const [phone, setPhone] = useState(null);
+    const [address, setAddress] = useState(null);
+    const [payType, setPayType] = useState(null);
+
+    function submit(event) {
+        event.preventDefault();
+        if (phone) {
+            const data = {
+                firstName: firstName,
+                lastName: lastName,
+                phone: phone,
+                address: address,
+                payType: payType,
+                payPrice: props.payAmount
+            };
+            console.log(data);
+        }
+        else {
+            console.log('Error');
+        }
+    }
 
     return (
         <div className="OrderBox">
             <h2>{Text.title}</h2>
-            <form>
+            <form onSubmit={submit}>
                 <div className="form-row">
                     <div className="col">
                         <span>{Text.form.first}:</span>
-                        <input required type="text" className="form-control" placeholder="John" />
+                        <input
+                            required
+                            type="text"
+                            className="form-control"
+                            placeholder="John"
+                            onChange={(event) => { setFirstName(event.target.value) }}
+                        />
                     </div>
                     <div className="col">
                         <span>{Text.form.last}:</span>
-                        <input required type="text" className="form-control" placeholder="Whick" />
+                        <input
+                            required
+                            type="text"
+                            className="form-control"
+                            placeholder="Whick"
+                            onChange={(event) => { setLastName(event.target.value) }}
+                        />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="col">
                         <span>{Text.form.phone}:</span>
-                        <input required className="form-control" type="text" placeholder="+374000000" defaultValue={"+374"} />
+                        <input
+                            required
+                            className="form-control"
+                            type="text"
+                            placeholder="+374000000"
+                            defaultValue={"+374"}
+                            minLength="12"
+                            onChange={(event) => { setPhone(event.target.value) }}
+                        />
                     </div>
                     <div className="col">
                         <span>{Text.form.address}:</span>
-                        <input required className="form-control" type="text" placeholder="+374000000" />
+                        <input
+                            required
+                            className="form-control"
+                            type="text"
+                            placeholder="Armenia, Yerevan, Halabyan 51"
+                            onChange={(event) => { setAddress(event.target.value) }}
+                        />
                     </div>
                 </div>
                 <div className="PaymentSort form-group">
@@ -38,7 +88,8 @@ function OrderForm(props) {
                             type="radio"
                             name="exampleRadios"
                             id="exampleRadios1"
-                            value="option1"
+                            value="Cash"
+                            onChange={(event) => { setPayType(event.target.value) }}
                         />
                         <label className="form-check-label" htmlFor="exampleRadios1">
                             {Text.form.sort.cash}
@@ -51,12 +102,16 @@ function OrderForm(props) {
                             type="radio"
                             name="exampleRadios"
                             id="exampleRadios2"
-                            value="option2"
+                            value="Card"
+                            onChange={(event) => { setPayType(event.target.value) }}
                         />
                         <label className="form-check-label" htmlFor="exampleRadios2">
                             {Text.form.sort.card}
                         </label>
                     </div>
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    <h4>{Text.form.rights}</h4>
                 </div>
                 <button className="btn btn-primary">
                     {Text.form.buy}

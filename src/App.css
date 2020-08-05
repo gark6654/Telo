@@ -363,12 +363,17 @@ aside .Title {
         width: 35%;
     }
 }
+.FullAmount {
+    text-align: right;
+}
 
 /* Order Form Box */
 .OrderBox {
-    margin: 5% auto;
+    margin: 2% auto;
 }
-
+.OrderBox .col {
+    margin: 15px auto;
+}
 .RemoveButton {
     color: #e6563f;
 }

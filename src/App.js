@@ -86,7 +86,6 @@ function App(props) {
                 <BasketItems.Provider value={basketItems}>
                     <SiteText.Provider value={sortedText.header}>
                         <changeLang.Provider value={changeLanguage}>
-
                             <Header basketLength={basketItems ? basketItems.length : 0} />
                         </changeLang.Provider>
                     </SiteText.Provider>
