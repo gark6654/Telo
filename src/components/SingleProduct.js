@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import ExitIcon from '../media/cancel.svg';
 import ToCartForm from './ToCartForm';
 
 function SingleProduct(props) {
@@ -24,7 +23,7 @@ function SingleProduct(props) {
         <div ref={outRef} className="SingleProductWindow container-fluid">
             <article className="col-md-5">
                 <button className="ExitButton" onClick={collapseBox}>
-                    <img src={ExitIcon} alt={"Logo"} />
+                    <img src="http://localhost:3000/media/Icon/cancel.svg" alt={"Logo"} />
                 </button>
                 <h1>
                     {props.product.name}

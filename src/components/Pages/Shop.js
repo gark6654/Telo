@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from 'react';
 import { SiteText } from '../../App';
 import Categories from '../Categories';
 import Filters from '../Filters';
-import FilterIcon from '../../media/filter.svg'
 import ProductsBox from '../ProductsBox';
 
 function Shop(props) {
@@ -28,7 +27,9 @@ function Shop(props) {
                     aria-controls="collapseExample"
                 >
                     <label>
-                        <span><img src={FilterIcon} alt="Logo" width="20" /></span> {Text.title}
+                        <span>
+                            <img src="http://localhost:3000/media/Icons/Filter.svg" alt="Logo" width="20" />
+                        </span> {Text.title}
                     </label>
                 </button> : ''
             }

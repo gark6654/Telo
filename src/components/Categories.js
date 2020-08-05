@@ -1,12 +1,5 @@
 import React, { useContext } from 'react';
 import { SiteText } from '../App';
-import SoapIcon from '../media/Soap.svg';
-import LiquidSoapIcon from '../media/LiquidSoap.svg';
-import ShampooIcon from '../media/shampoo.svg';
-import WashingPowder from '../media/powder.svg';
-import LiquidPawder from '../media/laundry-service.svg';
-import DishwashingLiquid from '../media/dish.svg';
-import Bleach from '../media/Bleach.svg';
 
 function Categories(props) {
     const Text = useContext(SiteText).pages.shop.categoryTitle; // Filters part text sorted by language.
@@ -20,43 +13,43 @@ function Categories(props) {
                 <ul>
                     <li>
                         <button className="CategoryButton btn">
-                            <img src={WashingPowder} alt="Logo" />
+                            <img src={"http://localhost:3000/media/Icons/powder.svg"} alt="Logo" />
                             <span>Washing powder</span>
                         </button>
                     </li>
                     <li>
                         <button className="CategoryButton btn">
-                            <img src={LiquidPawder} alt="Logo" />
+                            <img src={"http://localhost:3000/media/Icons/laundry-service.svg"} alt="Logo" />
                             <span>Washing Gel</span>
                         </button>
                     </li>
                     <li>
                         <button className="CategoryButton btn">
-                            <img src={SoapIcon} alt="Logo" />
+                            <img src={"http://localhost:3000/media/Icons/Soap.svg"} alt="Logo" />
                             <span>Soap</span>
                         </button>
                     </li>
                     <li>
                         <button className="CategoryButton btn">
-                            <img src={LiquidSoapIcon} alt="Logo" />
+                            <img src={"http://localhost:3000/media/Icons/LiquidSoap.svg"} alt="Logo" />
                             <span>Liquid Soap</span>
                         </button>
                     </li>
                     <li>
                         <button className="CategoryButton btn">
-                            <img src={ShampooIcon} alt="Logo" />
+                            <img src={"http://localhost:3000/media/Icons/shampoo.svg"} alt="Logo" />
                             <span>Shampoo</span>
                         </button>
                     </li>
                     <li>
                         <button className="CategoryButton btn">
-                            <img src={DishwashingLiquid} alt="Logo" />
+                            <img src={"http://localhost:3000/media/Icons/dish.svg"} alt="Logo" />
                             <span>Dishwashing liquid</span>
                         </button>
                     </li>
                     <li>
                         <button className="CategoryButton btn">
-                            <img src={Bleach} alt="Logo" />
+                            <img src={"http://localhost:3000/media/Icons/Bleach.svg"} alt="Logo" />
                             <span>Bleach, stain remover</span>
                         </button>
                     </li>
