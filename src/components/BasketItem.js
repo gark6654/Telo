@@ -30,10 +30,10 @@ function BasketItem(props) {
     }
 
     function hover() {
-        setIsHover(true);
+        setIsHover(!isHover);
     }
     function leave() {
-        setIsHover(false);
+        setIsHover(!isHover);
     }
 
     return (
