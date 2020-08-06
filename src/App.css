@@ -340,17 +340,6 @@ aside .Title {
 .ImageBox, .ProductInfoBox {
     text-align: center;
 }
-.ProductInfoBox .form {
-    display: flex;
-    justify-content: center;
-    color: #e6563f;
-}
-.ProductInfoBox input {
-    width: 15%;
-    height: 25px;
-    text-align: center;
-    margin: auto 5px;
-}
 .ImageBox img {
     width: 80%;
     border: 1px solid #5096fd;
@@ -363,6 +352,24 @@ aside .Title {
         width: 35%;
     }
 }
+.BasketItem .form {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    color: #e6563f;
+}
+.BasketItem input {
+    height: 25px;
+    padding: 10px;
+    margin: auto 5px;
+    text-align: center;
+}
+.RemoveButton {
+    color: #e6563f;
+    text-align: right;
+}
+
+/* Full amount to pay before basket items */
 .FullAmount {
     text-align: right;
 }
@@ -374,8 +381,11 @@ aside .Title {
 .OrderBox .col {
     margin: 15px auto;
 }
-.RemoveButton {
-    color: #e6563f;
+.PaymentType input, .PaymentType .form-check-label {
+    cursor: pointer;
+}
+.PaymentType img {
+    margin: auto 10px;
 }
 
 /* ======================================== FOOTER ======================================== */

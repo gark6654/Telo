@@ -53,28 +53,28 @@ function BasketItem(props) {
                     <h4>
                         {product.price} ֏
                     </h4>
-                    <div className="form">
-                        <span>{Text.inputCount}</span>
-                        <input
-                            className="form-control"
-                            type="number"
-                            min="1"
-                            defaultValue={count}
-                            onChange={changeCount}
-                        />
-                        <span>{Text.inputAmount}</span>
-                        <input
-                            className="form-control"
-                            type="number"
-                            value={payPrice}
-                            readOnly
-                        /> ֏
-                    </div>
                 </div>
             </div>
+            <div className="form">
+                <span>{Text.inputCount}</span>
+                <input
+                    className="form-control"
+                    type="number"
+                    min="1"
+                    defaultValue={count}
+                    onChange={changeCount}
+                />
+                <span>{Text.inputAmount}</span>
+                <input
+                    className="form-control"
+                    type="number"
+                    value={payPrice}
+                    readOnly
+                /> ֏
+            </div>
             {isHover ? <button className="RemoveButton btn" onClick={removeItem}>
-                            {Text.remove}
-                        </button> : ''}
+                {Text.remove}
+            </button> : ''}
         </div>
     );
 }

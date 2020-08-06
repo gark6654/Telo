@@ -15,7 +15,7 @@ function Cart(props) {
         if (sessionItems.length !== 0) {
             setCartItems(sessionItems);
         }
-    }, [props]);
+    });
 
     useEffect(() => {
         const sessionItems = BasketProducts;

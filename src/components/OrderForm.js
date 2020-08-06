@@ -79,7 +79,7 @@ function OrderForm(props) {
                         />
                     </div>
                 </div>
-                <div className="PaymentSort form-group">
+                <div className="PaymentType form-group">
                     <h4>{Text.form.sort.title}</h4>
                     <div className="form-check">
                         <input
@@ -93,6 +93,7 @@ function OrderForm(props) {
                         />
                         <label className="form-check-label" htmlFor="exampleRadios1">
                             {Text.form.sort.cash}
+                            <img src="http://localhost:3000/media/Icons/money.svg" width="30" alt="logo" /> 
                         </label>
                     </div>
                     <div className="form-check">
@@ -107,6 +108,7 @@ function OrderForm(props) {
                         />
                         <label className="form-check-label" htmlFor="exampleRadios2">
                             {Text.form.sort.card}
+                            <img src="http://localhost:3000/media/Icons/credit-card.svg" width="30" alt="logo" /> 
                         </label>
                     </div>
                 </div>
