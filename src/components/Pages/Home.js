@@ -1,18 +1,14 @@
 import React from 'react';
-import Slider from '../slider/Slider';
-import Product from '../Product';
+import Banner from '../../media/Banner.jpg'
 
 function Home(props) {
     return (
         <div>
-            <h1>Home page</h1>
-            <div>
-                <Slider autoPlay={true} duration={5}>
-                    <img src="http://localhost:3000/media/banner1.png" alt="img" />
-                    <img src="http://localhost:3000/media/banner1.png" alt="img" />
-                </Slider>
+            <div className="Banner">
+                <img src={Banner} alt="banner" />
             </div>
             <div className="container-fluid">
+                <h2>Ինչու՞ ընտրել մեզ </h2>
             </div>
         </div>
     );

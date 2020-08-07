@@ -311,6 +311,14 @@ aside .Title {
     text-align: center;
 }
 
+/* Home page */
+.Banner {
+    margin: 0px;
+}
+.Banner img {
+    width: 100%;
+}
+
 /* Basket Page */
 .CartBox div h2 {
     border-radius: 5px;

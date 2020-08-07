@@ -6,7 +6,7 @@ import Cart from './Pages/Cart';
 
 function Content(props) {
     return (
-        <div className="Content container-fluid">
+        <div className="Content">
             {/*
                 A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. 
