@@ -16,30 +16,32 @@ function Shop(props) {
     }, [props]);
 
     return (
-        <div className={`${windowW <= 768 ? '' : 'row'}`}>
-            {
-                windowW <= 768 ? <button
-                    className="btn FilterCollapseButton"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#CollapseFilters"
-                    aria-expanded="false"
-                    aria-controls="collapseExample"
-                >
-                    <label>
-                        <span>
-                            <img src="http://localhost:3000/media/Icons/Filter.svg" alt="Logo" width="20" />
-                        </span> {Text.title}
-                    </label>
-                </button> : ''
-            }
+        <div className="container-fluid">
+            <div className={`${windowW <= 768 ? '' : 'row'}`}>
+                {
+                    windowW <= 768 ? <button
+                        className="btn FilterCollapseButton"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#CollapseFilters"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                    >
+                        <label>
+                            <span>
+                                <img src="http://localhost:3000/media/Icons/Filter.svg" alt="Logo" width="20" />
+                            </span> {Text.title}
+                        </label>
+                    </button> : ''
+                }
 
-            <aside className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`} id="CollapseFilters">
-                <Categories />
-                <Filters />
-            </aside>
-            <div className="ProductsPart col-md">
-                <ProductsBox />
+                <aside className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`} id="CollapseFilters">
+                    <Categories />
+                    <Filters />
+                </aside>
+                <div className="ProductsPart col-md">
+                    <ProductsBox />
+                </div>
             </div>
         </div>
     );

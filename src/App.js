@@ -22,6 +22,11 @@ function App(props) {
 
     // Setup basket storage and global configs.
     useEffect(() => {
+        fetch('/items').then((res, err) => {
+            if (!err) {
+                console.log(res);
+            }
+        });
         const sessionBasket = sessionStorage.getItem('basket');
         if (sessionBasket) {
             setBasketItems(JSON.parse(sessionStorage.getItem('basket')));

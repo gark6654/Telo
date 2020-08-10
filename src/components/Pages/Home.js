@@ -1,5 +1,7 @@
 import React from 'react';
-import Banner from '../../media/Banner.jpg'
+import Banner from '../../media/Banner.jpg';
+
+console.log(Banner);
 
 function Home(props) {
     return (
