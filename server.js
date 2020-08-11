@@ -11,7 +11,9 @@ app.get('/items', (req, res) => {
         {name: "Persil"}
     ];
 
-    res.send(items);
+    res.json({
+        data: items
+    });
 });
 
 app.get('/add_item', (req, res) => {
