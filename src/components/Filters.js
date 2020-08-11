@@ -20,7 +20,7 @@ function Filters(props) {
                 <form>
                     <div className="form-group">
                         <span>{Text.from}</span>
-                        <input type="number" min="0" step="1" value="0" />
+                        <input type="number" min="0" step="1" readOnly defaultValue="0" />
                         <span>{Text.to}</span>
                         <input 
                             type="number" 

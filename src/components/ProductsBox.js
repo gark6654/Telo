@@ -8,8 +8,9 @@ function ProductsBox(props) {
     return (
         <div className="row">
             {
-                products.map(product => (
+                products.map((product, id) => (
                     <Product
+                        key={id}
                         name={product.name}
                         desc={product.desc}
                         price={product.price}

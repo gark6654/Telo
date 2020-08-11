@@ -41,6 +41,10 @@ app.get('/add_item', (req, res) => {
     res.send('OK');
 });
 
+app.get('/buy', (req, res) => {
+    res.send(req.body);
+});
+
 app.listen(5000, () => {
     console.log("App runing on 5000 port");
 });

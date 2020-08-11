@@ -29,7 +29,7 @@ function Cart(props) {
     return (
         <div className="CartBox container">
             {cartItems.length === 0 ? (
-                <div class="alert alert-info" role="alert">
+                <div className="alert alert-info" role="alert">
                     <h1>{Text.empty}</h1>
                 </div>
             ) : // Else
