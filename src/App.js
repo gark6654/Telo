@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import './App.css';
 
 const SiteText = React.createContext(null); // Site Text sorted from selected language.
+const SiteProducts = React.createContext(null); // Products.
 const BasketItems = React.createContext(null); // Basket items.
 
 // Functions that are dispatched through the context.
@@ -17,24 +18,14 @@ const RemoveItem = React.createContext(null); // Remove item from bsaket.
 
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
-    const [sortedText, setSortedText] = useState(Text.en); // Default language is English. 
+    const [sortedText, setSortedText] = useState(Text.en); // Text is sorted to English by default. 
+    const [shopProducts, setShopProducts] = useState([]);
     const [basketItems, setBasketItems] = useState([]);
 
-    // Setup basket storage and global configs.
+    // Setup products and basket.
     useEffect(() => {
-        fetch('http://localhost:4000/items', {mode: 'no-cors'})
-            .then(res => {
-                res.json();
-            }).then(data => {
-                console.log(data);
-            });
-        const sessionBasket = sessionStorage.getItem('basket');
-        if (sessionBasket) {
-            setBasketItems(JSON.parse(sessionStorage.getItem('basket')));
-        }
-        else {
-            sessionStorage.setItem('basket', JSON.stringify([]));
-        }
+        getProductsFromServer();
+        setupBasketStorage();
     }, [props]);
 
     // Get language from localStorage and setup site language.
@@ -57,6 +48,25 @@ function App(props) {
     useEffect(() => {
         sessionStorage.setItem('basket', JSON.stringify(basketItems));
     }, [basketItems]);
+
+    // Get products from server.
+    function getProductsFromServer() {
+        fetch('http://localhost:5000/items')
+            .then(response => response.json())
+            .then(data => setShopProducts([...data]))
+            .catch(error => console.error(error));
+    }
+
+    // Create basket session storage or get from it.
+    function setupBasketStorage() {
+        const sessionBasket = sessionStorage.getItem('basket');
+        if (sessionBasket) {
+            setBasketItems(JSON.parse(sessionStorage.getItem('basket')));
+        }
+        else {
+            sessionStorage.setItem('basket', JSON.stringify([]));
+        }
+    }
 
     // Change site language from LangSelector.
     function changeLanguage(lang) {
@@ -96,13 +106,15 @@ function App(props) {
                         </changeLang.Provider>
                     </SiteText.Provider>
                     <SiteText.Provider value={sortedText.content}>
-                        <ToBasket.Provider value={ToCart}>
-                            <ChangeBasket.Provider value={changeCount}>
-                                <RemoveItem.Provider value={removeItem}>
-                                    <Content />
-                                </RemoveItem.Provider>
-                            </ChangeBasket.Provider>
-                        </ToBasket.Provider>
+                        <SiteProducts.Provider value={shopProducts}>
+                            <ToBasket.Provider value={ToCart}>
+                                <ChangeBasket.Provider value={changeCount}>
+                                    <RemoveItem.Provider value={removeItem}>
+                                        <Content />
+                                    </RemoveItem.Provider>
+                                </ChangeBasket.Provider>
+                            </ToBasket.Provider>
+                        </SiteProducts.Provider>
                     </SiteText.Provider>
                     <SiteText.Provider value={sortedText.footer}>
                         <Footer />
@@ -115,6 +127,6 @@ function App(props) {
 
 // Functions was created from context.
 export {
-    BasketItems, SiteText, changeLang, ToBasket, ChangeBasket, RemoveItem
+    SiteProducts, BasketItems, SiteText, changeLang, ToBasket, ChangeBasket, RemoveItem
 };
 export default App;

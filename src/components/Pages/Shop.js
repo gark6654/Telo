@@ -35,7 +35,10 @@ function Shop(props) {
                     </button> : ''
                 }
 
-                <aside className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`} id="CollapseFilters">
+                <aside 
+                    className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`} 
+                    id="CollapseFilters"
+                >
                     <Categories />
                     <Filters />
                 </aside>
