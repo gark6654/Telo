@@ -26,6 +26,19 @@ function Cart(props) {
         setFullPrice(amount);
     }, [cartItems]);
 
+    function buyBasket(clientInfo) {
+        const data = {
+            client: clientInfo,
+            products: BasketProducts,
+            pay: fullPrice
+        };
+        fetch("http://localhost:5000/buy",
+            {
+                method: "POST",
+                body: 'data'
+            })
+    }
+
     return (
         <div className="CartBox container">
             {cartItems.length === 0 ? (
@@ -39,7 +52,7 @@ function Cart(props) {
                         <BasketItem key={key} id={key} product={item} />
                     ))}
                     <h3 className="FullAmount">{Text.pay}: {fullPrice} ֏</h3>
-                    <OrderForm payAmount={fullPrice} />
+                    <OrderForm payAmount={fullPrice} buy={buyBasket} />
                 </div>
             }
         </div>

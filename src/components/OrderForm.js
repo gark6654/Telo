@@ -22,7 +22,7 @@ function OrderForm(props) {
                 payType: payType,
                 payPrice: props.payAmount
             };
-            console.log(data);
+            props.buy(data);
         }
         else {
             console.log('Error');
@@ -112,7 +112,7 @@ function OrderForm(props) {
                         </label>
                     </div>
                 </div>
-                <div class="alert alert-danger" role="alert">
+                <div className="alert alert-danger" role="alert">
                     <h4>{Text.form.rights}</h4>
                 </div>
                 <button className="btn btn-primary">

@@ -4,6 +4,7 @@ const cors = require('cors');
 
 app.use(cors());
 
+
 app.get('/', (req, res) => {
     res.send('For view send request to /items');
 });
@@ -41,8 +42,9 @@ app.get('/add_item', (req, res) => {
     res.send('OK');
 });
 
-app.get('/buy', (req, res) => {
-    res.send(req.body);
+app.post('/buy', (req, res) => {
+    res.send('OK');
+    console.log(req.body);
 });
 
 app.listen(5000, () => {
