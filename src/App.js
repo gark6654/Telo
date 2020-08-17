@@ -22,10 +22,35 @@ function App(props) {
     const [shopProducts, setShopProducts] = useState([]); // Already filtred product for send's to content.
     const [basketItems, setBasketItems] = useState([]); // Basket items for buy. :) :) :)
 
+    // FIlters for show products.
+    const [filters, setFilters] = useState({
+        "category": null,
+        "maxPrice": null
+    });
+
     // Setup products and basket.
     useEffect(() => {
-        getProductsFromServer();
-        setupBasketStorage();
+        // Get products from server.
+        (
+            function getProductsFromServer() {
+                fetch('http://localhost:5000/items')
+                    .then(response => response.json())
+                    .then(data => setShopProducts([...data]))
+                    .catch(error => console.error(error));
+            }
+        )();
+        // Create basket session storage or get from it.
+        (
+            function setupBasketStorage() {
+                const sessionBasket = sessionStorage.getItem('basket');
+                if (sessionBasket) {
+                    setBasketItems(JSON.parse(sessionStorage.getItem('basket')));
+                }
+                else {
+                    sessionStorage.setItem('basket', JSON.stringify([]));
+                }
+            }
+        )();
     }, [props]);
 
     // Get language from localStorage and setup site language.
@@ -49,25 +74,6 @@ function App(props) {
     useEffect(() => {
         sessionStorage.setItem('basket', JSON.stringify(basketItems));
     }, [basketItems]);
-
-    // Get products from server.
-    function getProductsFromServer() {
-        fetch('http://localhost:5000/items')
-            .then(response => response.json())
-            .then(data => setShopProducts([...data]))
-            .catch(error => console.error(error));
-    }
-
-    // Create basket session storage or get from it.
-    function setupBasketStorage() {
-        const sessionBasket = sessionStorage.getItem('basket');
-        if (sessionBasket) {
-            setBasketItems(JSON.parse(sessionStorage.getItem('basket')));
-        }
-        else {
-            sessionStorage.setItem('basket', JSON.stringify([]));
-        }
-    }
 
     // Change site language from LangSelector.
     function changeLanguage(lang) {
@@ -95,6 +101,11 @@ function App(props) {
         itemsForChange.splice(productId, 1);
 
         setBasketItems([...itemsForChange]);
+    }
+
+    // change products category for show.
+    function changeCategory(category) {
+        console.log(category);
     }
 
     return (

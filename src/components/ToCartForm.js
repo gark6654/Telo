@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { SiteText, ToBasket } from '../App';
  
 function ToCartForm(props) {
-    const Text = useContext(SiteText).toCartForm; // ToCartForm part text sorted by language.
+    const Text = useContext(SiteText).content.toCartForm; // ToCartForm part text sorted by language.
     const AddToBasket = useContext(ToBasket); // Function get's from context (APP.js).
 
     // To basket product price.

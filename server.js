@@ -13,22 +13,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/items', (req, res) => {
-    mongo.connect("mongodb://127.0.0.1:27017/", { useNewUrlParser: true }, (err, db) => {
-        if (!err) {
-            console.log(db);
-        }
-        else {
-            console.error(err);
-        }
-    });
-
     const items = [
         {
             name: "Persil 5kg",
             desc: "Persil 5kg Automatic Washing Pawder for color",
-            price: 11000,
+            price: 8000,
             category: "Washing Powder",
             img: "persil.jpg"
+        },
+        {
+            name: "Gillette Fusion 5",
+            desc: "Man perfect shaver",
+            price: 11000,
+            category: "Shaver",
+            img: "GilletteFusion5.jpg"
         },
     ];
 
