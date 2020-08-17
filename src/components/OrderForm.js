@@ -19,8 +19,7 @@ function OrderForm(props) {
                 lastName: lastName,
                 phone: phone,
                 address: address,
-                payType: payType,
-                payPrice: props.payAmount
+                payType: payType
             };
             props.buy(data);
         }

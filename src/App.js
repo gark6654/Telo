@@ -12,15 +12,15 @@ const BasketItems = React.createContext(null); // Basket items.
 
 // Functions that are dispatched through the context.
 const changeLang = React.createContext(null); // Change language.
-const ToBasket = React.createContext(null); // Add item basket.
+const ToBasket = React.createContext(null); // Add item to basket.
 const ChangeBasket = React.createContext(null); // Change item count in basket.
 const RemoveItem = React.createContext(null); // Remove item from bsaket.
 
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
     const [sortedText, setSortedText] = useState(Text.en); // Text is sorted to English by default. 
-    const [shopProducts, setShopProducts] = useState([]);
-    const [basketItems, setBasketItems] = useState([]);
+    const [shopProducts, setShopProducts] = useState([]); // Already filtred product for send's to content.
+    const [basketItems, setBasketItems] = useState([]); // Basket items for buy. :) :) :)
 
     // Setup products and basket.
     useEffect(() => {
@@ -31,6 +31,7 @@ function App(props) {
     // Get language from localStorage and setup site language.
     useEffect(() => {
         localStorage.getItem('lang') ? setLang(localStorage.getItem('lang'))
+            // Else   
             : localStorage.setItem('lang', lang);
 
         if (lang === 'ՀԱՅ') {
@@ -98,14 +99,12 @@ function App(props) {
 
     return (
         <main>
-            <Router>
-                <BasketItems.Provider value={basketItems}>
-                    <SiteText.Provider value={sortedText.header}>
+            <SiteText.Provider value={sortedText}>
+                <Router>
+                    <BasketItems.Provider value={basketItems}>
                         <changeLang.Provider value={changeLanguage}>
                             <Header basketLength={basketItems ? basketItems.length : 0} />
                         </changeLang.Provider>
-                    </SiteText.Provider>
-                    <SiteText.Provider value={sortedText.content}>
                         <SiteProducts.Provider value={shopProducts}>
                             <ToBasket.Provider value={ToCart}>
                                 <ChangeBasket.Provider value={changeCount}>
@@ -115,12 +114,10 @@ function App(props) {
                                 </ChangeBasket.Provider>
                             </ToBasket.Provider>
                         </SiteProducts.Provider>
-                    </SiteText.Provider>
-                    <SiteText.Provider value={sortedText.footer}>
                         <Footer />
-                    </SiteText.Provider>
-                </BasketItems.Provider>
-            </Router>
+                    </BasketItems.Provider>
+                </Router>
+            </SiteText.Provider>
         </main>
     );
 }

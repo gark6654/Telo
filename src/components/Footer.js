@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { SiteText } from '../App';
 
 function Footer(props) {
-    const Text = useContext(SiteText); // Footer part text sorted by language.
+    const Text = useContext(SiteText).footer; // Footer part text sorted by language.
 
     return (
         <footer>

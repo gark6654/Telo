@@ -35,7 +35,6 @@ function ToCartForm(props) {
                     className="form-control" 
                     type="number" 
                     min={1} 
-                    defaultValue={1} 
                     onChange={getSum} 
                     defaultValue={count} 
                 />

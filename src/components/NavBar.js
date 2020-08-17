@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LangSelector from './LangSelector';
 
 function NavBar(props) {
-    const Text = useContext(SiteText).navBar; // Navbar part text sorted by language.
+    const Text = useContext(SiteText).header.navBar; // Navbar part text sorted by language.
 
     function search(event) {
         event.preventDefault();

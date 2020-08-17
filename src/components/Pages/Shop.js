@@ -5,7 +5,7 @@ import Filters from '../Filters';
 import ProductsBox from '../ProductsBox';
 
 function Shop(props) {
-    const Text = useContext(SiteText).pages.shop.filterPart; // ToCartForm part text sorted by language.
+    const Text = useContext(SiteText).content.pages.shop.filterPart; // ToCartForm part text sorted by language.
 
     const [windowW, setWindowW] = useState(window.innerWidth); // UI For Filters collapse. 
 

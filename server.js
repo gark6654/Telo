@@ -1,15 +1,27 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const mongo = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
+
 
 app.use(cors());
-
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('For view send request to /items');
 });
 
 app.get('/items', (req, res) => {
+    mongo.connect("mongodb://127.0.0.1:27017/", { useNewUrlParser: true }, (err, db) => {
+        if (!err) {
+            console.log(db);
+        }
+        else {
+            console.error(err);
+        }
+    });
+
     const items = [
         {
             name: "Persil 5kg",
@@ -18,33 +30,15 @@ app.get('/items', (req, res) => {
             category: "Washing Powder",
             img: "persil.jpg"
         },
-        {
-            name: "Persil",
-            desc: "Persil 2.34L Liquid detergent for color",
-            price: 8500,
-            category: "Washing Gel",
-            img: "PersilLiquidDetergent.jpg"
-        },
-        {
-            name: "Gillette Fusion5 PROSHIELD",
-            desc: "Gillette Fusion5 ProShield Men's Razor features 5 anti-friction blades",
-            price: 12000,
-            category: "Shaver",
-            img: "GilletteFusion5.jpg"
-        },
     ];
 
     res.json(items); // Send data already converted to JSON.
 });
 
-app.get('/add_item', (req, res) => {
-    console.log(req.query.name);
-    res.send('OK');
-});
-
 app.post('/buy', (req, res) => {
-    res.send('OK');
-    console.log(req.body);
+    const data = req.body.data;
+    console.log(data);
+    res.send('Post request for buy basket');
 });
 
 app.listen(5000, () => {

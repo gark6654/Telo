@@ -4,7 +4,7 @@ import OrderForm from './../OrderForm';
 import BasketItem from '../BasketItem';
 
 function Cart(props) {
-    const Text = useContext(SiteText).pages.cart;
+    const Text = useContext(SiteText).content.pages.cart;
     const BasketProducts = useContext(BasketItems);
 
     const [cartItems, setCartItems] = useState([]);
@@ -28,14 +28,19 @@ function Cart(props) {
 
     function buyBasket(clientInfo) {
         const data = {
-            client: clientInfo,
-            products: BasketProducts,
+            customer: clientInfo,
+            items: BasketProducts,
             pay: fullPrice
         };
         fetch("http://localhost:5000/buy",
             {
-                method: "POST",
-                body: 'data'
+                method: 'POST',
+                body: JSON.stringify({
+                    data: data
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
     }
 

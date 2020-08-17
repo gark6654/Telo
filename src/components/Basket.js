@@ -3,7 +3,7 @@ import { SiteText } from '../App';
 import { Link } from 'react-router-dom';
 
 function Basket(props) {
-    const Text = useContext(SiteText).basketTitle; // Basket part text sorted by language.
+    const Text = useContext(SiteText).header.basketTitle; // Basket part text sorted by language.
     const [basketLength, setBasketLength] = useState(0);
     
     // Set basket items count.
