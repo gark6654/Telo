@@ -19,7 +19,6 @@ function Product(props) {
             "category": props.cat,
             "price": props.price
         });
-        console.log(props);
     }, [props]);
 
     function zoomProduct() {

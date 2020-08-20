@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { SiteText } from '../App';
 
 function Filters(props) {
@@ -7,7 +7,10 @@ function Filters(props) {
 
     // Set max price value from input or slider(range).
     function setValues(event) {
-        setMaxPrice(event.target.value);
+        const val = event.target.value;
+
+        setMaxPrice(val);
+        props.changeMax(val);
     }
 
     return (

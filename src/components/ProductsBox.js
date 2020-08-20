@@ -6,9 +6,23 @@ function ProductsBox(props) {
     const [show, setShow] = useState([]);
     const products = useContext(SiteProducts);
 
+    const filters = props.filters;
+
     useEffect(() => {
-        setShow(products);
-    }, [products]);
+        var filtratedItems = products;
+        if (filters.category) {
+            filtratedItems = filtratedItems.filter(item => item.category === filters.category);
+        }
+        if (filters.maxPrice) {
+            filtratedItems = filtratedItems.filter(item => item.price <= filters.maxPrice);
+        }
+
+        console.log(filtratedItems);
+
+        setShow(filtratedItems);
+    }, [props]);
+
+    
 
     return (
         <div className="row">

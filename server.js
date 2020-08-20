@@ -18,14 +18,14 @@ app.get('/items', (req, res) => {
             name: "Persil 5kg",
             desc: "Persil 5kg Automatic Washing Pawder for color",
             price: 8000,
-            category: "Washing Powder",
+            category: "Washing Pawder",
             img: "persil.jpg"
         },
         {
             name: "Gillette Fusion 5",
             desc: "Man perfect shaver",
             price: 11000,
-            category: "Shaver",
+            category: "Soap",
             img: "GilletteFusion5.jpg"
         },
     ];
