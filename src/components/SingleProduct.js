@@ -36,6 +36,9 @@ function SingleProduct(props) {
                 <h3>
                     {props.product.desc}
                 </h3>
+                <span className="btn btn-warning">
+                    {props.product.category}
+                </span>
                 <h2 className="Price">
                     {props.product.price} ֏
                 </h2>

@@ -42,9 +42,12 @@ function Categories(props) {
             <div>
                 <ul>
                     {
-                        categories.map((category) => (
-                            <li>
-                                <button className="CategoryButton btn">
+                        categories.map((category, id) => (
+                            <li key={id}>
+                                <button 
+                                    className="CategoryButton btn" 
+                                    onClick={() => {props.changeCategory(category.name)}} 
+                                >
                                     <img src={`http://localhost:3000/media/Icons/${category.img}`} alt="Logo" />
                                     <span>{category.name}</span>
                                 </button>

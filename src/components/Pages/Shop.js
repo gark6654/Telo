@@ -7,13 +7,34 @@ import ProductsBox from '../ProductsBox';
 function Shop(props) {
     const Text = useContext(SiteText).content.pages.shop.filterPart; // ToCartForm part text sorted by language.
 
-    const [windowW, setWindowW] = useState(window.innerWidth); // UI For Filters collapse. 
+    // UI For Filters collapse.
+    const [windowW, setWindowW] = useState(window.innerWidth);
 
     useEffect(() => {
         window.addEventListener('resize', () => {
             setWindowW(window.innerWidth);
         });
     }, [props]);
+
+    // FIlters for show products.
+    const [filters, setFilters] = useState({
+        "category": null,
+        "maxPrice": null
+    });
+
+    function changeCat(category) {
+        setFilters({
+            "category": category,
+            "maxPrice": filters.maxPrice
+        });
+    }
+
+    function setMax(max) {
+        setFilters({
+            "category": filters.category,
+            "maxPrice": max
+        });
+    }
 
     return (
         <div className="container-fluid">
@@ -35,15 +56,15 @@ function Shop(props) {
                     </button> : ''
                 }
 
-                <aside 
-                    className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`} 
+                <aside
+                    className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`}
                     id="CollapseFilters"
                 >
-                    <Categories />
-                    <Filters />
+                    <Categories changeCategory={changeCat} />
+                    <Filters changeMax={setMax} />
                 </aside>
                 <div className="ProductsPart col-md">
-                    <ProductsBox />
+                    <ProductsBox filters={filters} />
                 </div>
             </div>
         </div>

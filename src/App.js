@@ -22,12 +22,6 @@ function App(props) {
     const [shopProducts, setShopProducts] = useState([]); // Already filtred product for send's to content.
     const [basketItems, setBasketItems] = useState([]); // Basket items for buy. :) :) :)
 
-    // FIlters for show products.
-    const [filters, setFilters] = useState({
-        "category": null,
-        "maxPrice": null
-    });
-
     // Setup products and basket.
     useEffect(() => {
         // Get products from server.
@@ -101,11 +95,6 @@ function App(props) {
         itemsForChange.splice(productId, 1);
 
         setBasketItems([...itemsForChange]);
-    }
-
-    // change products category for show.
-    function changeCategory(category) {
-        console.log(category);
     }
 
     return (

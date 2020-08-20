@@ -6,6 +6,7 @@ function Product(props) {
         "name": "",
         "img": "",
         "desc": "",
+        "category": "",
         "price": 0
     });
     const [zoom, setZoom] = useState(false);
@@ -15,8 +16,10 @@ function Product(props) {
             "name": props.name,
             "img": props.img,
             "desc": props.desc,
+            "category": props.cat,
             "price": props.price
         });
+        console.log(props);
     }, [props]);
 
     function zoomProduct() {

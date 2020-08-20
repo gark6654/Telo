@@ -21,6 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "startBack": "node server.js",
     "startBackDev": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
