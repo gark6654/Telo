@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SiteText } from '../App';
+import { SiteText } from '../../../App';
 
 function Categories(props) {
     const Text = useContext(SiteText).content.pages.shop.categoryTitle; // Filters part text sorted by language.

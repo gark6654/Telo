@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import Home from './Pages/Home';
-import Shop from './Pages/Shop';
-import Cart from './Pages/Cart';
+import Shop from './Pages/shop/Shop';
+import Cart from './Pages/cart/Cart';
 
 function Content(props) {
     return (

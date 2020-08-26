@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { SiteText, ToBasket } from '../App';
+import { SiteText, ToBasket } from '../../../App';
  
 function ToCartForm(props) {
     const Text = useContext(SiteText).content.toCartForm; // ToCartForm part text sorted by language.

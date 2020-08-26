@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { SiteProducts } from '../App';
+import { SiteProducts } from '../../../App';
 import Product from './Product';
 
 function ProductsBox(props) {

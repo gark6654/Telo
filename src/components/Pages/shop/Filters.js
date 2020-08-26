@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { SiteText } from '../App';
+import { SiteText } from '../../../App';
 
 function Filters(props) {
     const Text = useContext(SiteText).content.pages.shop.filterPart; // Filters part text sorted by language.

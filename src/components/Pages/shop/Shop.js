@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { SiteText } from '../../App';
-import Categories from '../Categories';
-import Filters from '../Filters';
-import ProductsBox from '../ProductsBox';
+import { SiteText } from '../../../App';
+import Categories from './Categories';
+import Filters from './Filters';
+import ProductsBox from './ProductsBox';
 
 function Shop(props) {
     const Text = useContext(SiteText).content.pages.shop.filterPart; // ToCartForm part text sorted by language.

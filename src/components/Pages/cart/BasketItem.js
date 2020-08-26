@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { SiteText, ChangeBasket, RemoveItem } from '../App';
+import { SiteText, ChangeBasket, RemoveItem } from '../../../App';
 
 function BasketItem(props) {
     const Text = useContext(SiteText).pages.cart.basket.basketItem;

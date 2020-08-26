@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { SiteText } from '../App';
+import { SiteText } from '../../../App';
 
 function OrderForm(props) {
     // Page Text sorted by selected language.

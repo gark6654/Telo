@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { SiteText, BasketItems } from '../../App';
-import OrderForm from './../OrderForm';
-import BasketItem from '../BasketItem';
+import { SiteText, BasketItems } from '../../../App';
+import OrderForm from './OrderForm';
+import BasketItem from './BasketItem';
 
 function Cart(props) {
     const Text = useContext(SiteText).content.pages.cart;
