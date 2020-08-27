@@ -17,8 +17,6 @@ function ProductsBox(props) {
             filtratedItems = filtratedItems.filter(item => item.price <= filters.maxPrice);
         }
 
-        console.log(filtratedItems);
-
         setShow(filtratedItems);
     }, [props]);
 
