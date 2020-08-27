@@ -40,7 +40,7 @@ app.post('/buy', (req, res) => {
 
 mongoClient.connect(db_URL, { useUnifiedTopology: true }, (err, client) => {
     if (err) {
-        return console.log('Error');
+        return console.log("Error, can't connect to mongoDB");
     }
     db = client.db('urartu');
 

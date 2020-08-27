@@ -6,6 +6,7 @@ function ProductsBox(props) {
     const [show, setShow] = useState([]);
     const products = useContext(SiteProducts);
 
+    const descLang = localStorage.getItem('lang');
     const filters = props.filters;
 
     useEffect(() => {
@@ -20,23 +21,34 @@ function ProductsBox(props) {
         setShow(filtratedItems);
     }, [props]);
 
-    
+
 
     return (
         <div className="row">
             {
-                show.length !== 0 ? 
-                show.map((product, id) => (
-                    <Product
-                        key={id}
-                        name={product.name}
-                        desc={product.desc}
-                        price={product.price}
-                        cat={product.category}
-                        img={product.img}
-                    />
-                )) 
-                : <h1>Not found.</h1>
+                show.length !== 0 ?
+                    show.map((product, id) => (
+                        <Product
+                            key={id}
+                            name={product.Name}
+                            desc={
+                                descLang === "ENG" ? product.Desc.EN :
+                                    descLang === "РУС" ? product.Desc.RU :
+                                        descLang === "ՀԱՅ" ? product.Desc.AM : ''
+                            }
+                            price={product.Price}
+                            cat={product.Category}
+                            img={product.Img}
+                            count={product.Count}
+                        />
+                    ))
+                    : <h1>
+                        {
+                            descLang === "ENG" ? "Not found items." :
+                                descLang === "РУС" ? "Не найдено товаров." :
+                                    descLang === "ՀԱՅ" ? "Ապրանքներ չեն գտնվել։" : 'ERROR 505'
+                        }
+                    </h1>
             }
         </div>
     )
