@@ -31,10 +31,13 @@ function ToCartForm(props) {
         <form className="ToCartBox" onSubmit={submit}>
             <div className="form-group">
                 <b>{Text.count}</b>
+                <br></br>
+                <span>{Text.available}: 40</span>
                 <input 
                     className="form-control" 
                     type="number" 
                     min={1} 
+                    max={props.product.maxCount}
                     onChange={getSum} 
                     defaultValue={count} 
                 />

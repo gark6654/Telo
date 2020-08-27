@@ -2,12 +2,14 @@ import React, { useEffect, useState, useContext } from 'react';
 import { SiteText, ChangeBasket, RemoveItem } from '../../../App';
 
 function BasketItem(props) {
-    const Text = useContext(SiteText).pages.cart.basket.basketItem;
+    const Text = useContext(SiteText).content.pages.cart.basket.basketItem;
     const change = useContext(ChangeBasket);
     const remove = useContext(RemoveItem);
 
     // UI
     const [isHover, setIsHover] = useState(false);
+    const descLang = localStorage.getItem('lang');
+    
     // Product data
     const product = props.product.product;
 
@@ -48,7 +50,11 @@ function BasketItem(props) {
                         {product.name}
                     </h3>
                     <p>
-                        {product.desc}
+                        {
+                            descLang === "РУС" ? product.desc.RU :
+                                descLang === "ՀԱՅ" ? product.desc.AM :
+                                    product.desc.EN
+                        }
                     </p>
                     <h4>
                         {product.price} ֏

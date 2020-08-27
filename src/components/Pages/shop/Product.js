@@ -7,9 +7,13 @@ function Product(props) {
         "img": "",
         "desc": "",
         "category": "",
-        "price": 0
+        "price": 0,
+        "maxCount": 0
     });
+
+    // UI
     const [zoom, setZoom] = useState(false);
+    const descLang = localStorage.getItem('lang');
 
     useEffect(() => {
         setInfo({
@@ -17,7 +21,8 @@ function Product(props) {
             "img": props.img,
             "desc": props.desc,
             "category": props.cat,
-            "price": props.price
+            "price": props.price,
+            "maxCount": props.count
         });
     }, [props]);
 
@@ -32,13 +37,19 @@ function Product(props) {
     return (
         <>
             <div className="Product col-lg-3 col-md-5 col-sm-5" onClick={zoomProduct}>
-                <h2>
-                    {info.name}
-                </h2>
+                <h3>
+                    {info.name} {/* Product Name */}
+                </h3>
+                {/* Product image */}
                 <img src={`http://localhost:3000/media/Products/${info.img}`} alt="prd" />
                 <label>
-                    {info.desc}
+                    {
+                        descLang === "РУС" ? info.desc.RU :
+                            descLang === "ՀԱՅ" ? info.desc.AM :
+                                info.desc.EN
+                    }
                 </label>
+                {/* Product Price */}
                 <h4 className="ProductPriceBox MoneySymbol">
                     {info.price} <span className="MoneySymbol">֏</span>
                 </h4>

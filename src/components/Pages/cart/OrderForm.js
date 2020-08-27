@@ -3,7 +3,7 @@ import { SiteText } from '../../../App';
 
 function OrderForm(props) {
     // Page Text sorted by selected language.
-    const Text = useContext(SiteText).pages.cart.orderForm;
+    const Text = useContext(SiteText).content.pages.cart.orderForm;
 
     const [firstName, setFirstName] = useState(null);
     const [lastName, setLastName] = useState(null);
@@ -92,7 +92,11 @@ function OrderForm(props) {
                         />
                         <label className="form-check-label" htmlFor="exampleRadios1">
                             {Text.form.sort.cash}
-                            <img src="http://localhost:3000/media/Icons/money.svg" width="30" alt="logo" /> 
+                            <img
+                                src="http://localhost:3000/media/Icons/money.svg"
+                                width="30"
+                                alt="logo"
+                            />
                         </label>
                     </div>
                     <div className="form-check">
@@ -107,7 +111,11 @@ function OrderForm(props) {
                         />
                         <label className="form-check-label" htmlFor="exampleRadios2">
                             {Text.form.sort.card}
-                            <img src="http://localhost:3000/media/Icons/credit-card.svg" width="30" alt="logo" /> 
+                            <img
+                                src="http://localhost:3000/media/Icons/credit-card.svg"
+                                width="30"
+                                alt="logo"
+                            />
                         </label>
                     </div>
                 </div>

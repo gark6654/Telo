@@ -19,7 +19,9 @@ const RemoveItem = React.createContext(null); // Remove item from bsaket.
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
     const [sortedText, setSortedText] = useState(Text.en); // Text is sorted to English by default. 
-    const [shopProducts, setShopProducts] = useState([]); // Already filtred product for send's to content.
+    
+    // Already filtred product for send's to content.
+    const [shopProducts, setShopProducts] = useState([]); 
     const [basketItems, setBasketItems] = useState([]); // Basket items for buy. :) :) :)
 
     // Setup products and basket.

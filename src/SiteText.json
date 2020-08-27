@@ -53,6 +53,7 @@
             },
             "toCartForm": {
                 "count": "Count",
+                "available": "Available",
                 "toCart": "Add To Basket"
             }
         },
@@ -120,6 +121,7 @@
             },
             "toCartForm": {
                 "count": "Количество",
+                "available": "Доступный",
                 "toCart": "Добавить в корзину"
             }
         },
@@ -187,6 +189,7 @@
             },
             "toCartForm": {
                 "count": "Քանակ",
+                "available": "Առկա",
                 "toCart": "Ավելացնել զամբյուղի մեջ"
             }
         },

@@ -4,6 +4,8 @@ import ToCartForm from './ToCartForm';
 function SingleProduct(props) {
     const outRef = useRef(null);
 
+    const descLang = localStorage.getItem('lang');
+    
     function collapseBox() {
         props.collapse();
     }
@@ -25,23 +27,27 @@ function SingleProduct(props) {
                 <button className="ExitButton" onClick={collapseBox}>
                     <img src="http://localhost:3000/media/Icons/cancel.svg" alt={"Logo"} />
                 </button>
-                <h1>
+                <h2>
                     {props.product.name}
-                </h1>
-                <img 
-                    className="SingleProductImg" 
-                    src={`http://localhost:3000/media/Products/${props.product.img}`} 
-                    alt="prd" 
+                </h2>
+                <img
+                    className="SingleProductImg"
+                    src={`http://localhost:3000/media/Products/${props.product.img}`}
+                    alt="prd"
                 />
-                <h3>
-                    {props.product.desc}
-                </h3>
+                <p>
+                    {
+                        descLang === "РУС" ? props.product.desc.RU :
+                            descLang === "ՀԱՅ" ? props.product.desc.AM :
+                                props.product.desc.EN
+                    }
+                </p>
                 <span className="btn btn-warning">
                     {props.product.category}
                 </span>
-                <h2 className="Price">
+                <h4 className="Price">
                     {props.product.price} ֏
-                </h2>
+                </h4>
                 <ToCartForm product={props.product} collapse={collapseBox} />
             </article>
         </div>

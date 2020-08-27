@@ -21,8 +21,6 @@ function ProductsBox(props) {
         setShow(filtratedItems);
     }, [props]);
 
-
-
     return (
         <div className="row">
             {
@@ -31,24 +29,23 @@ function ProductsBox(props) {
                         <Product
                             key={id}
                             name={product.Name}
-                            desc={
-                                descLang === "ENG" ? product.Desc.EN :
-                                    descLang === "РУС" ? product.Desc.RU :
-                                        descLang === "ՀԱՅ" ? product.Desc.AM : ''
-                            }
+                            desc={product.Desc}
                             price={product.Price}
                             cat={product.Category}
                             img={product.Img}
                             count={product.Count}
                         />
                     ))
-                    : <h1>
-                        {
-                            descLang === "ENG" ? "Not found items." :
+                    : // ELSE
+                    <div className="alert alert-info" role="alert">
+                        <h3>
+                            {
                                 descLang === "РУС" ? "Не найдено товаров." :
-                                    descLang === "ՀԱՅ" ? "Ապրանքներ չեն գտնվել։" : 'ERROR 505'
-                        }
-                    </h1>
+                                    descLang === "ՀԱՅ" ? "Ապրանքներ չեն գտնվել։" :
+                                        "Not found items."
+                            }
+                        </h3>
+                    </div>
             }
         </div>
     )
