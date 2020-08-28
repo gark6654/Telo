@@ -26,10 +26,22 @@ function NavBar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item ">
-                        <Link to="/" className="nav-link">{Text.navLinks.home}</Link>
+                        <Link
+                            to="/" className="nav-link">
+                                {Text.navLinks.home}
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/Shop/" className="nav-link">{Text.navLinks.shop}</Link>
+                        <Link
+                            to="/Shop/" className="nav-link">
+                                {Text.navLinks.shop}
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link
+                            to="/Order+Delivery/" className="nav-link">
+                                {Text.navLinks.orderInfo}
+                        </Link>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0" onSubmit={search}>

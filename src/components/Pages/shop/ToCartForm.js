@@ -32,7 +32,7 @@ function ToCartForm(props) {
             <div className="form-group">
                 <b>{Text.count}</b>
                 <br></br>
-                <span>{Text.available}: 40</span>
+                <span>{Text.available}: {props.product.maxCount}</span>
                 <input 
                     className="form-control" 
                     type="number" 

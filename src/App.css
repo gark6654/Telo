@@ -396,6 +396,11 @@ aside .Title {
     margin: auto 10px;
 }
 
+/* Order + Delivery page */
+.OrderAndDelivery img {
+    margin: auto 10px;
+}
+
 /* ======================================== FOOTER ======================================== */
 footer {
     position: relative;

@@ -6,13 +6,31 @@
             "navBar": {
                 "navLinks": {
                     "home": "Home",
-                    "shop": "Shop"
+                    "shop": "Shop",
+                    "orderInfo": "Order and Delivery"
                 },
                 "searchTitle": "Search"
             }
         },
         "content": {
             "pages": {
+                "orderDelivery": {
+                    "title": "Order and Delivery",
+                    "subTitle": "How to order from the site",
+                    "desc": "If you do not want to make an online order, then you can call the indicated number (055-97-79-39) and make purchases by phone․",
+                    "onlineOrder": {
+                        "title": "To do online order, you must complete the following steps.",
+                        "t1": "Select the product you want to buy from the list of products in our online store",
+                        "t2": "After selecting a product, to add it to your cart, you need to change the quantity to the quantity you need and click the «Add to basket» button.",
+                        "t3": "To do an order, click the shopping cart icon in the upper right corner of the site, and you will be taken to the shopping cart page with products already selected and added, where you can also change the quantity of goods․",
+                        "t4": "Fill in the Name, Surname, Phone number and all other fields, click the «Buy» button. The site is not responsible for incorrect online orders and payments, Please fill in the data carefully.",
+                        "t5": "After clicking the «Buy» button, our operators will contact you to confirm the order ․"
+                    },
+                    "orderTasks": {
+                        "title": "Delivery Terms",
+                        "desc": "Delivery is carried out only to the city of Yerevan. The cost of delivery is 500 AMD, but for purchases over 10000 AMD, delivery is free. For bulk orders, special conditions and prices apply."
+                    }
+                },
                 "shop": {
                     "categoryTitle": "Category",
                     "filterPart": {
@@ -74,13 +92,31 @@
             "navBar": {
                 "navLinks": {
                     "home": "Главная",
-                    "shop": "Магазин"
+                    "shop": "Магазин",
+                    "orderInfo": "Заказ и Доставка"
                 },
                 "searchTitle": "Поиск"
             }
         },
         "content": {
             "pages": {
+                "orderDelivery": {
+                    "title": "Заказ и Доставка",
+                    "subTitle": "Как сделать заказ с сайта.",
+                    "desc": "Если вы не хотите сделать онлайн заказ то вы  можете позвонить по указанному номеру  (055-97-79-39) и совершать покупки по телефону․",
+                    "onlineOrder": {
+                        "title": "Чтобы сделать онлайн-заказ, необходимо выполнить следующие шаги",
+                        "t1": "Выберите товар, который хотите купить, из списка товаров в нашем интернет-магазине.",
+                        "t2": "После выбора товара, чтобы добавить его в корзину, вам необходимо изменить количество на нужное вам количество и нажать кнопку «Добавить в корзину».",
+                        "t3": "Чтобы сделать заказ, щелкните значок корзины покупок в правом верхнем углу сайта, и вы перейдете на страницу корзины покупок с уже выбранными и добавленными продуктами, где вы тоже можете изменить количество товара ․",
+                        "t4": "Заполните Имя, Фамилия, Номер телефона и все остальные поля нажмите кнопку «Купить». Сайт не несет ответственности за неправильно оформленные онлайн-заказы и оплаты, Пожалуйста заполняйте данные внимательно",
+                        "t5": "После нажатия кнопки «Купить» наши операторы свяжутся с вами для подтверждения заказа ․"
+                    },
+                    "orderTasks": {
+                        "title": "Условия доставки",
+                        "desc": "Доставка осуществляется только в город Ереван.Стоимость доставки составляет 500 драм, но при покупках на сумму более 10000 драм доставка осуществляется бесплатно. При оптовых заказах действуют особые условия և цены."
+                    }
+                },
                 "shop": {
                     "categoryTitle": "Категория",
                     "filterPart": {
@@ -142,13 +178,31 @@
             "navBar": {
                 "navLinks": {
                     "home": "Գլխավոր",
-                    "shop": "Խանութ"
+                    "shop": "Խանութ",
+                    "orderInfo": "Պատվեր և առաքում"
                 },
                 "searchTitle": "Փնտրել"
             }
         },
         "content": {
             "pages": {
+                "orderDelivery": {
+                    "title": "Պատվեր եւ առաքում",
+                    "subTitle": "Ինչպես Պատվիրել Կայքից",
+                    "desc": "Եթե չեք ցանկանում կայքից օնլայն պատվել կատարել կարող եք զանգահարել նշված (055-97-79-39) հեռախոսահամարով և գնունմերը կատարել զանգի միջոցով․",
+                    "onlineOrder": {
+                        "title": "Օնլայն պատվեր կատարելու համար անհրաժեշտ են հետևյալ քայլերը․",
+                        "t1": "Ընտրեք ապրանքը որը ցանկանում եք գնել մեր օնլայն խանութի ապրանքների ցուցակից.",
+                        "t2": "Ապրանքի ընտրությունից հետո այն զամբյուղում ավելացնելու համար անհրաժեշտ է փոփոխել քանակությունը Ձեզ անհրաժեշտ քանակության չափով եւ սեղմել «Ավելացնել զամբյուղի մեջ» կոճակը.",
+                        "t3": "Պատվիրելու համար սեղմեք կայքի վերեւի աջ հատվածում գտվող զամբյուղի նշանի վրա, ինչը Ձեզ կտանի Ձեր զամբյուղի էջը՝ արդեն իսկ ընտրված եւ ավելացված ապրանքներով, որտեղ դու ևս կարող եք փոփխել ապրանքի քանակը․",
+                        "t4": "Լրացրեք Անուն, Ազնգանուն, հեռախոսահամար և մնացած բոլոր դաշտերը եւ սեղմեք «Գնել» կոճակը․Կայքը պատասխանատվություն չի կրում սխալ լրացված և առցանց վճարված պատվերների համար հետևաբար խնդրում ենք ուշադիր լրացնել տվյալները.",
+                        "t5": "«Գնել» կոճակը սեղմելուց հետո Ձեզ հետ կկապնվեն մեր օպերատորները պատվերը հաստատելու համար․"
+                    },
+                    "orderTasks": {
+                        "title": "Առաքման Պայմանները",
+                        "desc": "Առաքումը կատարվում է միայն Երեւան քաղաքի տարածքով.Առաքման արժեքը կազմում է 500 դրամ, սակայն 10000 դրամից ավել գնունմերի դեպքում առաքումը կատարվում է անվճար․Մեծածախ պատվերների դեպքում գործում են հատուկ պայմաններ և գներ։"
+                    }
+                },
                 "shop": {
                     "categoryTitle": "Կատեգորիաներ",
                     "filterPart": {

@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from './Pages/Home';
 import Shop from './Pages/shop/Shop';
 import Cart from './Pages/cart/Cart';
+import OrderAndDelivery from './Pages/OrderAndDelivery';
 
 function Content(props) {
     return (
@@ -12,6 +13,9 @@ function Content(props) {
                 renders the first one that matches the current URL. 
             */}
             <Switch>
+                <Route path="/Order+Delivery/">
+                    <OrderAndDelivery />
+                </Route>
                 <Route path="/Shop/">
                     <Shop />
                 </Route>
