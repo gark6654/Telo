@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import ToCartForm from './ToCartForm';
+import { Cancel } from '../../../Icons';
+
 
 function SingleProduct(props) {
     const outRef = useRef(null);
 
     const descLang = localStorage.getItem('lang');
-    
+
     function collapseBox() {
         props.collapse();
     }
@@ -25,7 +27,7 @@ function SingleProduct(props) {
         <div ref={outRef} className="SingleProductWindow container-fluid">
             <article className="col-md-5">
                 <button className="ExitButton" onClick={collapseBox}>
-                    <img src="http://localhost:3000/media/Icons/cancel.svg" alt={"Logo"} />
+                    <img src={Cancel} alt="icon" />
                 </button>
                 <h2>
                     {props.product.name}
@@ -33,7 +35,7 @@ function SingleProduct(props) {
                 <img
                     className="SingleProductImg"
                     src={`http://localhost:3000/media/Products/${props.product.img}`}
-                    alt="prd"
+                    alt="logo"
                 />
                 <p>
                     {

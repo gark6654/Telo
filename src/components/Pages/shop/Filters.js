@@ -2,7 +2,8 @@ import React, { useState, useContext } from 'react';
 import { SiteText } from '../../../App';
 
 function Filters(props) {
-    const Text = useContext(SiteText).content.pages.shop.filterPart; // Filters part text sorted by language.
+    // Filters part text sorted by language.
+    const Text = useContext(SiteText).content.pages.shop.filterPart; 
     const [maxPrice, setMaxPrice] = useState(100000);
 
     // Set max price value from input or slider(range).

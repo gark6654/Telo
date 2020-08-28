@@ -3,9 +3,12 @@ import { SiteText } from '../../../App';
 import Categories from './Categories';
 import Filters from './Filters';
 import ProductsBox from './ProductsBox';
+import { Filter } from '../../../Icons';
+
 
 function Shop(props) {
-    const Text = useContext(SiteText).content.pages.shop.filterPart; // ToCartForm part text sorted by language.
+    // ToCartForm part text sorted by language.
+    const Text = useContext(SiteText).content.pages.shop.filterPart;
 
     // UI For Filters collapse.
     const [windowW, setWindowW] = useState(window.innerWidth);
@@ -50,7 +53,7 @@ function Shop(props) {
                     >
                         <label>
                             <span>
-                                <img src="http://localhost:3000/media/Icons/Filter.svg" alt="Logo" width="20" />
+                                <img src={Filter} alt="icon" width="20" />
                             </span> {Text.title}
                         </label>
                     </button> : ''

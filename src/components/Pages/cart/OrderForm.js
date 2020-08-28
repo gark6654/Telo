@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { SiteText } from '../../../App';
+import { Money, CreditCard } from '../../../Icons';
 
 function OrderForm(props) {
     // Page Text sorted by selected language.
@@ -92,11 +93,7 @@ function OrderForm(props) {
                         />
                         <label className="form-check-label" htmlFor="exampleRadios1">
                             {Text.form.sort.cash}
-                            <img
-                                src="http://localhost:3000/media/Icons/money.svg"
-                                width="30"
-                                alt="logo"
-                            />
+                            <img src={Money} width="30" alt="icon" />
                         </label>
                     </div>
                     <div className="form-check">
@@ -111,11 +108,7 @@ function OrderForm(props) {
                         />
                         <label className="form-check-label" htmlFor="exampleRadios2">
                             {Text.form.sort.card}
-                            <img
-                                src="http://localhost:3000/media/Icons/credit-card.svg"
-                                width="30"
-                                alt="logo"
-                            />
+                            <img src={CreditCard} width="30" alt="icon" />
                         </label>
                     </div>
                 </div>

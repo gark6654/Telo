@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { SiteText } from '../../App';
-import Shop from '../../media/Icons/Shop.svg';
-import Order from '../../media/Icons/Order.svg';
-import Delivery from '../../media/Icons/Delivery.svg';
 
+// Site icons.
+import {Shop, Order, Delivery} from '../../Icons';
 
 function OrderAndDelivery(props) {
     const Text = useContext(SiteText).content.pages.orderDelivery;

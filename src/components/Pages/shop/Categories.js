@@ -2,7 +2,9 @@ import React, { useContext } from 'react';
 import { SiteText } from '../../../App';
 
 function Categories(props) {
-    const Text = useContext(SiteText).content.pages.shop.categoryTitle; // Filters part text sorted by language.
+    // Filters part text sorted by language.
+    const Text = useContext(SiteText).content.pages.shop.categoryTitle; 
+
     const categories = [
         {
             "name": "Washing Pawder",
@@ -48,7 +50,10 @@ function Categories(props) {
                                     className="CategoryButton btn" 
                                     onClick={() => {props.changeCategory(category.name)}} 
                                 >
-                                    <img src={`http://localhost:3000/media/Icons/${category.img}`} alt="Logo" />
+                                    <img 
+                                        src={`http://localhost:3000/media/Icons/${category.img}`} 
+                                        alt="icon" 
+                                    />
                                     <span>{category.name}</span>
                                 </button>
                             </li>
