@@ -9,6 +9,7 @@ function Cart(props) {
 
     const [cartItems, setCartItems] = useState([]);
     const [fullPrice, setFullPrice] = useState(0);
+    const [freeDelivery, setFreeDelivery] = useState(false);
 
     useEffect(() => {
         const sessionItems = BasketProducts;
@@ -23,6 +24,16 @@ function Cart(props) {
         sessionItems.map(item => {
             return amount += item.payPrice;
         });
+
+        // Delivery amount. 
+        if (amount < 10000) {
+            setFreeDelivery(false);
+            amount += 500;
+        }
+        else {
+            setFreeDelivery(true);
+        }
+
         setFullPrice(amount);
     }, [cartItems]);
 
@@ -56,6 +67,9 @@ function Cart(props) {
                     {cartItems.map((item, key) => (
                         <BasketItem key={key} id={key} product={item} />
                     ))}
+
+                    {!freeDelivery ? <h4>{Text.Delivery}: 500 ֏</h4> : ''}
+                   
                     <h3 className="FullAmount">{Text.pay}: {fullPrice} ֏</h3>
                     <OrderForm payAmount={fullPrice} buy={buyBasket} />
                 </div>

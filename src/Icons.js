@@ -10,6 +10,7 @@ import Money from './media/Icons/Money.svg';
 import Order from './media/Icons/Order.svg';
 import Phone from './media/Icons/Phone.svg';
 import Shop from './media/Icons/Shop.svg';
+import Vip from './media/Icons/Vip.svg';
 
 export {
     Cancel,
@@ -22,5 +23,6 @@ export {
     Money,
     Order,
     Phone,
-    Shop
+    Shop,
+    Vip
 };

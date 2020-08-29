@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { SiteText } from '../../App';
 
 // Site icons.
-import {Shop, Order, Delivery} from '../../Icons';
+import { Shop, Order, Delivery, Vip } from '../../Icons';
 
 function OrderAndDelivery(props) {
     const Text = useContext(SiteText).content.pages.orderDelivery;
@@ -50,6 +50,12 @@ function OrderAndDelivery(props) {
                         <p>
                             {Text.orderTasks.desc}
                         </p>
+                        <div className="alert alert-primary">
+                            <h4>
+                                {Text.bulkTitle}
+                                <img src={Vip} alt="icon" width="40" height="40" />
+                            </h4>
+                        </div>
                     </article>
                 </div>
             </div>
