@@ -9,7 +9,7 @@ function BasketItem(props) {
     // UI
     const [isHover, setIsHover] = useState(false);
     const descLang = localStorage.getItem('lang');
-    
+
     // Product data
     const product = props.product.product;
 
@@ -61,12 +61,14 @@ function BasketItem(props) {
                     </h4>
                 </div>
             </div>
+            <p>{Text.available + ': ' + product.maxCount}</p>
             <div className="form">
                 <span>{Text.inputCount}</span>
                 <input
                     className="form-control"
                     type="number"
                     min="1"
+                    max={product.maxCount}
                     defaultValue={count}
                     onChange={changeCount}
                 />

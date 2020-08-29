@@ -48,6 +48,7 @@
                         "basketItem": {
                             "inputCount": "Count",
                             "inputAmount": "Amount",
+                            "available": "Available",
                             "remove": "Remove from basket"
                         }
                     },
@@ -136,6 +137,7 @@
                         "basketItem": {
                             "inputCount": "Количество",
                             "inputAmount": "Сумма",
+                            "available": "Доступный",
                             "remove": "Удалить из корзины"
                         }
                     },
@@ -224,6 +226,7 @@
                         "basketItem": {
                             "inputCount": "Քանակ",
                             "inputAmount": "Արժեք",
+                            "available": "Առկա",
                             "remove": "Հեռացնել զամբյուղից"
                         }
                     },

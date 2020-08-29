@@ -12,10 +12,10 @@ function ProductsBox(props) {
     useEffect(() => {
         var filtratedItems = products;
         if (filters.category) {
-            filtratedItems = filtratedItems.filter(item => item.category === filters.category);
+            filtratedItems = filtratedItems.filter(item => item.Category == filters.category);
         }
         if (filters.maxPrice) {
-            filtratedItems = filtratedItems.filter(item => item.price <= filters.maxPrice);
+            filtratedItems = filtratedItems.filter(item => item.Price <= filters.maxPrice);
         }
 
         setShow(filtratedItems);
@@ -42,7 +42,7 @@ function ProductsBox(props) {
                             {
                                 descLang === "РУС" ? "Не найдено товаров." :
                                     descLang === "ՀԱՅ" ? "Ապրանքներ չեն գտնվել։" :
-                                        "Not found items."
+                                            "Not found items."
                             }
                         </h3>
                     </div>

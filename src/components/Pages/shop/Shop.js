@@ -5,7 +5,6 @@ import Filters from './Filters';
 import ProductsBox from './ProductsBox';
 import { Filter } from '../../../Icons';
 
-
 function Shop(props) {
     // ToCartForm part text sorted by language.
     const Text = useContext(SiteText).content.pages.shop.filterPart;
