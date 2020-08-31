@@ -15,13 +15,14 @@ const changeLang = React.createContext(null); // Change language.
 const ToBasket = React.createContext(null); // Add item to basket.
 const ChangeBasket = React.createContext(null); // Change item count in basket.
 const RemoveItem = React.createContext(null); // Remove item from bsaket.
+const ClearBasket = React.createContext(); // Remove all basket items.
 
 function App(props) {
     const [lang, setLang] = useState('EN'); // Default language is English. 
     const [sortedText, setSortedText] = useState(Text.en); // Text is sorted to English by default. 
-    
+
     // Already filtred product for send's to content.
-    const [shopProducts, setShopProducts] = useState([]); 
+    const [shopProducts, setShopProducts] = useState([]);
     const [basketItems, setBasketItems] = useState([]); // Basket items for buy. :) :) :)
 
     // Setup products and basket.
@@ -99,6 +100,11 @@ function App(props) {
         setBasketItems([...itemsForChange]);
     }
 
+    // Remove all basket items.
+    function clearBasket() {
+        setBasketItems([]);
+    }
+
     return (
         <main>
             <SiteText.Provider value={sortedText}>
@@ -111,7 +117,9 @@ function App(props) {
                             <ToBasket.Provider value={ToCart}>
                                 <ChangeBasket.Provider value={changeCount}>
                                     <RemoveItem.Provider value={removeItem}>
-                                        <Content />
+                                        <ClearBasket.Provider value={clearBasket}>
+                                            <Content />
+                                        </ClearBasket.Provider>
                                     </RemoveItem.Provider>
                                 </ChangeBasket.Provider>
                             </ToBasket.Provider>
@@ -126,6 +134,13 @@ function App(props) {
 
 // Functions was created from context.
 export {
-    SiteProducts, BasketItems, SiteText, changeLang, ToBasket, ChangeBasket, RemoveItem
+    SiteProducts, 
+    BasketItems, 
+    SiteText, 
+    changeLang, 
+    ToBasket, 
+    ChangeBasket, 
+    RemoveItem,
+    ClearBasket
 };
 export default App;

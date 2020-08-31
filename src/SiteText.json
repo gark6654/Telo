@@ -42,7 +42,9 @@
                     }
                 },
                 "cart": {
+                    "success": "Thank you for your purchase, our operators will contact you shortly to confirm your order.",
                     "empty": "Basket is empty",
+                    "removeAll": "Remove all items",
                     "basket": {
                         "title": "Basket Items",
                         "basketItem": {
@@ -131,7 +133,9 @@
                     }
                 },
                 "cart": {
+                    "success": "Благодарим за покупку, наши операторы свяжутся с вами в ближайшее время для подтверждения вашего заказа.",
                     "empty": "Корзина пуста",
+                    "removeAll": "Удалить все предметы",
                     "basket": {
                         "title": "Корзина товаров",
                         "basketItem": {
@@ -220,7 +224,9 @@
                     }
                 },
                 "cart": {
+                    "success": "Շնորհակալություն գնումների համար, մեր օպերատորները շուտով կկապվեն ձեզ հետ՝ ձեր պատվերը հաստատելու համար",
                     "empty": "Զամբյուղը դատարկ է",
+                    "removeAll": "Հեռացնել բոլոր ապրանքները",
                     "basket": {
                         "title": "Զամբյուղի ապրանքները",
                         "basketItem": {

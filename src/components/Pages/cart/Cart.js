@@ -1,22 +1,26 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { SiteText, BasketItems } from '../../../App';
+import { SiteText, BasketItems, ClearBasket } from '../../../App';
 import OrderForm from './OrderForm';
 import BasketItem from './BasketItem';
 
 function Cart(props) {
     const Text = useContext(SiteText).content.pages.cart;
     const BasketProducts = useContext(BasketItems);
+    const clearBasket = useContext(ClearBasket);
 
     const [cartItems, setCartItems] = useState([]);
     const [fullPrice, setFullPrice] = useState(0);
     const [freeDelivery, setFreeDelivery] = useState(false);
+
+    // UI
+    const [order, setOrder] = useState(true);
 
     useEffect(() => {
         const sessionItems = BasketProducts;
         if (sessionItems.length !== 0) {
             setCartItems(sessionItems);
         }
-    });
+    }, [props]);
 
     useEffect(() => {
         const sessionItems = BasketProducts;
@@ -54,23 +58,38 @@ function Cart(props) {
                     'Content-Type': 'application/json'
                 }
             })
+
+        setOrder(true);
+        clear();
+    }
+
+    function clear() {
+        setCartItems([]);
+        clearBasket();
     }
 
     return (
         <div className="CartBox container">
             {cartItems.length === 0 ? (
-                <div className="alert alert-info" role="alert">
-                    <h1>{Text.empty}</h1>
-                </div>
+                order ? // If order show thanks.
+                    <div className="alert alert-success" role="alert">
+                        <h1>{Text.success}</h1>
+                    </div>
+                    : // Else
+                    <div className="alert alert-info" role="alert">
+                        <h1>{Text.empty}</h1>
+                    </div>
             ) : // Else
                 <div>
                     <h2>{Text.basket.title}</h2>
                     {cartItems.map((item, key) => (
                         <BasketItem key={key} id={key} product={item} />
                     ))}
-
+                    <button className="btn btn-danger" onClick={clear}>
+                        {Text.removeAll}
+                    </button>
                     {!freeDelivery ? <h4>{Text.Delivery}: 500 ֏</h4> : ''}
-                   
+
                     <h3 className="FullAmount">{Text.pay}: {fullPrice} ֏</h3>
                     <OrderForm payAmount={fullPrice} buy={buyBasket} />
                 </div>

@@ -33,9 +33,26 @@ app.get('/items', (req, res) => {
 });
 
 app.post('/buy', (req, res) => {
+    let id;
     const data = req.body.data;
-    console.log(data);
-    res.send('Post request for buy basket');
+
+    // Get db orders count for identification.
+    db.collection('orders').find().count((err, count) => {
+        if (err) {
+            return res.sendStatus(500);
+        }
+        id = count + 1;
+
+        // Insert document to DB before identification.
+        db.collection('orders').insertOne({ _id: id, data }, (err) => {
+            if (err) {
+                res.sendStatus(500);
+                return console.error(err);
+            }
+
+            res.send('Post request for buy basket');
+        });
+    });
 });
 
 mongoClient.connect(db_URL, { useUnifiedTopology: true }, (err, client) => {
