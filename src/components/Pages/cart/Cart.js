@@ -41,6 +41,7 @@ function Cart(props) {
         const data = {
             customer: clientInfo,
             items: BasketProducts,
+            freeDelivery: freeDelivery,
             pay: fullPrice
         };
         fetch("http://localhost:5000/buy",

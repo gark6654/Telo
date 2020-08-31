@@ -24,9 +24,6 @@ function OrderForm(props) {
             };
             props.buy(data);
         }
-        else {
-            console.log('Error');
-        }
     }
 
     return (

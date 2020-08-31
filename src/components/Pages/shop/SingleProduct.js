@@ -44,9 +44,9 @@ function SingleProduct(props) {
                                 props.product.desc.EN
                     }
                 </p>
-                <span className="btn btn-warning">
+                {/* <span className="btn btn-warning">
                     {props.product.category}
-                </span>
+                </span> */}
                 <h4 className="Price">
                     {props.product.price} ֏
                 </h4>
