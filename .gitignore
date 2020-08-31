@@ -2,6 +2,7 @@
 
 # BACK-END dependencies
 back-end/node_modules
+back-end/MongoConfig.json
 
 # dependencies
 /node_modules

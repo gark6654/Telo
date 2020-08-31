@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoClient = require('mongodb').MongoClient;
+const MongoConfig = require('./MongoConfig.json');
 const bodyParser = require('body-parser');
 
-const db_URL = 'mongodb+srv://gark6654:jokerxan3808@cluster0.pp4gp.mongodb.net/';
+const db_URL = `mongodb+srv://${MongoConfig.user}:${MongoConfig.pass}@cluster0.pp4gp.mongodb.net/`;
 
 var db;
 
