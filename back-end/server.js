@@ -34,8 +34,8 @@ app.get('/items', (req, res) => {
 });
 
 app.post('/buy', (req, res) => {
-    let id;
     const data = req.body.data;
+    let id;
 
     // Get db orders count for identification.
     db.collection('orders').find().count((err, count) => {

@@ -13,7 +13,7 @@ function Cart(props) {
     const [freeDelivery, setFreeDelivery] = useState(false);
 
     // UI
-    const [order, setOrder] = useState(true);
+    const [order, setOrder] = useState(false);
 
     useEffect(() => {
         const sessionItems = BasketProducts;
@@ -72,8 +72,9 @@ function Cart(props) {
         <div className="CartBox container">
             {cartItems.length === 0 ? (
                 order ? // If order show thanks.
-                    <div className="alert alert-success" role="alert">
+                    <div className="successBox alert alert-success" role="alert">
                         <h1>{Text.success}</h1>
+                        <p style={{'fontSize': 100 + 'px'}}>&#128540;&#128527;</p>
                     </div>
                     : // Else
                     <div className="alert alert-info" role="alert">

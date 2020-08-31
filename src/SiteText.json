@@ -93,7 +93,7 @@
     "ru": {
         "_comment": "Русский",
         "header": {
-            "basketTitle": "Карзина",
+            "basketTitle": "Корзина",
             "navBar": {
                 "navLinks": {
                     "home": "Главная",
