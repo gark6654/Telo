@@ -1,16 +1,29 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# BACK-END dependencies
-back-end/node_modules
-back-end/MongoConfig.json
+# =================== FRONT-END ===================
 
 # dependencies
 front-end/node_modules
 front-end/.pnp
 front-end/.pnp.js
 
+# testing
+front-end/coverage
+
 # production
 front-end/build
+
+# =================== BACK-END ===================
+
+# dependencies
+back-end/node_modules
+back-end/.pnp
+back-end/.pnp.js
+
+# =================== ADMIN ===================
+admin/node_modules
+admin/.pnp
+admin/.pnp.js
 
 # misc
 .DS_Store
