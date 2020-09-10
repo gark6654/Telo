@@ -6,7 +6,6 @@ const MongoConfig = require('./MongoConfig.json');
 const bodyParser = require('body-parser');
 
 const db_URL = `mongodb+srv://${MongoConfig.user}:${MongoConfig.pass}@cluster0.pp4gp.mongodb.net/`;
-
 var db;
 
 app.use(cors());
@@ -58,7 +57,6 @@ app.post('/buy', (req, res) => {
 
 app.post('/add_product', (req, res) => {
     const item = req.body.item;
-    console.log(item);
 
     // Insert document to DB before identification.
     db.collection('products').insertOne({
@@ -71,13 +69,12 @@ app.post('/add_product', (req, res) => {
     }, (err) => {
         if (err) {
             res.sendStatus(500);
+            console.log("Can't insert item to DB");
             return console.error(err);
         }
 
-        res.send('Post request for add new products ');
+        return res.send('Post request for add new products ');
     });
-
-    res.send("Item is added");
 });
 
 mongoClient.connect(db_URL, { useUnifiedTopology: true }, (err, client) => {
