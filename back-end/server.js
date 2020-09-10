@@ -56,6 +56,30 @@ app.post('/buy', (req, res) => {
     });
 });
 
+app.post('/add_product', (req, res) => {
+    const item = req.body.item;
+    console.log(item);
+
+    // Insert document to DB before identification.
+    db.collection('products').insertOne({
+        Name: item.name,
+        Desc: item.description,
+        Category: item.category,
+        Price: item.price,
+        Img: item.img,
+        Count: item.count
+    }, (err) => {
+        if (err) {
+            res.sendStatus(500);
+            return console.error(err);
+        }
+
+        res.send('Post request for add new products ');
+    });
+
+    res.send("Item is added");
+});
+
 mongoClient.connect(db_URL, { useUnifiedTopology: true }, (err, client) => {
     if (err) {
         return console.log("Error, can't connect to mongoDB");
