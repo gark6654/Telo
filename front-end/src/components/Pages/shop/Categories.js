@@ -7,7 +7,7 @@ function Categories(props) {
 
     const categories = [
         {
-            "name": "Washing Pawder",
+            "name": "Washing Powder",
             "img": "powder.svg"
         },
         {

@@ -44,9 +44,11 @@ function Product(props) {
                 <img src={`http://localhost:3000/media/Products/${info.img}`} alt="prd" />
                 <label>
                     {
-                        descLang === "РУС" ? info.desc.RU :
-                            descLang === "ՀԱՅ" ? info.desc.AM :
-                                info.desc.EN
+                        info.desc ?
+                            descLang === "РУС" ? info.desc.RU.substring(0, 80) + ' [больше...]' :
+                                descLang === "ՀԱՅ" ? info.desc.AM.substring(0, 80) + ' [ավելին...]' :
+                                    info.desc.EN.substring(0, 75) + ' [more...]'
+                            : ''
                     }
                 </label>
                 {/* Product Price */}

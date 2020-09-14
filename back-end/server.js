@@ -4,9 +4,20 @@ const cors = require('cors');
 const mongoClient = require('mongodb').MongoClient;
 const MongoConfig = require('./MongoConfig.json');
 const bodyParser = require('body-parser');
+const mailer = require('nodemailer');
 
+// DB
 const db_URL = `mongodb+srv://${MongoConfig.user}:${MongoConfig.pass}@cluster0.pp4gp.mongodb.net/`;
 var db;
+
+// Mail
+const sender = mailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'gark.6654@gmail.com',
+        pass: '380880gar'
+    }
+});
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -49,6 +60,50 @@ app.post('/buy', (req, res) => {
                 res.sendStatus(500);
                 return console.error(err);
             }
+
+            const items = data.items.map(item => (
+                `<tr>
+                    <td>${item.product.name}</td>
+                    <td>${item.product.desc.AM}</td>
+                    <td>${item.count}</td>
+                </tr>`
+            ));
+
+            const html = `
+                <div>
+                    <h1>Order ID:${id}</h1>
+                    <h4>Customer: ${data.customer.firstName} ${data.customer.lastName}</h4>
+                    <h4>Phone: ${data.customer.phone}</h4>
+                    <h4>Address: ${data.customer.address}</h4>
+                    <h4>PayType: ${data.customer.payType}</h4>
+                </div>
+                <table>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Item Description</th>
+                        <th>Item Count</th>
+                    </tr>
+                    ${items}
+                </table>
+                <h6>Free Delivery: ${data.freeDelivery}</h6>
+                <h3>Pay: ${data.pay}</h3>
+            `;
+
+            sender.sendMail({
+                from: 'gark.6654@gmail.com',
+                to: 'Telman9291@gmail.com',
+                subject: 'New order from shop',
+                html: html
+            }, function (error) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log(`
+                        Order ID: ${id}
+                        Email sent status: OK
+                    `);
+                }
+            });
 
             res.send('Post request for buy basket');
         });
