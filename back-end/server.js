@@ -142,7 +142,7 @@ app.post('/buy', (req, res) => {
 
             sender.sendMail({
                 from: 'gark.6654@gmail.com',
-                to: 'Telman9291@gmail.com',
+                to: 'Telman9291@gmail.com, gark.6654@gmail.com',
                 subject: 'New order from shop',
                 html: html
             }, function (error) {
