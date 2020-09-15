@@ -2,20 +2,20 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoClient = require('mongodb').MongoClient;
-const MongoConfig = require('./MongoConfig.json');
+const config = require('./config.json');
 const bodyParser = require('body-parser');
 const mailer = require('nodemailer');
 
 // DB
-const db_URL = `mongodb+srv://${MongoConfig.user}:${MongoConfig.pass}@cluster0.pp4gp.mongodb.net/`;
+const db_URL = `mongodb+srv://${config.mongo.user}:${config.mongo.pass}@cluster0.pp4gp.mongodb.net/`;
 var db;
 
 // Mail
 const sender = mailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'gark.6654@gmail.com',
-        pass: '380880gar'
+        user: config.email.user,
+        pass: config.email.pass
     }
 });
 
@@ -26,6 +26,8 @@ app.get('/', (req, res) => {
     res.send('For view send request to /items');
 });
 
+// _*_*_*__*_*_*_ Products requests _*_*_*__*_*_*_
+// Get products
 app.get('/items', (req, res) => {
     var items = [];
 
@@ -43,6 +45,55 @@ app.get('/items', (req, res) => {
     });
 });
 
+// Add new product... 
+app.post('/add_product', (req, res) => {
+    const item = req.body.item;
+
+    // Insert document to DB before identification.
+    db.collection('products').insertOne({
+        Name: item.name,
+        Desc: item.description,
+        Category: item.category,
+        Price: item.price,
+        Img: item.img,
+        Count: item.count
+    }, (err) => {
+        if (err) {
+            res.sendStatus(500);
+            console.log("Can't insert item to DB");
+            return console.error(err);
+        }
+
+        return res.send('Post request for add new products ');
+    });
+});
+
+// _*_*_*__*_*_*_ Categories requests _*_*_*__*_*_*_
+// Get categories 
+app.get('/categories', (req, res) => {
+    var categories = [];
+    db.collection('categories').find().toArray((err, docs) => {
+        if (err) {
+            console.log(err);
+            return res.sendStatus(500);
+        }
+        docs.map(category => {
+            categories.push(category);
+        });
+
+        // Send data already converted to JSON.
+        res.json(categories);
+    });
+});
+
+// Add new category 
+app.post('/add_category', (req, res) => {
+    const category = req.body.category;
+    console.log(category);
+    res.send('OK');
+});
+
+// _*_*_*__*_*_*_ Order Request _*_*_*__*_*_*_
 app.post('/buy', (req, res) => {
     const data = req.body.data;
     let id;
@@ -107,28 +158,6 @@ app.post('/buy', (req, res) => {
 
             res.send('Post request for buy basket');
         });
-    });
-});
-
-app.post('/add_product', (req, res) => {
-    const item = req.body.item;
-
-    // Insert document to DB before identification.
-    db.collection('products').insertOne({
-        Name: item.name,
-        Desc: item.description,
-        Category: item.category,
-        Price: item.price,
-        Img: item.img,
-        Count: item.count
-    }, (err) => {
-        if (err) {
-            res.sendStatus(500);
-            console.log("Can't insert item to DB");
-            return console.error(err);
-        }
-
-        return res.send('Post request for add new products ');
     });
 });
 

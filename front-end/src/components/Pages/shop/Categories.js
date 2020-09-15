@@ -1,40 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { SiteText } from '../../../App';
 
 function Categories(props) {
     // Filters part text sorted by language.
-    const Text = useContext(SiteText).content.pages.shop.categoryTitle; 
+    const Text = useContext(SiteText).content.pages.shop.categoryTitle;
+    const SiteLang = localStorage.getItem('lang');
 
-    const categories = [
-        {
-            "name": "Washing Powder",
-            "img": "powder.svg"
-        },
-        {
-            "name": "Washing Gel",
-            "img": "laundry-service.svg"
-        },
-        {
-            "name": "Soap",
-            "img": "Soap.svg"
-        },
-        {
-            "name": "Liquid Soap",
-            "img": "LiquidSoap.svg"
-        },
-        {
-            "name": "Shampoo",
-            "img": "shampoo.svg"
-        },
-        {
-            "name": "Dishwashing liquid",
-            "img": "dish.svg"
-        },
-        {
-            "name": "Bleach, stain remover",
-            "img": "Bleach.svg"
-        }
-    ];
+    const [categories, setCategories] = useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/categories')
+            .then(response => response.json())
+            .then(data => setCategories([...data]))
+            .catch(error => console.error(error));
+    }, [props]);
 
     return (
         <div className="CategoriesBox">
@@ -43,21 +22,31 @@ function Categories(props) {
             </div>
             <div>
                 <ul>
-                    {
+                    {categories ?
                         categories.map((category, id) => (
                             <li key={id}>
-                                <button 
-                                    className="CategoryButton btn" 
-                                    onClick={() => {props.changeCategory(category.name)}} 
+                                <button
+                                    className="CategoryButton btn"
+                                    onClick={() => { props.changeCategory(category.Name) }}
                                 >
-                                    <img 
-                                        src={`http://localhost:3000/media/Icons/${category.img}`} 
-                                        alt="icon" 
+                                    <img
+                                        src={`http://localhost:3000/media/Icons/${category.Img}`}
+                                        alt="icon"
                                     />
-                                    <span>{category.name}</span>
+                                    <span>
+                                        {
+                                            SiteLang === "РУС" ?
+                                                category.Title.RU
+                                                : SiteLang === "ՀԱՅ" ?
+                                                    category.Title.AM
+                                                    :
+                                                    category.Title.EN
+                                        }
+                                    </span>
                                 </button>
                             </li>
                         ))
+                        : ''
                     }
                 </ul>
             </div>
