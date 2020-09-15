@@ -1,0 +1,72 @@
+input:focus, input:active, button:focus, button:active, select:active, select:focus {
+    outline: none !important;
+}
+
+header {
+    text-align: center;
+    background: #5096fd;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.content {
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.tools {
+    justify-content: center;
+}
+.container a {
+    color: #fff;
+}
+.container a:hover {
+    color: #fff;
+    text-decoration-line: none;  
+}
+.tools button {
+    margin: 10px;
+    padding: 10px;
+    background: #5096fd;
+    color: #fff;
+    border: 1px solid #5096fd;
+    border-radius: 15px;
+    transition: .2s;
+}
+.tools button:hover {
+    margin: 2px;
+}
+
+
+/* Add Item page */
+.AddPage form {
+    text-align: center;
+}
+.DescriptionBox {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.DescriptionBox textarea {
+    padding: 10px;
+    margin: 10px;
+}
+textarea {
+    height: 100px;
+    width: 200px;
+}
+
+/* Category Page */
+.CategoryPage table {
+    width: 100%;
+    margin: 20px 0px;
+    text-align: center;
+}
+.CategoryPage tr, .CategoryPage th, .CategoryPage td {
+    border: 1px solid black;
+}
+.CategoryPage table input {
+    text-align: center;
+}
