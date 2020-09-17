@@ -137,9 +137,15 @@ header {
     background: #fff;
     z-index: 1;
     height: 100%;
-    position: sticky !important;
-    top: 0;
 }
+@media(min-width: 768px) {
+    .FiltersPart {
+        max-width: 400px;
+        position: sticky !important;
+        top: 0;
+    }
+}
+
 .FiltersBox, .CategoriesBox {
     margin: 15px auto;
     padding: 10px;
@@ -152,6 +158,24 @@ aside .Title {
     color: #fff;
     border-radius: 5px;
 }
+.FilterController {
+    text-align: center;
+}
+.FilterEraser {
+    margin: 5px;
+}
+.FilterEraser img {
+    transition: .2s;
+}
+.FilterEraser:hover img {
+    width: 15px;
+    height: 15px;
+}
+.FilterEraser button {
+    background: none;
+    border: none;
+}
+/* In phones, tablets and any small devices... */
 .FilterCollapseButton {
     width: 100%;
     margin: auto;
@@ -311,14 +335,6 @@ aside .Title {
     text-align: center;
 }
 
-/* Home page */
-.Banner {
-    margin: 0px;
-}
-.Banner img {
-    width: 100%;
-}
-
 /* Cart Page */
 .CartBox div h2 {
     border-radius: 5px;
@@ -329,6 +345,10 @@ aside .Title {
 .CartBox h2 {
     background: #5096fd;
     color: #fff;
+}
+
+.EmptyBox {
+    text-align: center;
 }
 .BasketItem {
     color: #5096fd;

@@ -43,7 +43,7 @@ function BasketItem(props) {
         <div className="BasketItem container-fluid" onMouseEnter={hover} onMouseLeave={leave}>
             <div className="row">
                 <div className="ImageBox col-lg-2 col-md-2 col-sm-3 col-xs-5">
-                    <img src={`http://localhost:3000/media/Products/${product.img}`} alt="prInfo" />
+                    <img src={`http://192.168.0.104:3000/media/Products/${product.img}`} alt="prInfo" />
                 </div>
                 <div className="ProductInfoBox col-lg col-md col-sm col-xs">
                     <h3>

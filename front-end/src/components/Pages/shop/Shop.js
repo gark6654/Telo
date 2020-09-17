@@ -3,6 +3,7 @@ import { SiteText } from '../../../App';
 import Categories from './Categories';
 import Filters from './Filters';
 import ProductsBox from './ProductsBox';
+import FilterEraser from './FilterEraser';
 import { Filter } from '../../../Icons';
 
 function Shop(props) {
@@ -16,6 +17,16 @@ function Shop(props) {
         window.addEventListener('resize', () => {
             setWindowW(window.innerWidth);
         });
+
+        (function setupFilterStorage() {
+            const sessionBasket = sessionStorage.getItem('filters');
+            if (sessionBasket) {
+                setFilters(JSON.parse(sessionStorage.getItem('filters')));
+            }
+            else {
+                sessionStorage.setItem('filters', JSON.stringify([]));
+            }
+        })();
     }, [props]);
 
     // FIlters for show products.
@@ -24,7 +35,12 @@ function Shop(props) {
         "maxPrice": null
     });
 
-    function changeCat(category) {
+    // Set filters to session storage.
+    useEffect(() => {
+        sessionStorage.setItem('filters', JSON.stringify(filters));
+    }, [filters]);
+
+    function setCategory(category) {
         setFilters({
             "category": category,
             "maxPrice": filters.maxPrice
@@ -35,6 +51,20 @@ function Shop(props) {
         setFilters({
             "category": filters.category,
             "maxPrice": max
+        });
+    }
+
+    function unSetCategory() {
+        setFilters({
+            "category": null,
+            "maxPrice": filters.maxPrice
+        });
+    }
+
+    function unSetMax() {
+        setFilters({
+            "category": filters.category,
+            "maxPrice": null
         });
     }
 
@@ -62,7 +92,21 @@ function Shop(props) {
                     className={`FiltersPart ${windowW <= 768 ? 'collapse' : 'col-md-auto'}`}
                     id="CollapseFilters"
                 >
-                    <Categories changeCategory={changeCat} />
+                    <div className="FilterController">
+                        {
+                            filters.category ?
+                                <FilterEraser title={filters.category} unSet={unSetCategory} />
+                                // ELSE
+                                : ''
+                        }
+                        {
+                            !filters.maxPrice ? ''
+                                // ELSE
+                                :
+                                <FilterEraser title={`Max: ${filters.maxPrice} ֏`} unSet={unSetMax} />
+                        }
+                    </div>
+                    <Categories changeCategory={setCategory} />
                     <Filters changeMax={setMax} />
                 </aside>
                 <div className="ProductsPart col-md">

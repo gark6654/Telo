@@ -30,7 +30,7 @@ function App(props) {
         // Get products from server.
         (
             function getProductsFromServer() {
-                fetch('http://localhost:5000/items')
+                fetch('http://192.168.0.104:5000/items')
                     .then(response => response.json())
                     .then(data => setShopProducts([...data]))
                     .catch(error => console.error(error));

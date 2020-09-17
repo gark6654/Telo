@@ -73,11 +73,11 @@ function Cart(props) {
             {cartItems.length === 0 ? (
                 order ? // If order show thanks.
                     <div className="successBox alert alert-success" role="alert">
-                        <h1>{Text.success}</h1>
+                        <h2>{Text.success}</h2>
                         <p style={{'fontSize': 100 + 'px'}}>&#128540;&#128527;</p>
                     </div>
                     : // Else
-                    <div className="alert alert-info" role="alert">
+                    <div className="EmptyBox alert alert-info" role="alert">
                         <h1>{Text.empty}</h1>
                     </div>
             ) : // Else
