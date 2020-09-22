@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { SiteText } from '../App';
 import { Link } from 'react-router-dom';
 import LangSelector from './LangSelector';
@@ -28,19 +28,19 @@ function NavBar(props) {
                     <li className="nav-item ">
                         <Link
                             to="/" className="nav-link">
-                                {Text.navLinks.home}
+                            {Text.navLinks.home}
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link
                             to="/Shop/" className="nav-link">
-                                {Text.navLinks.shop}
+                            {Text.navLinks.shop}
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link
                             to="/Order+Delivery/" className="nav-link">
-                                {Text.navLinks.orderInfo}
+                            {Text.navLinks.orderInfo}
                         </Link>
                     </li>
                 </ul>

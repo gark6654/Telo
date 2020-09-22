@@ -6,6 +6,7 @@ import Content from './components/Content';
 import Footer from './components/Footer';
 import './App.css';
 
+// Global values...
 const SiteText = React.createContext(null); // Site Text sorted from selected language.
 const SiteProducts = React.createContext(null); // Products.
 const BasketItems = React.createContext(null); // Basket items.
@@ -30,13 +31,13 @@ function App(props) {
         // Get products from server.
         (
             function getProductsFromServer() {
-                fetch('http://192.168.0.104:5000/items')
+                fetch('http://localhost:5000/items')
                     .then(response => response.json())
                     .then(data => setShopProducts([...data]))
                     .catch(error => console.error(error));
             }
         )();
-        // Create basket session storage or get from it.
+        // Create basket session storage or basket get from it.
         (
             function setupBasketStorage() {
                 const sessionBasket = sessionStorage.getItem('basket');

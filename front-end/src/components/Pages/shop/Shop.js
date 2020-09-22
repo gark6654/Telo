@@ -12,6 +12,7 @@ function Shop(props) {
 
     // UI For Filters collapse.
     const [windowW, setWindowW] = useState(window.innerWidth);
+    const siteLang = localStorage.getItem('lang');
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -95,7 +96,11 @@ function Shop(props) {
                     <div className="FilterController">
                         {
                             filters.category ?
-                                <FilterEraser title={filters.category} unSet={unSetCategory} />
+                                <FilterEraser title={
+                                    siteLang === "РУС" ? filters.category.Title.RU :
+                                        siteLang === "ՀԱՅ" ? filters.category.Title.AM :
+                                            filters.category.Title.EN
+                                } unSet={unSetCategory} />
                                 // ELSE
                                 : ''
                         }
@@ -103,7 +108,11 @@ function Shop(props) {
                             !filters.maxPrice ? ''
                                 // ELSE
                                 :
-                                <FilterEraser title={`Max: ${filters.maxPrice} ֏`} unSet={unSetMax} />
+                                <FilterEraser title={`${
+                                    siteLang === "РУС" ? 'До' :
+                                        siteLang === "ՀԱՅ" ? 'Մինչև' :
+                                        'To'
+                                    }: ${filters.maxPrice} ֏`} unSet={unSetMax} />
                         }
                     </div>
                     <Categories changeCategory={setCategory} />

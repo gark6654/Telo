@@ -12,10 +12,10 @@ function ProductsBox(props) {
     useEffect(() => {
         var filtratedItems = products;
         if (filters.category) {
-            filtratedItems = filtratedItems.filter(item => item.Category === filters.category);
+            filtratedItems = filtratedItems.filter(item => item.Category === filters.category.Name);
         }
         if (filters.maxPrice) {
-            filtratedItems = filtratedItems.filter(item => item.Price <= filters.maxPrice);
+            filtratedItems = filtratedItems.filter(item => parseInt(item.Price) <= filters.maxPrice);
         }
 
         setShow(filtratedItems);

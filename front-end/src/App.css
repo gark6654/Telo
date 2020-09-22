@@ -189,7 +189,7 @@ aside .Title {
     background: #e6563f;
 }
 
-/* Categories side */
+/* Categories part */
 .CategoriesBox ul {
     padding: 0px;
     margin: 5px auto;
@@ -211,7 +211,7 @@ aside .Title {
     margin-right: 5px;
 }
 
-/* Filters side */
+/* Filters part */
 .PriceFilter span {
     margin: auto 5px;
 }
@@ -235,7 +235,7 @@ aside .Title {
     }
 }
 
-/* Products side */
+/* Products part */
 .ProductsPart {
     margin: 15px auto;
 }

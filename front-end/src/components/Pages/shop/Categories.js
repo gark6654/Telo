@@ -9,7 +9,7 @@ function Categories(props) {
     const [categories, setCategories] = useState(null);
 
     useEffect(() => {
-        fetch('http://192.168.0.104:5000/categories')
+        fetch('http://localhost:5000/categories')
             .then(response => response.json())
             .then(data => setCategories([...data]))
             .catch(error => console.error(error));
@@ -27,10 +27,10 @@ function Categories(props) {
                             <li key={id}>
                                 <button
                                     className="CategoryButton btn"
-                                    onClick={() => { props.changeCategory(category.Name) }}
+                                    onClick={() => { props.changeCategory(category) }}
                                 >
                                     <img
-                                        src={`http://192.168.0.104:3000/media/Icons/${category.Img}`}
+                                        src={`http://localhost:3000/media/Icons/${category.Img}`}
                                         alt="icon"
                                     />
                                     <span>
