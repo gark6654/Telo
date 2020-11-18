@@ -50,11 +50,7 @@ function BasketItem(props) {
                         {product.name}
                     </h3>
                     <p>
-                        {
-                            descLang === "РУС" ? product.desc.RU :
-                                descLang === "ՀԱՅ" ? product.desc.AM :
-                                    product.desc.EN
-                        }
+                        {product.desc[descLang]}
                     </p>
                     <h4>
                         {product.price} ֏

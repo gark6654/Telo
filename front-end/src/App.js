@@ -19,8 +19,8 @@ const RemoveItem = React.createContext(null); // Remove item from bsaket.
 const ClearBasket = React.createContext(); // Remove all basket items.
 
 function App(props) {
-    const [lang, setLang] = useState('EN'); // Default language is English. 
-    const [sortedText, setSortedText] = useState(Text.en); // Text is sorted to English by default. 
+    const [lang, setLang] = useState('ENG'); // Default language is English. 
+    const [sortedText, setSortedText] = useState(Text.ENG); // Text is sorted to English by default. 
 
     // Already filtred product for send's to content.
     const [shopProducts, setShopProducts] = useState([]);
@@ -57,15 +57,7 @@ function App(props) {
             // Else   
             : localStorage.setItem('lang', lang);
 
-        if (lang === 'ՀԱՅ') {
-            setSortedText(Text.am);
-        }
-        else if (lang === 'РУС') {
-            setSortedText(Text.ru);
-        }
-        else {
-            setSortedText(Text.en);
-        }
+        setSortedText(Text[lang]);
     }, [lang]);
 
     // Update basket session storage on basketItems update.

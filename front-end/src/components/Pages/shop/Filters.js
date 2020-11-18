@@ -7,7 +7,8 @@ function Filters(props) {
     const [maxPrice, setMaxPrice] = useState(100000);
 
     useEffect(() => {
-        const max = JSON.parse(sessionStorage.getItem('filters')).maxPrice;
+        const sessionFilters = sessionStorage.getItem('filters'); 
+        const max = sessionFilters ? JSON.parse(sessionFilters).maxPrice : null;  
         if (max) {
             setMaxPrice(max);
         }

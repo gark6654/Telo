@@ -4,7 +4,7 @@ import { SiteText } from '../../App';
 // Site icons.
 import { Shop, Order, Delivery, Vip } from '../../Icons';
 
-function OrderAndDelivery(props) {
+function OrderAndDelivery() {
     const Text = useContext(SiteText).content.pages.orderDelivery;
 
     return (

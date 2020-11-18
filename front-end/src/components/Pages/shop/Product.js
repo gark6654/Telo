@@ -43,22 +43,14 @@ function Product(props) {
                 {/* Product image */}
                 <img src={`http://localhost:3000/media/Products/${info.img}`} alt="prd" />
                 <label>
-                    {
-                        info.desc ?
-                            descLang === "РУС" ? info.desc.RU.substring(0, 80) + ' [больше...]' :
-                                descLang === "ՀԱՅ" ? info.desc.AM.substring(0, 80) + ' [ավելին...]' :
-                                    info.desc.EN.substring(0, 75) + ' [more...]'
-                            : ''
-                    }
+                    {info.desc ? info.desc[descLang].substring(0, 80) + '...' : ''}
                 </label>
                 {/* Product Price */}
                 <h4 className="ProductPriceBox MoneySymbol">
                     {info.price} <span className="MoneySymbol">֏</span>
                 </h4>
             </div>
-            {
-                zoom ? <SingleProduct product={info} collapse={collapseBox} /> : ''
-            }
+            {zoom ? <SingleProduct product={info} collapse={collapseBox} /> : ''}
         </>
     );
 }

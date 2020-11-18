@@ -34,14 +34,7 @@ function Categories(props) {
                                         alt="icon"
                                     />
                                     <span>
-                                        {
-                                            SiteLang === "РУС" ?
-                                                category.Title.RU
-                                                : SiteLang === "ՀԱՅ" ?
-                                                    category.Title.AM
-                                                    :
-                                                    category.Title.EN
-                                        }
+                                        {category.Title[SiteLang]}
                                     </span>
                                 </button>
                             </li>

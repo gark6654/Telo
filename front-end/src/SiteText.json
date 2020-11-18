@@ -1,5 +1,5 @@
 {
-    "en": {
+    "ENG": {
         "_comment": "English",
         "header": {
             "basketTitle": "My Cart",
@@ -90,7 +90,7 @@
             "rights": "All Right Reserved"
         }
     },
-    "ru": {
+    "РУС": {
         "_comment": "Русский",
         "header": {
             "basketTitle": "Корзина",
@@ -181,7 +181,7 @@
             "rights": "Все права защищены"
         }
     },
-    "am": {
+    "ՀԱՅ": {
         "_comment": "Հայերեն",
         "header": {
             "basketTitle": "Զամբյուղ",
