@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { SiteText } from '../App';
 import { Link } from 'react-router-dom';
+import SearchBox from './SearchBox';
 import LangSelector from './LangSelector';
 
 function NavBar(props) {
@@ -44,17 +45,7 @@ function NavBar(props) {
                         </Link>
                     </li>
                 </ul>
-                <form className="form-inline my-2 my-lg-0" onSubmit={search}>
-                    <input
-                        className="form-control mr-sm-2"
-                        type="search"
-                        placeholder={Text.searchTitle + '..'}
-                        aria-label="Search"
-                    />
-                    <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">
-                        {Text.searchTitle}
-                    </button>
-                </form>
+                <SearchBox searchTitle={Text.searchTitle} />
                 <LangSelector />
             </div>
         </nav>

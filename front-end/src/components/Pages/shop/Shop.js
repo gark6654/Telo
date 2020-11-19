@@ -97,9 +97,7 @@ function Shop(props) {
                         {
                             filters.category ?
                                 <FilterEraser title={
-                                    siteLang === "РУС" ? filters.category.Title.RU :
-                                        siteLang === "ՀԱՅ" ? filters.category.Title.AM :
-                                            filters.category.Title.EN
+                                    filters.category.Title[siteLang]
                                 } unSet={unSetCategory} />
                                 // ELSE
                                 : ''
@@ -109,9 +107,7 @@ function Shop(props) {
                                 // ELSE
                                 :
                                 <FilterEraser title={`${
-                                    siteLang === "РУС" ? 'До' :
-                                        siteLang === "ՀԱՅ" ? 'Մինչև' :
-                                        'To'
+                                    Text.to
                                     }: ${filters.maxPrice} ֏`} unSet={unSetMax} />
                         }
                     </div>

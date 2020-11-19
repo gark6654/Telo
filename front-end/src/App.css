@@ -427,6 +427,11 @@ aside .Title {
     margin: auto 10px;
 }
 
+/* Search Page */
+.SearchProducts .row {
+    justify-content: center;
+}
+
 /* ======================================== FOOTER ======================================== */
 footer {
     position: relative;

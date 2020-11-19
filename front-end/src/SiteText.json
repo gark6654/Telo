@@ -72,6 +72,9 @@
                             "buy": "Buy"
                         }
                     }
+                },
+                "search": {
+                    "title": "Search result by:"
                 }
             },
             "toCartForm": {
@@ -163,6 +166,9 @@
                             "buy": "Купить"
                         }
                     }
+                },
+                "search": {
+                    "title": "Результат поиска по:"
                 }
             },
             "toCartForm": {
@@ -254,6 +260,9 @@
                             "buy": "Գնել"
                         }
                     }
+                },
+                "search": {
+                    "title": "Որոնման արդյունքը:"
                 }
             },
             "toCartForm": {

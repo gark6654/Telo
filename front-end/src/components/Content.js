@@ -3,9 +3,10 @@ import { Switch, Route } from "react-router-dom";
 import Home from './Pages/Home';
 import Shop from './Pages/shop/Shop';
 import Cart from './Pages/cart/Cart';
+import Search from './Pages/Search';
 import OrderAndDelivery from './Pages/OrderAndDeliveryInfo';
 
-function Content(props) {
+function Content() {
     return (
         <div className="Content">
             {/*
@@ -13,6 +14,9 @@ function Content(props) {
                 renders the first one that matches the current URL. 
             */}
             <Switch>
+                <Route path="/search/">
+                    <Search />
+                </Route>
                 <Route path="/Order+Delivery/">
                     <OrderAndDelivery />
                 </Route>
