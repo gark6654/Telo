@@ -6,9 +6,10 @@ const mongoClient = require('mongodb').MongoClient;
 const config = require('./config.json');
 const bodyParser = require('body-parser');
 const mailer = require('nodemailer');
+const { static } = require('express');
 
 // 
-const images_dir = path.join(__dirname, 'public');
+const public_dir = path.join(__dirname, 'public');
 // DB
 const db_URL = `mongodb+srv://${config.mongo.user}:${config.mongo.pass}@cluster0.pp4gp.mongodb.net/`;
 var db;
@@ -22,13 +23,11 @@ const sender = mailer.createTransport({
     }
 });
 
-app.use(express.static(images_dir));
+app.use(express.static(public_dir));
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send('For view send request to /items');
-});
+app.use(express.static(path.join(__dirname, 'public', 'build')));
 
 // _*_*_*__*_*_*_ Products requests _*_*_*__*_*_*_
 // Get products
@@ -163,6 +162,11 @@ app.post('/buy', (req, res) => {
             res.send('Post request for buy basket');
         });
     });
+});
+
+// If can't find url redirect to front end.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/build', 'index.html'));
 });
 
 mongoClient.connect(db_URL, { useUnifiedTopology: true }, (err, client) => {
