@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const cors = require('cors');
 const mongoClient = require('mongodb').MongoClient;
 const config = require('./config.json');
 const bodyParser = require('body-parser');
 const mailer = require('nodemailer');
 
+// 
+const images_dir = path.join(__dirname, 'public');
 // DB
 const db_URL = `mongodb+srv://${config.mongo.user}:${config.mongo.pass}@cluster0.pp4gp.mongodb.net/`;
 var db;
@@ -19,6 +22,7 @@ const sender = mailer.createTransport({
     }
 });
 
+app.use(express.static(images_dir));
 app.use(cors());
 app.use(bodyParser.json());
 

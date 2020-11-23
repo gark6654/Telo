@@ -34,7 +34,7 @@ function SingleProduct(props) {
                 </h2>
                 <img
                     className="SingleProductImg"
-                    src={`http://localhost:3000/media/Products/${props.product.img}`}
+                    src={`http://localhost:5000/Images/${props.product.img}`}
                     alt="logo"
                 />
                 <p>

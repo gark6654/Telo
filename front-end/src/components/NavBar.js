@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { SiteText } from '../App';
 import { Link } from 'react-router-dom';
 import SearchBox from './SearchBox';
@@ -6,10 +6,6 @@ import LangSelector from './LangSelector';
 
 function NavBar(props) {
     const Text = useContext(SiteText).header.navBar; // Navbar part text sorted by language.
-
-    function search(event) {
-        event.preventDefault();
-    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
