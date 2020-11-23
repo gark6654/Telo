@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { SiteText } from '../../../App';
+import Icons from '../../../Icons';
 
 function Categories(props) {
     // Filters part text sorted by language.
@@ -30,7 +31,7 @@ function Categories(props) {
                                     onClick={() => { props.changeCategory(category) }}
                                 >
                                     <img
-                                        src={`http://localhost:3000/media/Icons/${category.Img}`}
+                                        src={`http://localhost:5000/Icons/${category.Img}`}
                                         alt="icon"
                                     />
                                     <span>
