@@ -41,7 +41,7 @@ function Product(props) {
                     {info.name} {/* Product Name */}
                 </h3>
                 {/* Product image */}
-                <img src={`http://localhost:5000/Images/${info.img}`} alt="prd" />
+                <img src={`https://secure-mountain-01458.herokuapp.com/Images/${info.img}`} alt="prd" />
                 <label>
                     {info.desc ? info.desc[descLang].substring(0, 80) + '...' : ''}
                 </label>

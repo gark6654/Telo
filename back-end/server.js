@@ -175,7 +175,7 @@ mongoClient.connect(db_URL, { useUnifiedTopology: true }, (err, client) => {
     }
     db = client.db('urartu');
 
-    app.listen(5000, () => {
-        console.log("App running on 5000 port");
+    app.listen(process.env.PORT || 3000, () => {
+        console.log("App running on 3000 port");
     });
 });

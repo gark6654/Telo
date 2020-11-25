@@ -31,7 +31,7 @@ function App(props) {
         // Get products from server.
         (
             function getProductsFromServer() {
-                fetch('http://localhost:5000/items')
+                fetch('https://secure-mountain-01458.herokuapp.com/items')
                     .then(response => response.json())
                     .then(data => setShopProducts([...data]))
                     .catch(error => console.error(error));

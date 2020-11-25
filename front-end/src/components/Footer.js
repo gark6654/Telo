@@ -19,18 +19,18 @@ function Footer(props) {
                     <div className="PhoneBox col-md">
                         <img src={Phone} alt="icon" width="25" />
                         <span>{Text.phoneTitle}:</span>
-                        <p>+374 55 97 79 39</p>
+                        <p>+374 55 00 00 00</p>
                     </div>
                     <div className="MailBox col-md">
                         <img src={Email} alt="icon" width="25" />
                         <span>{Text.mailTitle}:</span>
-                        <p>urartu@gmail.com</p>
+                        <p>sitename@gmail.com</p>
                     </div>
                 </div>
             </div>
             <div className="FooterBottomPart">
                 <p>
-                    &copy; {new Date().getFullYear()} Urartu.ge {Text.rights}.
+                    &copy; {new Date().getFullYear()} sitename.am {Text.rights}.
                 </p>
             </div>
         </footer>
